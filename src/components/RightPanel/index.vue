@@ -87,7 +87,7 @@ export default {
 }
 </style>
 
-<style scoped>
+<style scoped lang="scss">
 .rightPanel-background {
     position: fixed;
     top: 0;
