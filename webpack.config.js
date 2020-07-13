@@ -49,6 +49,10 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
+                test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+                loader: 'file-loader'
+            },
+            {
                 test: /\.(png|gif|jpg|jpeg|svg)$/, //处理图片
                 exclude: /node_modules/,
                 use: ['url-loader'],

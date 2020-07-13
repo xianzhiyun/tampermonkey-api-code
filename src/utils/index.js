@@ -422,3 +422,38 @@ export function flatten(data) {
     return data.reduce((arr, {id, name, children = []}) =>
       arr.concat([{id, name}], flatten(children)), [])
 }
+
+// 复制文本
+export function copyText(id, attr) {
+    let target = null
+    if (attr) {
+        target = document.createElement('div')
+        target.id = 'tempTarget'
+        target.style.opacity = '0'
+        if (id) {
+            const curNode = document.querySelector(`#${id}`)
+            target.innerText = curNode[attr]
+        } else {
+            target.innerText = attr
+        }
+        document.body.appendChild(target)
+    } else {
+        target = document.querySelector(`#${id}`)
+    }
+
+    try {
+        const range = document.createRange()
+        range.selectNode(target)
+        window.getSelection().removeAllRanges()
+        window.getSelection().addRange(range)
+        document.execCommand('copy')
+        window.getSelection().removeAllRanges()
+    } catch (e) {
+        console.log('\x1B[31m%s\x1B[0m', '复制失败')
+    }
+
+    if (attr) {
+        // remove temp target
+        target.parentElement.removeChild(target)
+    }
+}

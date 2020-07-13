@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-// import ElementUI from 'element-ui';
-// import 'element-ui/lib/theme-chalk/index.css';
-// Vue.use(ElementUI);
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
 
 const root = document.createElement('div') //创建div节点
 document.body.appendChild(root) //将div节点添加到body下

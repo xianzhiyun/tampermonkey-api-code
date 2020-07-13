@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <right-panel>
-      <div>hello</div>
+      <form-code></form-code>
     </right-panel>
     <!--<iframe id="iframe" src="http://localhost:8080/#/form-code" frameborder="0"></iframe>-->
   </div>
@@ -9,10 +9,12 @@
 
 <script>
 import RightPanel from './components/RightPanel/index.vue'
+import FormCode from '@/views/form-code/index.vue'
 export default {
   name: 'App',
   components:{
-    RightPanel
+    RightPanel,
+    FormCode
   },
   mounted() {
   }
