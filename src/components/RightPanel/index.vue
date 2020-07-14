@@ -13,7 +13,7 @@
             >
                 <i :class="show?'el-icon-close':'el-icon-setting'"/>
             </div>
-            <div class="rightPanel-items">
+            <div class="rightPanel-items" style="height: 100%">
                 <slot/>
             </div>
         </div>
