@@ -15,3 +15,9 @@
 * https://www.lookroot.cn/views/article/vue3demo.html
 * https://github.com/lookroot/vuestu/tree/master/vue3demo/clidemo
 * https://vue-js.com/topic/5e2d023f7a28821363fb6821
+
+
+# 遇到问题
+
+* select的option内容被隐藏
+    * 由于抽屉z-index层级关系导致被遮住

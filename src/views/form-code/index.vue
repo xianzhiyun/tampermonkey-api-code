@@ -1,7 +1,7 @@
 <template>
     <div class="app-container">
         <div style="margin-left: 10px">
-            <span>个数：</span>
+            <span>一行显示数量：</span>
             <el-input-number v-model="itemNum" size="mini" :min="1" :max="4" label="一行展示内容" />
             <el-button style="margin: 10px" type="primary" size="mini" @click="generateCode">
                 生成代码
@@ -103,8 +103,12 @@ export default {
             tableData: [],
             typeOptions: [
                 {
-                    label: 'input',
+                    label: 'Input',
                     value: 'input'
+                },
+                {
+                    label: '插槽',
+                    value: 'slot'
                 },
                 {
                     label: 'select',
@@ -145,7 +149,6 @@ export default {
         this.getList()
     },
     mounted() {
-        console.log(666666666666666)
     },
     methods: {
         // 代码生成
@@ -163,7 +166,7 @@ export default {
                 this.tableData.push({
                     value: item,
                     label: fromData[item].description.slice(0, 6),
-                    isParams: false, // 是否是参数
+                    isParams: true, // 是否是参数
                     type: 'input'
                 })
             })

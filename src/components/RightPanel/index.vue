@@ -37,7 +37,7 @@ export default {
     },
     data() {
         return {
-            show: false
+            show: true
         }
     },
     watch: {
@@ -109,7 +109,7 @@ export default {
     transition: all .25s cubic-bezier(.7, .3, .1, 1);
     transform: translate(100%);
     background: #fff;
-    z-index: 40000;
+    z-index: 1000;
 }
 
 .show {
@@ -117,7 +117,7 @@ export default {
 }
 
 .show .rightPanel-background {
-    z-index: 20000;
+    z-index: 900;
     opacity: 1;
     width: 100%;
     height: 100%;
