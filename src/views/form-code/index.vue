@@ -85,6 +85,8 @@
 import Sortable from 'sortablejs'
 import { copyText } from '@/utils'
 import { code } from './code.js'
+import {formCode} from "@/utils/generate-code";
+import apiJson from './demo.json'
 
 export default {
     name: '',
@@ -99,7 +101,6 @@ export default {
             sortable: null,
             oldList: [],
             newList: [],
-            apiJson: '{"email":{"type":"string","description":"邮箱"},"groupId":{"type":"integer","format":"int64","description":"所属组ID"},"isResponsible":{"type":"boolean","description":"是否为责任人：true-是，false-不是"},"isSystemUser":{"type":"boolean","description":"是否系统用户：true-是，false-不是"},"name":{"type":"string","description":"姓名"},"password":{"type":"string","description":"登录密码"},"phone":{"type":"string","description":"联系电话"},"positionId":{"type":"integer","format":"int64","description":"职位"},"roles":{"type":"array","description":"角色列表","items":{"type":"integer","format":"int64"}},"username":{"type":"string","description":"登录用户名"}}',
             tableData: [],
             typeOptions: [
                 {
@@ -153,6 +154,7 @@ export default {
     methods: {
         // 代码生成
         generateCode() {
+            console.log(formCode(this.tableData))
             copyText('', code)
         },
         // 删除某一项
@@ -160,16 +162,17 @@ export default {
             this.list.splice(scope.$index, 1)
         },
         fromDatByJson() {
-            const fromData = JSON.parse(this.apiJson)
-            const fieldList = Object.keys(fromData)
-            fieldList.forEach(item => {
-                this.tableData.push({
-                    value: item,
-                    label: fromData[item].description.slice(0, 6),
-                    isParams: true, // 是否是参数
-                    type: 'input'
-                })
-            })
+            console.log(apiJson)
+            // const fromData = JSON.parse(this.apiJson)
+            // const fieldList = Object.keys(fromData)
+            // fieldList.forEach(item => {
+            //     this.tableData.push({
+            //         value: item,
+            //         label: fromData[item].description.slice(0, 6),
+            //         isParams: true, // 是否是参数
+            //         type: 'input'
+            //     })
+            // })
         },
         async getList() {
             this.listLoading = true

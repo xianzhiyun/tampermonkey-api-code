@@ -12,7 +12,6 @@ export const formCode = (data) => {
         "roles": {"type": "array", "description": "角色列表", "items": {"type": "integer", "format": "int64"}},
         "username": {"type": "string", "description": "登录用户名"}
     }
-
     // 生成代码的配置项
     let config = {
         formInfo: {
@@ -46,38 +45,43 @@ export const formCode = (data) => {
                 //? 帮我插进去一个插槽吧
                 config.slotHtml.push(`<template #form-${item.value}></template>`)
                 break
-            /*case 'select':
+            case 'select':
+                // 设置option内容
                 let field = item[`${item.value}Option`]
-                if (item[`${item.value}Option`]){
-                    config.listTypeInfo.item[`${item.value}Option`]
-                }*/
+                config.listTypeInfo[field] = []
+                break
+            // 图片... 上传统一
         }
         config.formInfo.fieldList.push(fieldItem)
     })
     // html 代码片段
-    let html = `<vt-form
-                  ref="vtForm"
-                  :ref-obj.sync="formInfo.ref"
-                  :data="formInfo.data"
-                  :field-list="formInfo.fieldList"
-                  :rules="formInfo.rules"
-                  :count="formInfo.count"
-                  label-position="left"
-                >${config.slotHtml.join('\n')}</vt-form>`
+    let html = `<template>
+                <vt-form
+                ref="vtForm"
+                :ref-obj.sync="formInfo.ref"
+                :data="formInfo.data"
+                :field-list="formInfo.fieldList"
+                :rules="formInfo.rules"
+                :count="formInfo.count"
+                label-position="left"
+                >${config.slotHtml.join('\n')}</vt-form>
+            </template>`
     // js代码
-    const js =
-        `export default {
-          data () {
-            return {
-              formInfo: ${config.formInfo},
-              listTypeInfo: ${config.listTypeInfo}
+    const script =
+        `<script>
+            export default {
+              data () {
+                return {
+                  formInfo: ${JSON.stringify(config.formInfo)},
+                  listTypeInfo: ${JSON.stringify(config.listTypeInfo)}
+                }
+              },
+              computed: {},
+              watch: {},
+              created () {},
+              mounted () {},
             }
-          },
-          computed: {},
-          watch: {},
-          created () {},
-          mounted () {},
-        }`
-
-
+        </script>`
+    const css = `<style scoped lang="scss"></style>`
+    return html + script + css
 }
