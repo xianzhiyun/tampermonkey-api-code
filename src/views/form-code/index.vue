@@ -2,7 +2,7 @@
     <div class="app-container">
         <div style="margin-left: 10px">
             <span>一行显示数量：</span>
-            <el-input-number v-model="itemNum" size="mini" :min="1" :max="4" label="一行展示内容" />
+            <el-input-number v-model="itemNum" size="mini" :min="1" :max="4" label="一行展示内容"/>
             <el-button style="margin: 10px" type="primary" size="mini" @click="generateCode">
                 生成代码
             </el-button>
@@ -19,13 +19,13 @@
             />
             <el-table-column align="center" label="字段名/value">
                 <template slot-scope="{row}">
-                    <el-input v-model="row.value" size="mini" placeholder="请输入内容" />
+                    <el-input v-model="row.value" size="mini" placeholder="请输入内容"/>
                 </template>
             </el-table-column>
 
             <el-table-column align="center" label="标题/lable">
                 <template slot-scope="{row}">
-                    <el-input v-model="row.label" size="mini" placeholder="请输入内容" />
+                    <el-input v-model="row.label" size="mini" placeholder="请输入内容"/>
                 </template>
             </el-table-column>
             <el-table-column align="center" label="参数">
@@ -70,7 +70,7 @@
 
             <el-table-column align="center" label="Drag" width="80">
                 <template slot-scope="scope">
-                    <i style="font-size: 16px;color: #303133;cursor: pointer" class="el-icon-rank" />
+                    <i style="font-size: 16px;color: #303133;cursor: pointer" class="el-icon-rank"/>
                     <i
                             style="font-size: 16px;color: #F56C6C;margin-left: 20px;cursor: pointer"
                             class="el-icon-delete" @click="deleteItem(scope)"
@@ -83,8 +83,7 @@
 
 <script>
 import Sortable from 'sortablejs'
-import { copyText } from '@/utils'
-import { code } from './code.js'
+import {copyText} from '@/utils'
 import {formCode} from "@/utils/generate-code";
 import apiJson from './demo.json'
 
@@ -162,17 +161,33 @@ export default {
             this.list.splice(scope.$index, 1)
         },
         fromDatByJson() {
+            let schema = ''
             console.log(apiJson)
-            // const fromData = JSON.parse(this.apiJson)
-            // const fieldList = Object.keys(fromData)
-            // fieldList.forEach(item => {
-            //     this.tableData.push({
-            //         value: item,
-            //         label: fromData[item].description.slice(0, 6),
-            //         isParams: true, // 是否是参数
-            //         type: 'input'
-            //     })
-            // })
+            let path = 'saveUsingPOST_1'
+            let paths = apiJson.paths
+            let definitions = apiJson.definitions
+            Object.keys(paths).forEach((item) => {
+                let methods = paths[item]
+                Object.keys(methods).forEach((methodsItem) => {
+                    let methodsConfig = methods[methodsItem]
+                    if (methodsConfig.operationId === path) {
+                        if (Array.isArray(methodsConfig.parameters) && methodsConfig.parameters.length > 0) {
+                            schema =  methodsConfig.parameters[0].schema.originalRef
+                        }
+                    }
+                })
+            })
+            let params = definitions[schema].properties
+            console.log(params)
+            const fieldList = Object.keys(params)
+            fieldList.forEach(item => {
+                this.tableData.push({
+                    value: item,
+                    label: params[item].description.slice(0, 6),
+                    isParams: true, // 是否是参数
+                    type: 'input'
+                })
+            })
         },
         async getList() {
             this.listLoading = true
@@ -208,9 +223,10 @@ export default {
 </script>
 
 <style>
-.app-container{
+.app-container {
     background: #999999;
 }
+
 .sortable-ghost {
     opacity: .8;
     color: #fff !important;
