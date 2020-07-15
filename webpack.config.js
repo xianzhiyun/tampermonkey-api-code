@@ -50,7 +50,7 @@ module.exports = {
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
-                loader: 'file-loader'
+                loader: 'url-loader'
             },
             {
                 test: /\.(png|gif|jpg|jpeg|svg)$/, //处理图片

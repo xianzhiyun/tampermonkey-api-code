@@ -92,9 +92,9 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
-/* harmony import */ var element_ui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(48);
+/* harmony import */ var element_ui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(49);
 /* harmony import */ var element_ui__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(element_ui__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var element_ui_lib_theme_chalk_index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(199);
+/* harmony import */ var element_ui_lib_theme_chalk_index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(200);
 /* harmony import */ var element_ui_lib_theme_chalk_index_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_theme_chalk_index_css__WEBPACK_IMPORTED_MODULE_3__);
 
 
@@ -9047,7 +9047,7 @@ process.umask = function() { return 0; };
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_vue_vue_type_template_id_7ba5bd90_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 /* harmony import */ var _App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
-/* empty/unused harmony star reexport *//* harmony import */ var _App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(45);
+/* empty/unused harmony star reexport *//* harmony import */ var _App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(46);
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(28);
 
 
@@ -9233,7 +9233,12 @@ var render = function() {
           [_c("i", { class: _vm.show ? "el-icon-close" : "el-icon-setting" })]
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "rightPanel-items" }, [_vm._t("default")], 2)
+        _c(
+          "div",
+          { staticClass: "rightPanel-items", staticStyle: { height: "100%" } },
+          [_vm._t("default")],
+          2
+        )
       ])
     ]
   )
@@ -9296,7 +9301,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      show: false
+      show: true
     };
   },
   watch: {
@@ -10366,7 +10371,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(27);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-exports.push([module.i, ".rightPanel-background[data-v-1e488bfb] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  opacity: 0;\n  transition: opacity 0.3s cubic-bezier(0.7, 0.3, 0.1, 1);\n  background: rgba(0, 0, 0, 0.2);\n  z-index: -1;\n}\n.rightPanel[data-v-1e488bfb] {\n  width: 80%;\n  /*max-width: 260px;*/\n  height: 100vh;\n  position: fixed;\n  top: 0;\n  right: 0;\n  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.05);\n  transition: all 0.25s cubic-bezier(0.7, 0.3, 0.1, 1);\n  transform: translate(100%);\n  background: #fff;\n  z-index: 40000;\n}\n.show[data-v-1e488bfb] {\n  transition: all 0.3s cubic-bezier(0.7, 0.3, 0.1, 1);\n}\n.show .rightPanel-background[data-v-1e488bfb] {\n  z-index: 20000;\n  opacity: 1;\n  width: 100%;\n  height: 100%;\n}\n.show .rightPanel[data-v-1e488bfb] {\n  transform: translate(0);\n}\n.handle-button[data-v-1e488bfb] {\n  width: 48px;\n  height: 48px;\n  position: absolute;\n  left: -48px;\n  text-align: center;\n  font-size: 24px;\n  border-radius: 6px 0 0 6px !important;\n  z-index: 0;\n  pointer-events: auto;\n  cursor: pointer;\n  color: #fff;\n  line-height: 48px;\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: contain;\n}\n.handle-button i[data-v-1e488bfb] {\n  font-size: 24px;\n  line-height: 48px;\n}\n", ""]);
+exports.push([module.i, ".rightPanel-background[data-v-1e488bfb] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  opacity: 0;\n  transition: opacity 0.3s cubic-bezier(0.7, 0.3, 0.1, 1);\n  background: rgba(0, 0, 0, 0.2);\n  z-index: -1;\n}\n.rightPanel[data-v-1e488bfb] {\n  width: 80%;\n  /*max-width: 260px;*/\n  height: 100vh;\n  position: fixed;\n  top: 0;\n  right: 0;\n  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.05);\n  transition: all 0.25s cubic-bezier(0.7, 0.3, 0.1, 1);\n  transform: translate(100%);\n  background: #fff;\n  z-index: 1000;\n}\n.show[data-v-1e488bfb] {\n  transition: all 0.3s cubic-bezier(0.7, 0.3, 0.1, 1);\n}\n.show .rightPanel-background[data-v-1e488bfb] {\n  z-index: 900;\n  opacity: 1;\n  width: 100%;\n  height: 100%;\n}\n.show .rightPanel[data-v-1e488bfb] {\n  transform: translate(0);\n}\n.handle-button[data-v-1e488bfb] {\n  width: 48px;\n  height: 48px;\n  position: absolute;\n  left: -48px;\n  text-align: center;\n  font-size: 24px;\n  border-radius: 6px 0 0 6px !important;\n  z-index: 0;\n  pointer-events: auto;\n  cursor: pointer;\n  color: #fff;\n  line-height: 48px;\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: contain;\n}\n.handle-button i[data-v-1e488bfb] {\n  font-size: 24px;\n  line-height: 48px;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -10534,8 +10539,8 @@ function normalizeComponent (
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_vue_vue_type_template_id_f31ea1a2_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30);
 /* harmony import */ var _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(32);
-/* empty/unused harmony star reexport *//* harmony import */ var _index_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(39);
-/* harmony import */ var _index_vue_vue_type_style_index_1_id_f31ea1a2_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(42);
+/* empty/unused harmony star reexport *//* harmony import */ var _index_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(40);
+/* harmony import */ var _index_vue_vue_type_style_index_1_id_f31ea1a2_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(43);
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(28);
 
 
@@ -10587,269 +10592,273 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "app-container" },
-    [
-      _c(
-        "div",
-        { staticStyle: { "margin-left": "10px" } },
-        [
-          _c("span", [_vm._v("个数：")]),
-          _vm._v(" "),
-          _c("el-input-number", {
-            attrs: { size: "mini", min: 1, max: 4, label: "一行展示内容" },
-            model: {
-              value: _vm.itemNum,
-              callback: function($$v) {
-                _vm.itemNum = $$v
-              },
-              expression: "itemNum"
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "el-button",
-            {
-              staticStyle: { margin: "10px" },
-              attrs: { type: "primary", size: "mini" },
-              on: { click: _vm.generateCode }
+  return _c("div", { staticClass: "app-container" }, [
+    _c(
+      "div",
+      { staticStyle: { "margin-left": "10px" } },
+      [
+        _c("span", [_vm._v("个数：")]),
+        _vm._v(" "),
+        _c("el-input-number", {
+          attrs: { size: "mini", min: 1, max: 4, label: "一行展示内容" },
+          model: {
+            value: _vm.itemNum,
+            callback: function($$v) {
+              _vm.itemNum = $$v
             },
-            [_vm._v("\n            生成代码\n        ")]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "el-table",
-        {
-          directives: [
-            {
-              name: "loading",
-              rawName: "v-loading",
-              value: _vm.listLoading,
-              expression: "listLoading"
-            }
-          ],
-          ref: "dragTable",
-          staticStyle: { width: "100%" },
-          attrs: {
-            data: _vm.list,
-            "row-key": "id",
-            border: "",
-            fit: "",
-            "highlight-current-row": ""
+            expression: "itemNum"
           }
-        },
-        [
-          _c("el-table-column", {
-            attrs: { label: "#", type: "index", align: "center", width: "50" }
-          }),
-          _vm._v(" "),
-          _c("el-table-column", {
-            attrs: { align: "center", label: "字段名/value" },
-            scopedSlots: _vm._u([
+        }),
+        _vm._v(" "),
+        _c(
+          "el-button",
+          {
+            staticStyle: { margin: "10px" },
+            attrs: { type: "primary", size: "mini" },
+            on: { click: _vm.generateCode }
+          },
+          [_vm._v("\n            生成代码\n        ")]
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "table-box" },
+      [
+        _c(
+          "el-table",
+          {
+            directives: [
               {
-                key: "default",
-                fn: function(ref) {
-                  var row = ref.row
-                  return [
-                    _c("el-input", {
-                      attrs: { size: "mini", placeholder: "请输入内容" },
-                      model: {
-                        value: row.value,
-                        callback: function($$v) {
-                          _vm.$set(row, "value", $$v)
-                        },
-                        expression: "row.value"
-                      }
-                    })
-                  ]
-                }
+                name: "loading",
+                rawName: "v-loading",
+                value: _vm.listLoading,
+                expression: "listLoading"
               }
-            ])
-          }),
-          _vm._v(" "),
-          _c("el-table-column", {
-            attrs: { align: "center", label: "标题/lable" },
-            scopedSlots: _vm._u([
-              {
-                key: "default",
-                fn: function(ref) {
-                  var row = ref.row
-                  return [
-                    _c("el-input", {
-                      attrs: { size: "mini", placeholder: "请输入内容" },
-                      model: {
-                        value: row.label,
-                        callback: function($$v) {
-                          _vm.$set(row, "label", $$v)
-                        },
-                        expression: "row.label"
-                      }
-                    })
-                  ]
-                }
-              }
-            ])
-          }),
-          _vm._v(" "),
-          _c("el-table-column", {
-            attrs: { align: "center", label: "参数" },
-            scopedSlots: _vm._u([
-              {
-                key: "default",
-                fn: function(ref) {
-                  var row = ref.row
-                  return [
-                    _c("el-switch", {
-                      model: {
-                        value: row.isParams,
-                        callback: function($$v) {
-                          _vm.$set(row, "isParams", $$v)
-                        },
-                        expression: "row.isParams"
-                      }
-                    })
-                  ]
-                }
-              }
-            ])
-          }),
-          _vm._v(" "),
-          _c("el-table-column", {
-            attrs: { align: "center", label: "表单类型/type" },
-            scopedSlots: _vm._u([
-              {
-                key: "default",
-                fn: function(ref) {
-                  var row = ref.row
-                  return [
-                    _c(
-                      "el-select",
-                      {
-                        attrs: { size: "mini", placeholder: "请选择" },
+            ],
+            ref: "dragTable",
+            staticStyle: { flex: "1" },
+            attrs: {
+              "max-height": "3500",
+              data: _vm.list,
+              "row-key": "id",
+              height: "0",
+              border: "",
+              fit: "",
+              "highlight-current-row": ""
+            }
+          },
+          [
+            _c("el-table-column", {
+              attrs: { label: "#", type: "index", align: "center", width: "50" }
+            }),
+            _vm._v(" "),
+            _c("el-table-column", {
+              attrs: { align: "center", label: "字段名/value" },
+              scopedSlots: _vm._u([
+                {
+                  key: "default",
+                  fn: function(ref) {
+                    var row = ref.row
+                    return [
+                      _c("el-input", {
+                        attrs: { size: "mini", placeholder: "请输入内容" },
                         model: {
-                          value: row.type,
+                          value: row.value,
                           callback: function($$v) {
-                            _vm.$set(row, "type", $$v)
+                            _vm.$set(row, "value", $$v)
                           },
-                          expression: "row.type"
+                          expression: "row.value"
                         }
-                      },
-                      _vm._l(_vm.typeOptions, function(item) {
-                        return _c("el-option", {
-                          key: item.value,
-                          attrs: { label: item.label, value: item.value }
-                        })
-                      }),
-                      1
-                    )
-                  ]
+                      })
+                    ]
+                  }
                 }
-              }
-            ])
-          }),
-          _vm._v(" "),
-          _c("el-table-column", {
-            attrs: { align: "center", label: "验证" },
-            scopedSlots: _vm._u([
-              {
-                key: "default",
-                fn: function(ref) {
-                  var row = ref.row
-                  return [
-                    _c("el-switch", {
-                      model: {
-                        value: row.required,
-                        callback: function($$v) {
-                          _vm.$set(row, "required", $$v)
-                        },
-                        expression: "row.required"
-                      }
-                    })
-                  ]
-                }
-              }
-            ])
-          }),
-          _vm._v(" "),
-          _c("el-table-column", {
-            attrs: { align: "center", label: "rules" },
-            scopedSlots: _vm._u([
-              {
-                key: "default",
-                fn: function(ref) {
-                  var row = ref.row
-                  return [
-                    _c(
-                      "el-select",
-                      {
-                        attrs: { size: "mini", placeholder: "请选择" },
+              ])
+            }),
+            _vm._v(" "),
+            _c("el-table-column", {
+              attrs: { align: "center", label: "标题/lable" },
+              scopedSlots: _vm._u([
+                {
+                  key: "default",
+                  fn: function(ref) {
+                    var row = ref.row
+                    return [
+                      _c("el-input", {
+                        attrs: { size: "mini", placeholder: "请输入内容" },
                         model: {
-                          value: row.rules,
+                          value: row.label,
                           callback: function($$v) {
-                            _vm.$set(row, "rules", $$v)
+                            _vm.$set(row, "label", $$v)
                           },
-                          expression: "row.rules"
+                          expression: "row.label"
                         }
-                      },
-                      _vm._l(_vm.rulesList, function(item) {
-                        return _c("el-option", {
-                          key: item.value,
-                          attrs: { label: item.label, value: item.value }
-                        })
+                      })
+                    ]
+                  }
+                }
+              ])
+            }),
+            _vm._v(" "),
+            _c("el-table-column", {
+              attrs: { align: "center", label: "参数", width: "75" },
+              scopedSlots: _vm._u([
+                {
+                  key: "default",
+                  fn: function(ref) {
+                    var row = ref.row
+                    return [
+                      _c("el-switch", {
+                        model: {
+                          value: row.isParams,
+                          callback: function($$v) {
+                            _vm.$set(row, "isParams", $$v)
+                          },
+                          expression: "row.isParams"
+                        }
+                      })
+                    ]
+                  }
+                }
+              ])
+            }),
+            _vm._v(" "),
+            _c("el-table-column", {
+              attrs: { align: "center", label: "表单类型/type" },
+              scopedSlots: _vm._u([
+                {
+                  key: "default",
+                  fn: function(ref) {
+                    var row = ref.row
+                    return [
+                      _c(
+                        "el-select",
+                        {
+                          attrs: { size: "mini", placeholder: "请选择" },
+                          model: {
+                            value: row.type,
+                            callback: function($$v) {
+                              _vm.$set(row, "type", $$v)
+                            },
+                            expression: "row.type"
+                          }
+                        },
+                        _vm._l(_vm.typeOptions, function(item) {
+                          return _c("el-option", {
+                            key: item.value,
+                            attrs: { label: item.label, value: item.value }
+                          })
+                        }),
+                        1
+                      )
+                    ]
+                  }
+                }
+              ])
+            }),
+            _vm._v(" "),
+            _c("el-table-column", {
+              attrs: { align: "center", label: "验证", width: "75" },
+              scopedSlots: _vm._u([
+                {
+                  key: "default",
+                  fn: function(ref) {
+                    var row = ref.row
+                    return [
+                      _c("el-switch", {
+                        model: {
+                          value: row.required,
+                          callback: function($$v) {
+                            _vm.$set(row, "required", $$v)
+                          },
+                          expression: "row.required"
+                        }
+                      })
+                    ]
+                  }
+                }
+              ])
+            }),
+            _vm._v(" "),
+            _c("el-table-column", {
+              attrs: { align: "center", label: "rules" },
+              scopedSlots: _vm._u([
+                {
+                  key: "default",
+                  fn: function(ref) {
+                    var row = ref.row
+                    return [
+                      _c(
+                        "el-select",
+                        {
+                          attrs: { size: "mini", placeholder: "请选择" },
+                          model: {
+                            value: row.rules,
+                            callback: function($$v) {
+                              _vm.$set(row, "rules", $$v)
+                            },
+                            expression: "row.rules"
+                          }
+                        },
+                        _vm._l(_vm.rulesList, function(item) {
+                          return _c("el-option", {
+                            key: item.value,
+                            attrs: { label: item.label, value: item.value }
+                          })
+                        }),
+                        1
+                      )
+                    ]
+                  }
+                }
+              ])
+            }),
+            _vm._v(" "),
+            _c("el-table-column", {
+              attrs: { align: "center", label: "Drag", width: "80" },
+              scopedSlots: _vm._u([
+                {
+                  key: "default",
+                  fn: function(scope) {
+                    return [
+                      _c("i", {
+                        staticClass: "el-icon-rank",
+                        staticStyle: {
+                          "font-size": "16px",
+                          color: "#303133",
+                          cursor: "pointer"
+                        }
                       }),
-                      1
-                    )
-                  ]
-                }
-              }
-            ])
-          }),
-          _vm._v(" "),
-          _c("el-table-column", {
-            attrs: { align: "center", label: "Drag", width: "80" },
-            scopedSlots: _vm._u([
-              {
-                key: "default",
-                fn: function(scope) {
-                  return [
-                    _c("i", {
-                      staticClass: "el-icon-rank",
-                      staticStyle: {
-                        "font-size": "16px",
-                        color: "#303133",
-                        cursor: "pointer"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("i", {
-                      staticClass: "el-icon-delete",
-                      staticStyle: {
-                        "font-size": "16px",
-                        color: "#F56C6C",
-                        "margin-left": "20px",
-                        cursor: "pointer"
-                      },
-                      on: {
-                        click: function($event) {
-                          return _vm.deleteItem(scope)
+                      _vm._v(" "),
+                      _c("i", {
+                        staticClass: "el-icon-delete",
+                        staticStyle: {
+                          "font-size": "16px",
+                          color: "#F56C6C",
+                          "margin-left": "20px",
+                          cursor: "pointer"
+                        },
+                        on: {
+                          click: function($event) {
+                            return _vm.deleteItem(scope)
+                          }
                         }
-                      }
-                    })
-                  ]
+                      })
+                    ]
+                  }
                 }
-              }
-            ])
-          })
-        ],
-        1
-      )
-    ],
-    1
-  )
+              ])
+            })
+          ],
+          1
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -10877,7 +10886,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var sortablejs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(37);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
-/* harmony import */ var _code_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(38);
+/* harmony import */ var _utils_generate_code__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(38);
+/* harmony import */ var _demo_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(39);
+var _demo_json__WEBPACK_IMPORTED_MODULE_5___namespace = /*#__PURE__*/__webpack_require__.t(39, 1);
 
 
 //
@@ -10963,6 +10974,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -10979,11 +10999,13 @@ __webpack_require__.r(__webpack_exports__);
       sortable: null,
       oldList: [],
       newList: [],
-      apiJson: '{"email":{"type":"string","description":"邮箱"},"groupId":{"type":"integer","format":"int64","description":"所属组ID"},"isResponsible":{"type":"boolean","description":"是否为责任人：true-是，false-不是"},"isSystemUser":{"type":"boolean","description":"是否系统用户：true-是，false-不是"},"name":{"type":"string","description":"姓名"},"password":{"type":"string","description":"登录密码"},"phone":{"type":"string","description":"联系电话"},"positionId":{"type":"integer","format":"int64","description":"职位"},"roles":{"type":"array","description":"角色列表","items":{"type":"integer","format":"int64"}},"username":{"type":"string","description":"登录用户名"}}',
       tableData: [],
       typeOptions: [{
-        label: 'input',
+        label: 'Input',
         value: 'input'
+      }, {
+        label: '插槽',
+        value: 'slot'
       }, {
         label: 'select',
         value: 'select'
@@ -11014,13 +11036,13 @@ __webpack_require__.r(__webpack_exports__);
     this.fromDatByJson();
     this.getList();
   },
-  mounted: function mounted() {
-    console.log(666666666666666);
-  },
+  mounted: function mounted() {},
   methods: {
     // 代码生成
     generateCode: function generateCode() {
-      Object(_utils__WEBPACK_IMPORTED_MODULE_3__["copyText"])('', _code_js__WEBPACK_IMPORTED_MODULE_4__["code"]);
+      var code = Object(_utils_generate_code__WEBPACK_IMPORTED_MODULE_4__["formCode"])(this.tableData);
+      console.log(code);
+      Object(_utils__WEBPACK_IMPORTED_MODULE_3__["copyText"])('', code);
     },
     // 删除某一项
     deleteItem: function deleteItem(scope) {
@@ -11029,13 +11051,31 @@ __webpack_require__.r(__webpack_exports__);
     fromDatByJson: function fromDatByJson() {
       var _this = this;
 
-      var fromData = JSON.parse(this.apiJson);
-      var fieldList = Object.keys(fromData);
+      var schema = '';
+      console.log(_demo_json__WEBPACK_IMPORTED_MODULE_5__);
+      var path = 'saveUsingPOST_1';
+      var paths = _demo_json__WEBPACK_IMPORTED_MODULE_5__.paths;
+      var definitions = _demo_json__WEBPACK_IMPORTED_MODULE_5__.definitions;
+      Object.keys(paths).forEach(function (item) {
+        var methods = paths[item];
+        Object.keys(methods).forEach(function (methodsItem) {
+          var methodsConfig = methods[methodsItem];
+
+          if (methodsConfig.operationId === path) {
+            if (Array.isArray(methodsConfig.parameters) && methodsConfig.parameters.length > 0) {
+              schema = methodsConfig.parameters[0].schema.originalRef;
+            }
+          }
+        });
+      });
+      var params = definitions[schema].properties;
+      console.log(params);
+      var fieldList = Object.keys(params);
       fieldList.forEach(function (item) {
         _this.tableData.push({
           value: item,
-          label: fromData[item].description.slice(0, 6),
-          isParams: false,
+          label: params[item].description.slice(0, 6),
+          isParams: true,
           // 是否是参数
           type: 'input'
         });
@@ -15596,26 +15636,144 @@ Sortable.mount(Remove, Revert);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "code", function() { return code; });
-var code = '<template>\n  <div>\n    <vt-form ref="vtForm" :ref-obj.sync="formInfo.ref" :data="formInfo.data" :field-list="formInfo.fieldList"\n      :rules="formInfo.rules" :count="formInfo.count" label-position="left"></vt-form>\n  </div>\n</template>\n<script>\nexport default {\n  components: {},\n  props: [],\n  data() {\n    return {\n      formInfo: {\n        "ref": null,\n        "count": 2,\n        "data": {\n          "email": "null    //邮箱",\n          "groupId": "null    //所属组ID",\n          "isSystemUser": "null    //是否系统用",\n          "field115": "null    //日期范围",\n          "isResponsible": "null    //是否为责任",\n          "name": "null    //姓名",\n          "field113": "null    //下拉选择",\n          "password": "null    //登录密码",\n          "positionId": "null    //职位",\n          "roles": "null    //角色列表",\n          "phone": "null    //联系电话"\n        },\n        "fieldList": [{\n          "label": "邮箱",\n          "value": "email"\n        }, {\n          "label": "所属组ID",\n          "value": "groupId"\n        }, {\n          "label": "是否系统用",\n          "value": "isSystemUser"\n        }, {\n          "label": "日期范围",\n          "value": "field115"\n        }, {\n          "label": "是否为责任",\n          "value": "isResponsible"\n        }, {\n          "label": "姓名",\n          "value": "name"\n        }, {\n          "label": "下拉选择",\n          "value": "field113"\n        }, {\n          "label": "登录密码",\n          "value": "password"\n        }, {\n          "label": "职位",\n          "value": "positionId"\n        }, {\n          "label": "角色列表",\n          "value": "roles"\n        }, {\n          "label": "联系电话",\n          "value": "phone"\n        }],\n        "rules": {\n          "email": [{\n            "required": true,\n            "message": "请输入邮箱",\n            "trigger": ["blur", "change"]\n          }],\n          "groupId": [{\n            "required": true,\n            "message": "请输入所属组ID",\n            "trigger": ["blur", "change"]\n          }],\n          "isSystemUser": [{\n            "required": true,\n            "message": "请输入是否系统用",\n            "trigger": ["blur", "change"]\n          }],\n          "field115": [{\n            "required": true,\n            "trigger": ["blur", "change"]\n          }],\n          "isResponsible": [{\n            "required": true,\n            "message": "请输入是否为责任",\n            "trigger": ["blur", "change"]\n          }],\n          "name": [{\n            "required": true,\n            "message": "请输入姓名",\n            "trigger": ["blur", "change"]\n          }],\n          "field113": [{\n            "required": true,\n            "message": "请选择下拉选择",\n            "trigger": ["blur", "change"]\n          }],\n          "password": [{\n            "required": true,\n            "message": "请输入登录密码",\n            "trigger": ["blur", "change"]\n          }],\n          "positionId": [{\n            "required": true,\n            "message": "请输入职位",\n            "trigger": ["blur", "change"]\n          }],\n          "roles": [{\n            "required": true,\n            "message": "请输入角色列表",\n            "trigger": ["blur", "change"]\n          }],\n          "phone": [{\n            "required": true,\n            "message": "请输入联系电话",\n            "trigger": ["blur", "change"]\n          }]\n        }\n      }\n    }\n  },\n  computed: {},\n  watch: {},\n  created() {},\n  mounted() {},\n  methods: {}\n}\n\n</script>\n<style>\n</style>';
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formCode", function() { return formCode; });
+/* 表单生成的代码 */
+var formCode = function formCode(data) {
+  var apiJson = {
+    "email": {
+      "type": "string",
+      "description": "邮箱"
+    },
+    "groupId": {
+      "type": "integer",
+      "format": "int64",
+      "description": "所属组ID"
+    },
+    "isResponsible": {
+      "type": "boolean",
+      "description": "是否为责任人：true-是，false-不是"
+    },
+    "isSystemUser": {
+      "type": "boolean",
+      "description": "是否系统用户：true-是，false-不是"
+    },
+    "name": {
+      "type": "string",
+      "description": "姓名"
+    },
+    "password": {
+      "type": "string",
+      "description": "登录密码"
+    },
+    "phone": {
+      "type": "string",
+      "description": "联系电话"
+    },
+    "positionId": {
+      "type": "integer",
+      "format": "int64",
+      "description": "职位"
+    },
+    "roles": {
+      "type": "array",
+      "description": "角色列表",
+      "items": {
+        "type": "integer",
+        "format": "int64"
+      }
+    },
+    "username": {
+      "type": "string",
+      "description": "登录用户名"
+    }
+  }; // 生成代码的配置项
+
+  var config = {
+    formInfo: {
+      ref: null,
+      count: 3,
+      data: {
+        name: null // 设备名称
+
+      },
+      fieldList: [{
+        label: '所属项目',
+        value: 'projectId',
+        type: 'slot'
+      }, {
+        label: '功能定义',
+        value: 'featureIsCustomized',
+        type: 'radio',
+        list: 'featureIsCustomizedList'
+      }],
+      rules: {
+        projectId: [{
+          required: true,
+          message: '请选择项目名称',
+          trigger: ['blur', 'change']
+        }]
+      }
+    },
+    listTypeInfo: {},
+    slotHtml: []
+  }; // 对数据遍历，处理结果
+
+  data.forEach(function (item) {
+    // config.formInfo.data[item] = null
+    var fieldItem = {
+      label: item.label,
+      value: item.value,
+      type: item.type
+    };
+
+    switch (item.type) {
+      case 'slot':
+        // 需要在html生成代码片段
+        //? 帮我插进去一个插槽吧
+        config.slotHtml.push("<template #form-".concat(item.value, "></template>"));
+        break;
+
+      case 'select':
+        // 设置option内容
+        var field = item["".concat(item.value, "Option")];
+        config.listTypeInfo[field] = [];
+        break;
+      // 图片... 上传统一
+    }
+
+    config.formInfo.fieldList.push(fieldItem);
+  }); // html 代码片段
+
+  var html = "<template>\n                <vt-form\n                ref=\"vtForm\"\n                :ref-obj.sync=\"formInfo.ref\"\n                :data=\"formInfo.data\"\n                :field-list=\"formInfo.fieldList\"\n                :rules=\"formInfo.rules\"\n                :count=\"formInfo.count\"\n                label-position=\"left\"\n                >".concat(config.slotHtml.join('\n'), "</vt-form>\n            </template>"); // js代码
+
+  var script = "<script>\n            export default {\n              data () {\n                return {\n                  formInfo: ".concat(JSON.stringify(config.formInfo), ",\n                  listTypeInfo: ").concat(JSON.stringify(config.listTypeInfo), "\n                }\n              },\n              computed: {},\n              watch: {},\n              created () {},\n              mounted () {},\n            }\n        </script>");
+  var css = "<style scoped lang=\"scss\"></style>";
+  return html + script + css;
+};
 
 /***/ }),
 /* 39 */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"swagger\":\"2.0\",\"info\":{\"description\":\"VCP接口\",\"version\":\"0.0.1-SNAPSHOT\",\"title\":\"VCP接口\"},\"host\":\"10.100.172.6:9123\",\"basePath\":\"/connection\",\"tags\":[{\"name\":\"mqtt消息处理\",\"description\":\"Mqtt Controller\"},{\"name\":\"task-manage-controller\",\"description\":\"任务管理接口\"},{\"name\":\"供应商\",\"description\":\"Supplier Controller\"},{\"name\":\"分类表(设备分类-网关分类)\",\"description\":\"Category Controller\"},{\"name\":\"协议管理\",\"description\":\"Protocol Controller\"},{\"name\":\"告警消息\",\"description\":\"Alarm Message Controller\"},{\"name\":\"告警规则\",\"description\":\"Alarm Rule Controller\"},{\"name\":\"基础接口\",\"description\":\"Base Controller\"},{\"name\":\"平台采集通道\",\"description\":\"Platform Gather Channel Controller\"},{\"name\":\"当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表\",\"description\":\"Gateway Gather Channel Equip Controller\"},{\"name\":\"监控——设备地图\",\"description\":\"Equipment Map Controller\"},{\"name\":\"监控——设备数据\",\"description\":\"Equipment Data Controller\"},{\"name\":\"网关表\",\"description\":\"Gateway Controller\"},{\"name\":\"网关采集通道\",\"description\":\"Gateway Gather Channel Controller\"},{\"name\":\"设备功能\",\"description\":\"Equipment Feature Controller\"},{\"name\":\"设备表\",\"description\":\"Equipment Controller\"},{\"name\":\"部署记录\",\"description\":\"Gateway Protocol Deploy Log Controller\"},{\"name\":\"项目模板表\",\"description\":\"Project Template Controller\"},{\"name\":\"项目表\",\"description\":\"Project Controller\"},{\"name\":\"项目资源菜单表\",\"description\":\"Project Resource Menu Controller\"}],\"paths\":{\"/api/alarmMessage/page\":{\"get\":{\"tags\":[\"告警消息\"],\"summary\":\"分页查询列表\",\"operationId\":\"pageListUsingGET\",\"parameters\":[{\"name\":\"alarmType\",\"in\":\"query\",\"required\":false,\"type\":\"integer\",\"format\":\"int32\"},{\"name\":\"equipName\",\"in\":\"query\",\"description\":\"设备名称\",\"required\":false,\"type\":\"string\"},{\"name\":\"equipType\",\"in\":\"query\",\"description\":\"设备类型:0虚拟1实体\",\"required\":false,\"type\":\"integer\",\"format\":\"int32\"},{\"name\":\"pageNum\",\"in\":\"query\",\"description\":\"请求页码\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"},{\"name\":\"pageSize\",\"in\":\"query\",\"description\":\"页容量\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"},{\"name\":\"propertyName\",\"in\":\"query\",\"description\":\"属性名称\",\"required\":false,\"type\":\"string\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«PageInfo«报警消息列表对象»»\",\"$ref\":\"#/definitions/Return«PageInfo«报警消息列表对象»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/alarmMessage/testCondition\":{\"put\":{\"tags\":[\"告警消息\"],\"summary\":\"测试触发规则\",\"operationId\":\"testConditionUsingPUT\",\"parameters\":[{\"name\":\"equipId\",\"in\":\"query\",\"description\":\"equipId\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"propertyId\",\"in\":\"query\",\"description\":\"propertyId\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"value\",\"in\":\"query\",\"description\":\"value\",\"required\":true,\"type\":\"number\",\"format\":\"double\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/alarmRule\":{\"post\":{\"tags\":[\"告警规则\"],\"summary\":\"新增告警规则\",\"operationId\":\"addUsingPOST\",\"parameters\":[{\"in\":\"body\",\"name\":\"vo\",\"description\":\"vo\",\"required\":true,\"schema\":{\"originalRef\":\"新增告警规则\",\"$ref\":\"#/definitions/新增告警规则\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"},\"put\":{\"tags\":[\"告警规则\"],\"summary\":\"修改告警规则\",\"operationId\":\"updateUsingPUT_1\",\"parameters\":[{\"in\":\"body\",\"name\":\"vo\",\"description\":\"vo\",\"required\":true,\"schema\":{\"originalRef\":\"更新告警规则\",\"$ref\":\"#/definitions/更新告警规则\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"},\"delete\":{\"tags\":[\"告警规则\"],\"summary\":\"删除告警规则\",\"description\":\"可分别根据设备、属性、规则删除\",\"operationId\":\"deleteUsingDELETE\",\"parameters\":[{\"in\":\"body\",\"name\":\"vo\",\"description\":\"vo\",\"required\":true,\"schema\":{\"originalRef\":\"删除报警规则条件\",\"$ref\":\"#/definitions/删除报警规则条件\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"204\":{\"description\":\"No Content\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/alarmRule/equipProperty\":{\"get\":{\"tags\":[\"告警规则\"],\"summary\":\"查看设备属性\",\"description\":\"参数：设备id、属性id\",\"operationId\":\"viewEquipPropertyUsingGET\",\"parameters\":[{\"name\":\"equipId\",\"in\":\"query\",\"description\":\"设备ID\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"equipPropertyId\",\"in\":\"query\",\"description\":\"属性ID\",\"required\":false,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«设备对象»\",\"$ref\":\"#/definitions/Return«设备对象»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/alarmRule/equipRuleList\":{\"get\":{\"tags\":[\"告警规则\"],\"summary\":\"查询设备属性的规则列表\",\"description\":\"参数：设备id\",\"operationId\":\"equipRuleListUsingGET\",\"parameters\":[{\"name\":\"id\",\"in\":\"query\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«设备属性规则»»\",\"$ref\":\"#/definitions/Return«List«设备属性规则»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/alarmRule/organizationUserTree\":{\"get\":{\"tags\":[\"告警规则\"],\"summary\":\"查询机构用户\",\"description\":\"参数：条件id，可不填\",\"operationId\":\"organizationUserTreeUsingGET\",\"parameters\":[{\"name\":\"id\",\"in\":\"query\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«机构用户»»\",\"$ref\":\"#/definitions/Return«List«机构用户»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/alarmRule/propertyActionUsers\":{\"get\":{\"tags\":[\"告警规则\"],\"summary\":\"查询规则的通知用户\",\"description\":\"参数：条件id\",\"operationId\":\"propertyActionUsersUsingGET\",\"parameters\":[{\"name\":\"id\",\"in\":\"query\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«用户推送»»\",\"$ref\":\"#/definitions/Return«List«用户推送»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/alarmRule/propertyRules\":{\"get\":{\"tags\":[\"告警规则\"],\"summary\":\"查看属性的报警规则列表\",\"description\":\"参数：属性id,属性id可不传\",\"operationId\":\"propertyRulesUsingGET\",\"parameters\":[{\"name\":\"id\",\"in\":\"query\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«属性的规则列表»\",\"$ref\":\"#/definitions/Return«属性的规则列表»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/alarmRule/rule/page\":{\"get\":{\"tags\":[\"告警规则\"],\"summary\":\"分页查询有协议的设备列表\",\"operationId\":\"pageListUsingGET_1\",\"parameters\":[{\"name\":\"lastOnLineDateEnd\",\"in\":\"query\",\"description\":\"最后上线时间_截止\",\"required\":false,\"type\":\"string\",\"format\":\"date-time\"},{\"name\":\"lastOnLineDateStart\",\"in\":\"query\",\"description\":\"最后上线时间_起始\",\"required\":false,\"type\":\"string\",\"format\":\"date-time\"},{\"name\":\"name\",\"in\":\"query\",\"description\":\"名称\",\"required\":false,\"type\":\"string\"},{\"name\":\"pageNum\",\"in\":\"query\",\"description\":\"请求页码\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"},{\"name\":\"pageSize\",\"in\":\"query\",\"description\":\"页容量\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"},{\"name\":\"projectId\",\"in\":\"query\",\"description\":\"项目ID\",\"required\":false,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"protocolId\",\"in\":\"query\",\"description\":\"设备协议\",\"required\":false,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"type\",\"in\":\"query\",\"description\":\"类型:0虚拟1实体\",\"required\":false,\"type\":\"integer\",\"format\":\"int32\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«PageInfo«有报警规则的设备VO»»\",\"$ref\":\"#/definitions/Return«PageInfo«有报警规则的设备VO»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/alarmRule/updateStatus\":{\"put\":{\"tags\":[\"告警规则\"],\"summary\":\"修改告警规则状态\",\"description\":\"参数id：告警规则条件id\",\"operationId\":\"updateUsingPUT\",\"parameters\":[{\"in\":\"body\",\"name\":\"vo\",\"description\":\"vo\",\"required\":true,\"schema\":{\"originalRef\":\"改变状态通用VO\",\"$ref\":\"#/definitions/改变状态通用VO\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/base/staticDict/alarm\":{\"post\":{\"tags\":[\"基础接口\"],\"summary\":\"报警静态字典\",\"operationId\":\"getAlarmUsingPOST\",\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«报警消息字典»\",\"$ref\":\"#/definitions/Return«报警消息字典»\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/base/staticDict/basics\":{\"post\":{\"tags\":[\"基础接口\"],\"summary\":\"公共静态字典\",\"operationId\":\"getBasicsUsingPOST\",\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«基础字典»\",\"$ref\":\"#/definitions/Return«基础字典»\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/base/staticDict/equipment\":{\"post\":{\"tags\":[\"基础接口\"],\"summary\":\"设备静态字典\",\"operationId\":\"getEquipmentUsingPOST\",\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«设备字典»\",\"$ref\":\"#/definitions/Return«设备字典»\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/base/staticDict/gateway\":{\"post\":{\"tags\":[\"基础接口\"],\"summary\":\"网关模块静态字典\",\"operationId\":\"getGatewayUsingPOST\",\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«网关字典»\",\"$ref\":\"#/definitions/Return«网关字典»\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/base/staticDict/platformGather\":{\"post\":{\"tags\":[\"基础接口\"],\"summary\":\"数据设置静态字典\",\"operationId\":\"getPlatformGatherUsingPOST\",\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«数据设置字典»\",\"$ref\":\"#/definitions/Return«数据设置字典»\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/category\":{\"post\":{\"tags\":[\"分类表(设备分类-网关分类)\"],\"summary\":\"新建分类表(设备分类:1, 网关分类:2, 协议分类:3, 供应商分类:4)\",\"operationId\":\"saveUsingPOST\",\"parameters\":[{\"in\":\"body\",\"name\":\"category\",\"description\":\"category\",\"required\":true,\"schema\":{\"originalRef\":\"分类表\",\"$ref\":\"#/definitions/分类表\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"},\"put\":{\"tags\":[\"分类表(设备分类-网关分类)\"],\"summary\":\"修改分类表\",\"operationId\":\"updateUsingPUT_2\",\"parameters\":[{\"in\":\"body\",\"name\":\"category\",\"description\":\"category\",\"required\":true,\"schema\":{\"originalRef\":\"分类表\",\"$ref\":\"#/definitions/分类表\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/category/findByParentId\":{\"get\":{\"tags\":[\"分类表(设备分类-网关分类)\"],\"summary\":\"查询指定分类的下级分类(入参type传值如下: 设备分类:1, 网关分类:2, 协议分类:3, 供应商分类:4)\",\"operationId\":\"findByParentIdUsingGET\",\"parameters\":[{\"name\":\"name\",\"in\":\"query\",\"description\":\"网关分类名称\",\"required\":false,\"type\":\"string\"},{\"name\":\"parentId\",\"in\":\"query\",\"description\":\"父级ID\",\"required\":false,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"type\",\"in\":\"query\",\"description\":\"查询类型(必填)\",\"required\":true,\"type\":\"ref\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«分类列表展示VO»»\",\"$ref\":\"#/definitions/Return«List«分类列表展示VO»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/category/getCategoryCode\":{\"get\":{\"tags\":[\"分类表(设备分类-网关分类)\"],\"summary\":\"获取分类编码\",\"operationId\":\"getCodeUsingGET\",\"parameters\":[{\"name\":\"name\",\"in\":\"query\",\"description\":\"分类名称\",\"required\":false,\"type\":\"string\"},{\"name\":\"type\",\"in\":\"query\",\"description\":\"查询类型(设备分类:1, 网关分类:2, 协议分类:3, 供应商分类:4)\",\"required\":true,\"type\":\"ref\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«string»\",\"$ref\":\"#/definitions/Return«string»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/category/status\":{\"put\":{\"tags\":[\"分类表(设备分类-网关分类)\"],\"summary\":\"更改状态（启用或禁用）\",\"operationId\":\"changeStatusUsingPUT\",\"parameters\":[{\"in\":\"body\",\"name\":\"vo\",\"description\":\"vo\",\"required\":true,\"schema\":{\"originalRef\":\"改变状态通用VO\",\"$ref\":\"#/definitions/改变状态通用VO\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/category/tree\":{\"get\":{\"tags\":[\"分类表(设备分类-网关分类)\"],\"summary\":\"查询分类树(入参type传值如下: 设备分类:1, 网关分类:2, 协议分类:3, 供应商分类:4)\",\"operationId\":\"getListUsingGET\",\"parameters\":[{\"name\":\"type\",\"in\":\"query\",\"description\":\"type\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«分类树»»\",\"$ref\":\"#/definitions/Return«List«分类树»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/category/{id}/{type}\":{\"delete\":{\"tags\":[\"分类表(设备分类-网关分类)\"],\"summary\":\"删除分类表(入参type传值如下: 设备分类:1, 网关分类:2, 协议分类:3, 供应商分类:4)\",\"operationId\":\"deleteUsingDELETE_1\",\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"type\",\"in\":\"path\",\"description\":\"type\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"204\":{\"description\":\"No Content\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipment\":{\"post\":{\"tags\":[\"设备表\"],\"summary\":\"新建设备表\",\"operationId\":\"saveUsingPOST_1\",\"parameters\":[{\"in\":\"body\",\"name\":\"equipmentVO\",\"description\":\"equipmentVO\",\"required\":true,\"schema\":{\"originalRef\":\"设备操作VO\",\"$ref\":\"#/definitions/设备操作VO\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"},\"put\":{\"tags\":[\"设备表\"],\"summary\":\"修改设备表\",\"operationId\":\"updateUsingPUT_3\",\"parameters\":[{\"in\":\"body\",\"name\":\"equipmentVO\",\"description\":\"equipmentVO\",\"required\":true,\"schema\":{\"originalRef\":\"设备操作VO\",\"$ref\":\"#/definitions/设备操作VO\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipment/equipmentWithProperties\":{\"get\":{\"tags\":[\"设备表\"],\"summary\":\"设备(带属性)列表\",\"description\":\"查询条件：分类id\",\"operationId\":\"equipmentWithPropertiesUsingGET\",\"parameters\":[{\"name\":\"id\",\"in\":\"query\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«包含属性的设备»»\",\"$ref\":\"#/definitions/Return«List«包含属性的设备»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipment/exportFile\":{\"get\":{\"tags\":[\"设备表\"],\"summary\":\"导出项目数据\",\"operationId\":\"exportFileUsingGET\",\"parameters\":[{\"name\":\"categoryId\",\"in\":\"query\",\"required\":false,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"lastOnLineDateEnd\",\"in\":\"query\",\"required\":false,\"type\":\"string\",\"format\":\"date-time\"},{\"name\":\"lastOnLineDateStart\",\"in\":\"query\",\"required\":false,\"type\":\"string\",\"format\":\"date-time\"},{\"name\":\"name\",\"in\":\"query\",\"required\":false,\"type\":\"string\"},{\"name\":\"pageNum\",\"in\":\"query\",\"description\":\"请求页码\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"},{\"name\":\"pageSize\",\"in\":\"query\",\"description\":\"页容量\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"},{\"name\":\"projectId\",\"in\":\"query\",\"required\":false,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"protocolId\",\"in\":\"query\",\"required\":false,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"type\",\"in\":\"query\",\"required\":false,\"type\":\"integer\",\"format\":\"int32\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«string»\",\"$ref\":\"#/definitions/Return«string»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipment/findCategorysByProjectId\":{\"get\":{\"tags\":[\"设备表\"],\"summary\":\"根据项目ID，获取项目下的设备分类\",\"operationId\":\"findCategorysByProjectIdUsingGET\",\"parameters\":[{\"name\":\"projectId\",\"in\":\"query\",\"description\":\"projectId\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«分类表»»\",\"$ref\":\"#/definitions/Return«List«分类表»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipment/getById\":{\"get\":{\"tags\":[\"设备表\"],\"summary\":\"查询具体设备\",\"operationId\":\"getByIdUsingGET\",\"parameters\":[{\"name\":\"id\",\"in\":\"query\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«设备表»\",\"$ref\":\"#/definitions/Return«设备表»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipment/importFile\":{\"post\":{\"tags\":[\"设备表\"],\"summary\":\"导入项目数据\",\"operationId\":\"importFileUsingPOST\",\"consumes\":[\"multipart/form-data\"],\"parameters\":[{\"name\":\"file\",\"in\":\"formData\",\"description\":\"file\",\"required\":true,\"type\":\"file\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«string»\",\"$ref\":\"#/definitions/Return«string»\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipment/page\":{\"get\":{\"tags\":[\"设备表\"],\"summary\":\"分页查询列表\",\"operationId\":\"pageListUsingGET_2\",\"parameters\":[{\"name\":\"categoryId\",\"in\":\"query\",\"description\":\"设备分类ID\",\"required\":false,\"type\":\"ref\"},{\"name\":\"lastOnLineDateEnd\",\"in\":\"query\",\"description\":\"最后上线时间_截止\",\"required\":false,\"type\":\"string\",\"format\":\"date\"},{\"name\":\"lastOnLineDateStart\",\"in\":\"query\",\"description\":\"最后上线时间_起始\",\"required\":false,\"type\":\"string\",\"format\":\"date\"},{\"name\":\"name\",\"in\":\"query\",\"description\":\"设备名称\",\"required\":false,\"type\":\"string\"},{\"name\":\"pageNum\",\"in\":\"query\",\"description\":\"请求页码\",\"required\":false,\"type\":\"ref\"},{\"name\":\"pageSize\",\"in\":\"query\",\"description\":\"页容量\",\"required\":false,\"type\":\"ref\"},{\"name\":\"projectId\",\"in\":\"query\",\"description\":\"项目ID\",\"required\":false,\"type\":\"ref\"},{\"name\":\"protocolId\",\"in\":\"query\",\"description\":\"设备协议\",\"required\":false,\"type\":\"ref\"},{\"name\":\"type\",\"in\":\"query\",\"description\":\"设备类型\",\"required\":false,\"type\":\"ref\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«PageInfo«设备表»»\",\"$ref\":\"#/definitions/Return«PageInfo«设备表»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipment/{id}\":{\"delete\":{\"tags\":[\"设备表\"],\"summary\":\"删除设备表（根据id删除单个设备表）\",\"operationId\":\"deleteUsingDELETE_2\",\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"204\":{\"description\":\"No Content\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipmentData/EquipmentTreeList\":{\"get\":{\"tags\":[\"监控——设备数据\"],\"summary\":\"查询本租户下所有能看到的设备及相关所属分类\",\"operationId\":\"EquipmentTreeListUsingGET\",\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«设备分类-设备树»»\",\"$ref\":\"#/definitions/Return«List«设备分类-设备树»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipmentData/findAlarmMessage\":{\"get\":{\"tags\":[\"监控——设备数据\"],\"summary\":\"查询相关设备属性的报警记录\",\"operationId\":\"findAlarmMessageUsingGET\",\"parameters\":[{\"name\":\"beginTime\",\"in\":\"query\",\"description\":\"起始时间\",\"required\":false,\"type\":\"string\",\"format\":\"date\"},{\"name\":\"endTime\",\"in\":\"query\",\"description\":\"设备ID\",\"required\":false,\"type\":\"string\",\"format\":\"date\"},{\"name\":\"equipId\",\"in\":\"query\",\"description\":\"设备ID\",\"required\":false,\"type\":\"ref\"},{\"name\":\"identifier\",\"in\":\"query\",\"description\":\"设备属性标识\",\"required\":false,\"type\":\"string\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«告警消息»»\",\"$ref\":\"#/definitions/Return«List«告警消息»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipmentData/findAttValue\":{\"get\":{\"tags\":[\"监控——设备数据\"],\"summary\":\"查询实时记录\",\"operationId\":\"findAttValueUsingGET\",\"parameters\":[{\"name\":\"beginTime\",\"in\":\"query\",\"description\":\"起始时间\",\"required\":false,\"type\":\"string\",\"format\":\"date\"},{\"name\":\"endTime\",\"in\":\"query\",\"description\":\"设备ID\",\"required\":false,\"type\":\"string\",\"format\":\"date\"},{\"name\":\"equipNo\",\"in\":\"query\",\"description\":\"设备编码\",\"required\":false,\"type\":\"string\"},{\"name\":\"identifier\",\"in\":\"query\",\"description\":\"设备属性标识\",\"required\":false,\"type\":\"string\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«设备属性值»»\",\"$ref\":\"#/definitions/Return«List«设备属性值»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipmentData/findAttValues\":{\"get\":{\"tags\":[\"监控——设备数据\"],\"summary\":\"查询设备属性的历史数据\",\"operationId\":\"findAttValuesUsingGET\",\"parameters\":[{\"name\":\"endTime\",\"in\":\"query\",\"description\":\"查询截止时间\",\"required\":false,\"type\":\"string\",\"format\":\"date\"},{\"name\":\"equipNo\",\"in\":\"query\",\"description\":\"设备编号\",\"required\":false,\"type\":\"string\"},{\"name\":\"identifier\",\"in\":\"query\",\"description\":\"设备属性标识\",\"required\":false,\"type\":\"string\"},{\"name\":\"startTime\",\"in\":\"query\",\"description\":\"查询起始时间\",\"required\":false,\"type\":\"string\",\"format\":\"date\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«设备历史记录及统计对象»\",\"$ref\":\"#/definitions/Return«设备历史记录及统计对象»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipmentData/findFeatureValueByCategoryId\":{\"get\":{\"tags\":[\"监控——设备数据\"],\"summary\":\"查询设备分类下设备的属性集合及属性最新记录\",\"operationId\":\"findFeatureValueByCategoryIdUsingGET\",\"parameters\":[{\"name\":\"categoryId\",\"in\":\"query\",\"description\":\"设备分类ID\",\"required\":false,\"type\":\"ref\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«设备功能»»\",\"$ref\":\"#/definitions/Return«List«设备功能»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipmentData/findFeatureValueByEquipId\":{\"get\":{\"tags\":[\"监控——设备数据\"],\"summary\":\"查询设备下属性集合及属性最新记录\",\"operationId\":\"findFeatureValueByEquipIdUsingGET\",\"parameters\":[{\"name\":\"equipId\",\"in\":\"query\",\"description\":\"设备ID\",\"required\":false,\"type\":\"ref\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«设备功能»»\",\"$ref\":\"#/definitions/Return«List«设备功能»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipmentFeature/ICOList\":{\"get\":{\"tags\":[\"设备功能\"],\"summary\":\"获取图片列表\",\"operationId\":\"ICOListUsingGET\",\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«ICO图片对象»»\",\"$ref\":\"#/definitions/Return«List«ICO图片对象»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipmentFeature/deleteByEquipId/{id}\":{\"delete\":{\"tags\":[\"设备功能\"],\"summary\":\"删除设备功能（根据id删除单个设备功能）\",\"operationId\":\"deleteByEquipIdUsingDELETE\",\"parameters\":[{\"name\":\"equipId\",\"in\":\"path\",\"description\":\"equipId\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"204\":{\"description\":\"No Content\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipmentFeature/findByEquipId\":{\"get\":{\"tags\":[\"设备功能\"],\"summary\":\"查询功能集合\",\"operationId\":\"findByEquipIdUsingGET\",\"parameters\":[{\"name\":\"equipId\",\"in\":\"query\",\"description\":\"设备ID\",\"required\":false,\"type\":\"ref\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«设备功能»»\",\"$ref\":\"#/definitions/Return«List«设备功能»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipmentFeature/findDataUnit\":{\"get\":{\"tags\":[\"设备功能\"],\"summary\":\"查询数据单位字典项\",\"operationId\":\"findDataUnitUsingGET\",\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«字典项»»\",\"$ref\":\"#/definitions/Return«List«字典项»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipmentFeature/save\":{\"post\":{\"tags\":[\"设备功能\"],\"summary\":\"新增设备功能\",\"operationId\":\"saveUsingPOST_2\",\"parameters\":[{\"in\":\"body\",\"name\":\"featureCreateVO\",\"description\":\"featureCreateVO\",\"required\":true,\"schema\":{\"originalRef\":\"创建设备功能VO\",\"$ref\":\"#/definitions/创建设备功能VO\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipmentFeature/update\":{\"put\":{\"tags\":[\"设备功能\"],\"summary\":\"修改设备功能\",\"operationId\":\"updateUsingPUT_4\",\"parameters\":[{\"in\":\"body\",\"name\":\"featureVO\",\"description\":\"featureVO\",\"required\":true,\"schema\":{\"originalRef\":\"设备功能操作VO\",\"$ref\":\"#/definitions/设备功能操作VO\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipmentFeature/{id}\":{\"delete\":{\"tags\":[\"设备功能\"],\"summary\":\"删除设备功能（根据id删除单个设备功能）\",\"operationId\":\"deleteUsingDELETE_3\",\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"204\":{\"description\":\"No Content\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipmentMap/findMapAndCoords\":{\"get\":{\"tags\":[\"监控——设备地图\"],\"summary\":\"查询项目的位置类型及相关设备的地点集合\",\"operationId\":\"findMapAndCoordsUsingGET\",\"parameters\":[{\"name\":\"projectId\",\"in\":\"query\",\"description\":\"项目ID\",\"required\":false,\"type\":\"ref\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«设备地图信息表»\",\"$ref\":\"#/definitions/Return«设备地图信息表»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/equipmentMap/projectList\":{\"get\":{\"tags\":[\"监控——设备地图\"],\"summary\":\"查询本租户下所有项目集合，无分页\",\"operationId\":\"projectListUsingGET\",\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«项目表»»\",\"$ref\":\"#/definitions/Return«List«项目表»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gateway\":{\"post\":{\"tags\":[\"网关表\"],\"summary\":\"新建网关\",\"operationId\":\"saveUsingPOST_3\",\"parameters\":[{\"in\":\"body\",\"name\":\"gateway\",\"description\":\"gateway\",\"required\":true,\"schema\":{\"originalRef\":\"网关表\",\"$ref\":\"#/definitions/网关表\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"},\"put\":{\"tags\":[\"网关表\"],\"summary\":\"修改网关表\",\"operationId\":\"updateUsingPUT_5\",\"parameters\":[{\"in\":\"body\",\"name\":\"gateway\",\"description\":\"gateway\",\"required\":true,\"schema\":{\"originalRef\":\"网关表\",\"$ref\":\"#/definitions/网关表\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gateway/findByCategoryId\":{\"get\":{\"tags\":[\"网关表\"],\"summary\":\"根据网关分类查询网关\",\"operationId\":\"findByCategoryIdUsingGET\",\"parameters\":[{\"name\":\"categoryId\",\"in\":\"query\",\"description\":\"网关分类ID\",\"required\":false,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"name\",\"in\":\"query\",\"description\":\"网关名称\",\"required\":false,\"type\":\"string\"},{\"name\":\"pageNum\",\"in\":\"query\",\"description\":\"请求页码\",\"required\":true,\"type\":\"ref\"},{\"name\":\"pageSize\",\"in\":\"query\",\"description\":\"页容量\",\"required\":true,\"type\":\"ref\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«PageInfo«网关表-列表展示数据VO»»\",\"$ref\":\"#/definitions/Return«PageInfo«网关表-列表展示数据VO»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gateway/findChannelByGatewayId\":{\"get\":{\"tags\":[\"网关表\"],\"summary\":\"协议配置--根据网关ID查询通道\",\"operationId\":\"findChannelByIdUsingGET\",\"parameters\":[{\"name\":\"gatewayId\",\"in\":\"query\",\"description\":\"gatewayId\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«协议配置--网关采集通道展示VO»»\",\"$ref\":\"#/definitions/Return«List«协议配置--网关采集通道展示VO»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gateway/findEuipByChannelId\":{\"get\":{\"tags\":[\"网关表\"],\"summary\":\"协议配置--根据网关通道ID查询可关联设备\",\"operationId\":\"findEquipByChannelIdUsingGET\",\"parameters\":[{\"name\":\"channelId\",\"in\":\"query\",\"description\":\"通道ID\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"projectId\",\"in\":\"query\",\"description\":\"项目ID\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"protocolId\",\"in\":\"query\",\"description\":\"协议ID\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«Map«string,List«通道可关联设备VO»»»\",\"$ref\":\"#/definitions/Return«Map«string,List«通道可关联设备VO»»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gateway/generalInfo\":{\"get\":{\"tags\":[\"网关表\"],\"summary\":\"网关概览\",\"operationId\":\"generalInfoUsingGET\",\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gateway/getDetailsById\":{\"get\":{\"tags\":[\"网关表\"],\"summary\":\"根据网关ID查询网关详情信息\",\"operationId\":\"getByIdUsingGET_1\",\"parameters\":[{\"name\":\"id\",\"in\":\"query\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«网关详情VO»\",\"$ref\":\"#/definitions/Return«网关详情VO»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gateway/protocolDeploy\":{\"post\":{\"tags\":[\"网关表\"],\"summary\":\"网关协议部署\",\"operationId\":\"protocolDeployUsingPOST\",\"parameters\":[{\"in\":\"body\",\"name\":\"gateways\",\"description\":\"gateways\",\"required\":true,\"schema\":{\"type\":\"array\",\"items\":{\"originalRef\":\"网关表-列表展示数据VO\",\"$ref\":\"#/definitions/网关表-列表展示数据VO\"}}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gateway/saveChannelModel\":{\"post\":{\"tags\":[\"网关表\"],\"summary\":\"协议配置--保存/新增通道\",\"operationId\":\"saveChannelModelUsingPOST\",\"parameters\":[{\"in\":\"body\",\"name\":\"channelModelVO\",\"description\":\"channelModelVO\",\"required\":true,\"schema\":{\"originalRef\":\"网关采集通道--保存通道VO\",\"$ref\":\"#/definitions/网关采集通道--保存通道VO\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gateway/saveEquipChannel\":{\"post\":{\"tags\":[\"网关表\"],\"summary\":\"协议配置--保存网关通道与设备的关联关系\",\"operationId\":\"saveEquipChannelUsingPOST\",\"parameters\":[{\"in\":\"body\",\"name\":\"list\",\"description\":\"list\",\"required\":true,\"schema\":{\"type\":\"array\",\"items\":{\"originalRef\":\"保存通道关联设备VO\",\"$ref\":\"#/definitions/保存通道关联设备VO\"}}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gateway/{id}\":{\"delete\":{\"tags\":[\"网关表\"],\"summary\":\"删除网关表（根据id删除单个网关表）\",\"operationId\":\"deleteUsingDELETE_4\",\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"204\":{\"description\":\"No Content\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gatewayGatherChannel\":{\"post\":{\"tags\":[\"网关采集通道\"],\"summary\":\"新建网关采集通道\",\"operationId\":\"saveUsingPOST_4\",\"parameters\":[{\"in\":\"body\",\"name\":\"gatewayGatherChannel\",\"description\":\"gatewayGatherChannel\",\"required\":true,\"schema\":{\"originalRef\":\"网关采集通道\",\"$ref\":\"#/definitions/网关采集通道\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"},\"put\":{\"tags\":[\"网关采集通道\"],\"summary\":\"修改网关采集通道\",\"operationId\":\"updateUsingPUT_6\",\"parameters\":[{\"in\":\"body\",\"name\":\"gatewayGatherChannel\",\"description\":\"gatewayGatherChannel\",\"required\":true,\"schema\":{\"originalRef\":\"网关采集通道\",\"$ref\":\"#/definitions/网关采集通道\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gatewayGatherChannel/page\":{\"get\":{\"tags\":[\"网关采集通道\"],\"summary\":\"分页查询列表\",\"operationId\":\"pageListUsingGET_3\",\"parameters\":[{\"name\":\"pageNum\",\"in\":\"query\",\"description\":\"请求页码\",\"required\":false,\"type\":\"ref\"},{\"name\":\"pageSize\",\"in\":\"query\",\"description\":\"页容量\",\"required\":false,\"type\":\"ref\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«PageInfo«网关采集通道»»\",\"$ref\":\"#/definitions/Return«PageInfo«网关采集通道»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gatewayGatherChannel/{id}\":{\"delete\":{\"tags\":[\"网关采集通道\"],\"summary\":\"删除网关采集通道（根据id删除单个网关采集通道）\",\"operationId\":\"deleteUsingDELETE_5\",\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"204\":{\"description\":\"No Content\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gatewayGatherChannelEquip\":{\"post\":{\"tags\":[\"当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表\"],\"summary\":\"新建当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表\",\"operationId\":\"saveUsingPOST_5\",\"parameters\":[{\"in\":\"body\",\"name\":\"gatewayGatherChannelEquip\",\"description\":\"gatewayGatherChannelEquip\",\"required\":true,\"schema\":{\"originalRef\":\"当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表\",\"$ref\":\"#/definitions/当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"},\"put\":{\"tags\":[\"当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表\"],\"summary\":\"修改当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表\",\"operationId\":\"updateUsingPUT_7\",\"parameters\":[{\"in\":\"body\",\"name\":\"gatewayGatherChannelEquip\",\"description\":\"gatewayGatherChannelEquip\",\"required\":true,\"schema\":{\"originalRef\":\"当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表\",\"$ref\":\"#/definitions/当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gatewayGatherChannelEquip/page\":{\"get\":{\"tags\":[\"当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表\"],\"summary\":\"分页查询列表\",\"operationId\":\"pageListUsingGET_4\",\"parameters\":[{\"name\":\"pageNum\",\"in\":\"query\",\"description\":\"请求页码\",\"required\":false,\"type\":\"ref\"},{\"name\":\"pageSize\",\"in\":\"query\",\"description\":\"页容量\",\"required\":false,\"type\":\"ref\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«PageInfo«当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表»»\",\"$ref\":\"#/definitions/Return«PageInfo«当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gatewayGatherChannelEquip/{id}\":{\"delete\":{\"tags\":[\"当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表\"],\"summary\":\"删除当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表（根据id删除单个当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表）\",\"operationId\":\"deleteUsingDELETE_6\",\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"204\":{\"description\":\"No Content\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gatewayProtocolDeployLog\":{\"post\":{\"tags\":[\"部署记录\"],\"summary\":\"新建部署记录\",\"operationId\":\"saveUsingPOST_6\",\"parameters\":[{\"in\":\"body\",\"name\":\"protocolDeployLog\",\"description\":\"protocolDeployLog\",\"required\":true,\"schema\":{\"originalRef\":\"网关协议部署记录\",\"$ref\":\"#/definitions/网关协议部署记录\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"},\"put\":{\"tags\":[\"部署记录\"],\"summary\":\"修改部署记录\",\"operationId\":\"updateUsingPUT_8\",\"parameters\":[{\"in\":\"body\",\"name\":\"protocolDeployLog\",\"description\":\"protocolDeployLog\",\"required\":true,\"schema\":{\"originalRef\":\"网关协议部署记录\",\"$ref\":\"#/definitions/网关协议部署记录\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gatewayProtocolDeployLog/page\":{\"get\":{\"tags\":[\"部署记录\"],\"summary\":\"分页查询列表\",\"operationId\":\"pageListUsingGET_5\",\"parameters\":[{\"name\":\"pageNum\",\"in\":\"query\",\"description\":\"请求页码\",\"required\":false,\"type\":\"ref\"},{\"name\":\"pageSize\",\"in\":\"query\",\"description\":\"页容量\",\"required\":false,\"type\":\"ref\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«PageInfo«网关协议部署记录»»\",\"$ref\":\"#/definitions/Return«PageInfo«网关协议部署记录»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/gatewayProtocolDeployLog/{id}\":{\"delete\":{\"tags\":[\"部署记录\"],\"summary\":\"删除部署记录（根据id删除单个部署记录）\",\"operationId\":\"deleteUsingDELETE_7\",\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"204\":{\"description\":\"No Content\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/mqtt/sendMsg\":{\"post\":{\"tags\":[\"mqtt消息处理\"],\"summary\":\"消息发送\",\"operationId\":\"sendMsgUsingPOST\",\"parameters\":[{\"in\":\"body\",\"name\":\"messageVO\",\"description\":\"messageVO\",\"required\":true,\"schema\":{\"originalRef\":\"MqttSendMessageVO\",\"$ref\":\"#/definitions/MqttSendMessageVO\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«string»\",\"$ref\":\"#/definitions/Return«string»\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/platformGatherChannel/deploy\":{\"put\":{\"tags\":[\"平台采集通道\"],\"summary\":\"部署\",\"description\":\"参数：设备ID\",\"operationId\":\"deployUsingPUT\",\"parameters\":[{\"in\":\"body\",\"name\":\"vo\",\"description\":\"vo\",\"required\":true,\"schema\":{\"originalRef\":\"对象操作\",\"$ref\":\"#/definitions/对象操作\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/platformGatherChannel/equip/page\":{\"get\":{\"tags\":[\"平台采集通道\"],\"summary\":\"分页查询有平台采集协议的设备列表\",\"operationId\":\"pageListUsingGET_6\",\"parameters\":[{\"name\":\"categoryId\",\"in\":\"query\",\"description\":\"分类ID\",\"required\":false,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"lastOnLineDateEnd\",\"in\":\"query\",\"description\":\"最后上线时间_截止\",\"required\":false,\"type\":\"string\",\"format\":\"date-time\"},{\"name\":\"lastOnLineDateStart\",\"in\":\"query\",\"description\":\"最后上线时间_起始\",\"required\":false,\"type\":\"string\",\"format\":\"date-time\"},{\"name\":\"name\",\"in\":\"query\",\"description\":\"名称\",\"required\":false,\"type\":\"string\"},{\"name\":\"pageNum\",\"in\":\"query\",\"description\":\"请求页码\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"},{\"name\":\"pageSize\",\"in\":\"query\",\"description\":\"页容量\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"},{\"name\":\"projectId\",\"in\":\"query\",\"description\":\"项目ID\",\"required\":false,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"protocolId\",\"in\":\"query\",\"description\":\"设备协议\",\"required\":false,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"type\",\"in\":\"query\",\"description\":\"类型:0虚拟1实体\",\"required\":false,\"type\":\"integer\",\"format\":\"int32\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«PageInfo«设备规则查询对象»»\",\"$ref\":\"#/definitions/Return«PageInfo«设备规则查询对象»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/platformGatherChannel/equipList\":{\"get\":{\"tags\":[\"平台采集通道\"],\"summary\":\"设备组下的设备列表\",\"description\":\"包含设备协议和网关协议,参数：设备组id\",\"operationId\":\"equipListUsingGET\",\"parameters\":[{\"name\":\"id\",\"in\":\"query\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«设备组下的设备(包含设备协议、网关协议)列表»»\",\"$ref\":\"#/definitions/Return«List«设备组下的设备(包含设备协议、网关协议)列表»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/platformGatherChannel/protocolList\":{\"get\":{\"tags\":[\"平台采集通道\"],\"summary\":\"可配置的协议列表\",\"operationId\":\"protocolListUsingGET\",\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«简易协议VO»»\",\"$ref\":\"#/definitions/Return«List«简易协议VO»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/platformGatherChannel/saveModbusSetting\":{\"put\":{\"tags\":[\"平台采集通道\"],\"summary\":\"保存modbus配置\",\"operationId\":\"saveModbusSettingUsingPUT\",\"parameters\":[{\"in\":\"body\",\"name\":\"vo\",\"description\":\"vo\",\"required\":true,\"schema\":{\"originalRef\":\"设置选择属性\",\"$ref\":\"#/definitions/设置选择属性\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«object»\",\"$ref\":\"#/definitions/Return«object»\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/platformGatherChannel/saveMqttSetting\":{\"put\":{\"tags\":[\"平台采集通道\"],\"summary\":\"保存Mqtt配置\",\"operationId\":\"saveMqttSettingUsingPUT\",\"parameters\":[{\"in\":\"body\",\"name\":\"vo\",\"description\":\"vo\",\"required\":true,\"schema\":{\"originalRef\":\"保存设备Mqtt协议的配置«MQTT协议的主题配置«协议的属性配置»»\",\"$ref\":\"#/definitions/保存设备Mqtt协议的配置«MQTT协议的主题配置«协议的属性配置»»\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«设备Mqtt协议的配置»\",\"$ref\":\"#/definitions/Return«设备Mqtt协议的配置»\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/platformGatherChannel/viewModbusSetting\":{\"get\":{\"tags\":[\"平台采集通道\"],\"summary\":\"查看设备modbus配置\",\"operationId\":\"viewModbusSettingUsingGET\",\"parameters\":[{\"name\":\"equipId\",\"in\":\"query\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"platformGatherGatewayId\",\"in\":\"query\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"platformGatherProtocolId\",\"in\":\"query\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«设备Modbus协议的配置»\",\"$ref\":\"#/definitions/Return«设备Modbus协议的配置»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/platformGatherChannel/viewMqttSetting\":{\"get\":{\"tags\":[\"平台采集通道\"],\"summary\":\"查看设备mqtt配置\",\"operationId\":\"viewMqttSettingUsingGET\",\"parameters\":[{\"name\":\"equipId\",\"in\":\"query\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"platformGatherGatewayId\",\"in\":\"query\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"platformGatherProtocolId\",\"in\":\"query\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«设备Mqtt协议的配置«MQTT协议的主题配置«设备的功能，包含是否选择»»»\",\"$ref\":\"#/definitions/Return«设备Mqtt协议的配置«MQTT协议的主题配置«设备的功能，包含是否选择»»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/platformGatherChannel/{id}\":{\"delete\":{\"tags\":[\"平台采集通道\"],\"summary\":\"删除平台采集通道（根据id删除单个平台采集通道）\",\"operationId\":\"deleteUsingDELETE_8\",\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«object»\",\"$ref\":\"#/definitions/Return«object»\"}},\"204\":{\"description\":\"No Content\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/platformProtocolDeployLog\":{\"put\":{\"tags\":[\"部署记录\"],\"summary\":\"修改部署记录\",\"operationId\":\"updateUsingPUT_9\",\"parameters\":[{\"in\":\"body\",\"name\":\"protocolDeployLog\",\"description\":\"protocolDeployLog\",\"required\":true,\"schema\":{\"originalRef\":\"平台协议部署记录\",\"$ref\":\"#/definitions/平台协议部署记录\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/platformProtocolDeployLog/page\":{\"get\":{\"tags\":[\"部署记录\"],\"summary\":\"分页查询列表\",\"operationId\":\"pageListUsingGET_7\",\"parameters\":[{\"name\":\"pageNum\",\"in\":\"query\",\"description\":\"请求页码\",\"required\":false,\"type\":\"ref\"},{\"name\":\"pageSize\",\"in\":\"query\",\"description\":\"页容量\",\"required\":false,\"type\":\"ref\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«PageInfo«平台协议部署记录»»\",\"$ref\":\"#/definitions/Return«PageInfo«平台协议部署记录»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/platformProtocolDeployLog/{id}\":{\"delete\":{\"tags\":[\"部署记录\"],\"summary\":\"删除部署记录（根据id删除单个部署记录）\",\"operationId\":\"deleteUsingDELETE_9\",\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"204\":{\"description\":\"No Content\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/project\":{\"post\":{\"tags\":[\"项目表\"],\"summary\":\"新建项目表\",\"operationId\":\"saveUsingPOST_7\",\"parameters\":[{\"in\":\"body\",\"name\":\"projectVO\",\"description\":\"projectVO\",\"required\":true,\"schema\":{\"originalRef\":\"项目表\",\"$ref\":\"#/definitions/项目表\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«long»\",\"$ref\":\"#/definitions/Return«long»\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"},\"put\":{\"tags\":[\"项目表\"],\"summary\":\"修改项目表\",\"operationId\":\"updateUsingPUT_10\",\"parameters\":[{\"in\":\"body\",\"name\":\"projectVO\",\"description\":\"projectVO\",\"required\":true,\"schema\":{\"originalRef\":\"项目表\",\"$ref\":\"#/definitions/项目表\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/project/findTenant\":{\"get\":{\"tags\":[\"项目表\"],\"summary\":\"查询租户信息\",\"operationId\":\"findTenantUsingGET\",\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«运营方-客户信(租户)»»\",\"$ref\":\"#/definitions/Return«List«运营方-客户信(租户)»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/project/getProjectById\":{\"get\":{\"tags\":[\"项目表\"],\"summary\":\"查询项目详情\",\"operationId\":\"getProjectByIdUsingGET\",\"parameters\":[{\"name\":\"id\",\"in\":\"query\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«项目表»\",\"$ref\":\"#/definitions/Return«项目表»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/project/page\":{\"get\":{\"tags\":[\"项目表\"],\"summary\":\"分页查询列表\",\"operationId\":\"pageListUsingGET_8\",\"parameters\":[{\"name\":\"name\",\"in\":\"query\",\"description\":\"项目名称\",\"required\":false,\"type\":\"string\"},{\"name\":\"pageNum\",\"in\":\"query\",\"description\":\"请求页码\",\"required\":false,\"type\":\"ref\"},{\"name\":\"pageSize\",\"in\":\"query\",\"description\":\"页容量\",\"required\":false,\"type\":\"ref\"},{\"name\":\"tenantName\",\"in\":\"query\",\"description\":\"客户名称\",\"required\":false,\"type\":\"string\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«PageInfo«项目表»»\",\"$ref\":\"#/definitions/Return«PageInfo«项目表»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/project/projectList\":{\"get\":{\"tags\":[\"项目表\"],\"summary\":\"查询当前租户下所有项目集合，针对下拉选择项目时使用\",\"operationId\":\"projectListUsingGET_1\",\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«项目表»»\",\"$ref\":\"#/definitions/Return«List«项目表»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/project/{id}\":{\"delete\":{\"tags\":[\"项目表\"],\"summary\":\"删除项目表（根据id删除单个项目表）\",\"operationId\":\"deleteUsingDELETE_10\",\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"204\":{\"description\":\"No Content\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/projectResourceMenu\":{\"put\":{\"tags\":[\"项目资源菜单表\"],\"summary\":\"修改项目资源菜单表\",\"operationId\":\"saveUsingPUT\",\"parameters\":[{\"in\":\"body\",\"name\":\"mainTainVO\",\"description\":\"mainTainVO\",\"required\":true,\"schema\":{\"originalRef\":\"项目菜单关联维护表\",\"$ref\":\"#/definitions/项目菜单关联维护表\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/projectResourceMenu/allMenuList\":{\"get\":{\"tags\":[\"项目资源菜单表\"],\"summary\":\"查询项目对应菜单数据\",\"operationId\":\"allMenuListUsingGET\",\"parameters\":[{\"name\":\"projectId\",\"in\":\"query\",\"description\":\"projectId\",\"required\":false,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"tenantId\",\"in\":\"query\",\"description\":\"tenantId\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«项目资源菜单表»»\",\"$ref\":\"#/definitions/Return«List«项目资源菜单表»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/projectTemplate\":{\"post\":{\"tags\":[\"项目模板表\"],\"summary\":\"新建项目模板表\",\"operationId\":\"saveUsingPOST_8\",\"parameters\":[{\"in\":\"body\",\"name\":\"projectTemplate\",\"description\":\"projectTemplate\",\"required\":true,\"schema\":{\"originalRef\":\"项目模板表\",\"$ref\":\"#/definitions/项目模板表\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"},\"put\":{\"tags\":[\"项目模板表\"],\"summary\":\"修改项目模板表\",\"operationId\":\"updateUsingPUT_11\",\"parameters\":[{\"in\":\"body\",\"name\":\"projectTemplate\",\"description\":\"projectTemplate\",\"required\":true,\"schema\":{\"originalRef\":\"项目模板表\",\"$ref\":\"#/definitions/项目模板表\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/projectTemplate/page\":{\"get\":{\"tags\":[\"项目模板表\"],\"summary\":\"分页查询列表\",\"operationId\":\"pageListUsingGET_9\",\"parameters\":[{\"name\":\"pageNum\",\"in\":\"query\",\"description\":\"请求页码\",\"required\":false,\"type\":\"ref\"},{\"name\":\"pageSize\",\"in\":\"query\",\"description\":\"页容量\",\"required\":false,\"type\":\"ref\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«PageInfo«项目模板表»»\",\"$ref\":\"#/definitions/Return«PageInfo«项目模板表»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/projectTemplate/{id}\":{\"delete\":{\"tags\":[\"项目模板表\"],\"summary\":\"删除项目模板表（根据id删除单个项目模板表）\",\"operationId\":\"deleteUsingDELETE_11\",\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"204\":{\"description\":\"No Content\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/protocol\":{\"post\":{\"tags\":[\"协议管理\"],\"summary\":\"新建协议\",\"operationId\":\"saveUsingPOST_9\",\"parameters\":[{\"in\":\"body\",\"name\":\"vo\",\"description\":\"vo\",\"required\":true,\"schema\":{\"originalRef\":\"添加协议请求\",\"$ref\":\"#/definitions/添加协议请求\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«object»\",\"$ref\":\"#/definitions/Return«object»\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"},\"put\":{\"tags\":[\"协议管理\"],\"summary\":\"修改协议\",\"operationId\":\"updateUsingPUT_12\",\"parameters\":[{\"in\":\"body\",\"name\":\"vo\",\"description\":\"vo\",\"required\":true,\"schema\":{\"originalRef\":\"更新协议请求\",\"$ref\":\"#/definitions/更新协议请求\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«object»\",\"$ref\":\"#/definitions/Return«object»\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/protocol/page\":{\"get\":{\"tags\":[\"协议管理\"],\"summary\":\"分页查询列表\",\"operationId\":\"pageListUsingGET_10\",\"parameters\":[{\"name\":\"categoryId\",\"in\":\"query\",\"required\":false,\"type\":\"integer\",\"format\":\"int64\"},{\"name\":\"name\",\"in\":\"query\",\"required\":false,\"type\":\"string\"},{\"name\":\"pageNum\",\"in\":\"query\",\"description\":\"请求页码\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"},{\"name\":\"pageSize\",\"in\":\"query\",\"description\":\"页容量\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«PageInfo«协议»»\",\"$ref\":\"#/definitions/Return«PageInfo«协议»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/protocol/protocolList\":{\"get\":{\"tags\":[\"协议管理\"],\"summary\":\"查询协议集合，展示协议列表时使用\",\"operationId\":\"protocolListUsingGET_1\",\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«简易协议VO»»\",\"$ref\":\"#/definitions/Return«List«简易协议VO»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/protocol/{id}\":{\"get\":{\"tags\":[\"协议管理\"],\"summary\":\"查看协议\",\"operationId\":\"viewUsingGET\",\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«协议»\",\"$ref\":\"#/definitions/Return«协议»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"},\"delete\":{\"tags\":[\"协议管理\"],\"summary\":\"删除（根据id删除单个）\",\"operationId\":\"deleteUsingDELETE_12\",\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int64\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"204\":{\"description\":\"No Content\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/supplier\":{\"post\":{\"tags\":[\"供应商\"],\"summary\":\"新建供应商\",\"operationId\":\"saveUsingPOST_10\",\"parameters\":[{\"in\":\"body\",\"name\":\"supplier\",\"description\":\"supplier\",\"required\":true,\"schema\":{\"originalRef\":\"供应商\",\"$ref\":\"#/definitions/供应商\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"},\"put\":{\"tags\":[\"供应商\"],\"summary\":\"修改供应商\",\"operationId\":\"updateUsingPUT_13\",\"parameters\":[{\"in\":\"body\",\"name\":\"supplier\",\"description\":\"supplier\",\"required\":true,\"schema\":{\"originalRef\":\"供应商\",\"$ref\":\"#/definitions/供应商\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/supplier/list\":{\"post\":{\"tags\":[\"供应商\"],\"summary\":\"分页查询列表\",\"operationId\":\"listUsingPOST\",\"parameters\":[{\"in\":\"body\",\"name\":\"querySupplierVO\",\"description\":\"querySupplierVO\",\"required\":true,\"schema\":{\"originalRef\":\"获取供应商实例VO\",\"$ref\":\"#/definitions/获取供应商实例VO\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«PageInfo«供应商»»\",\"$ref\":\"#/definitions/Return«PageInfo«供应商»»\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/supplier/status\":{\"put\":{\"tags\":[\"供应商\"],\"summary\":\"更改状态（启用或禁用）\",\"operationId\":\"changeStatusUsingPUT_1\",\"parameters\":[{\"in\":\"body\",\"name\":\"vo\",\"description\":\"vo\",\"required\":true,\"schema\":{\"originalRef\":\"改变状态通用VO\",\"$ref\":\"#/definitions/改变状态通用VO\"}}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/supplier/supplierList\":{\"get\":{\"tags\":[\"供应商\"],\"summary\":\"查询供应商集合，针对下拉选择供应商时使用\",\"operationId\":\"supplierListUsingGET\",\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«List«供应商下拉选择VO»»\",\"$ref\":\"#/definitions/Return«List«供应商下拉选择VO»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/api/supplier/{id}\":{\"delete\":{\"tags\":[\"供应商\"],\"summary\":\"删除供应商（根据id删除单个供应商）\",\"operationId\":\"deleteUsingDELETE_13\",\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"description\":\"id\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"204\":{\"description\":\"No Content\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/task/delete/{jobName}/{jobGroup}\":{\"post\":{\"tags\":[\"task-manage-controller\"],\"summary\":\"删除定时任务\",\"operationId\":\"deleteUsingPOST\",\"parameters\":[{\"name\":\"jobGroup\",\"in\":\"path\",\"description\":\"任务组\",\"required\":false,\"type\":\"string\"},{\"name\":\"jobName\",\"in\":\"path\",\"description\":\"任务名称\",\"required\":false,\"type\":\"string\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/task/list\":{\"get\":{\"tags\":[\"task-manage-controller\"],\"summary\":\"任务列表\",\"operationId\":\"listUsingGET\",\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return«Map«string,object»»\",\"$ref\":\"#/definitions/Return«Map«string,object»»\"}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/task/pause/{jobName}/{jobGroup}\":{\"post\":{\"tags\":[\"task-manage-controller\"],\"summary\":\"暂停定时任务\",\"operationId\":\"pauseUsingPOST\",\"parameters\":[{\"name\":\"jobGroup\",\"in\":\"path\",\"description\":\"任务组\",\"required\":false,\"type\":\"string\"},{\"name\":\"jobName\",\"in\":\"path\",\"description\":\"任务名称\",\"required\":false,\"type\":\"string\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/task/resume/{jobName}/{jobGroup}\":{\"post\":{\"tags\":[\"task-manage-controller\"],\"summary\":\"重新开始定时任务\",\"operationId\":\"resumeUsingPOST\",\"parameters\":[{\"name\":\"jobGroup\",\"in\":\"path\",\"description\":\"任务组\",\"required\":false,\"type\":\"string\"},{\"name\":\"jobName\",\"in\":\"path\",\"description\":\"任务名称\",\"required\":false,\"type\":\"string\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}},\"/task/save\":{\"post\":{\"tags\":[\"task-manage-controller\"],\"summary\":\"保存定时任务\",\"operationId\":\"saveUsingPOST_11\",\"parameters\":[{\"name\":\"createTime\",\"in\":\"query\",\"required\":false,\"type\":\"string\"},{\"name\":\"cronExpression\",\"in\":\"query\",\"required\":false,\"type\":\"string\"},{\"name\":\"id\",\"in\":\"query\",\"required\":false,\"type\":\"integer\",\"format\":\"int32\"},{\"name\":\"jobDescription\",\"in\":\"query\",\"required\":false,\"type\":\"string\"},{\"name\":\"jobGroup\",\"in\":\"query\",\"required\":false,\"type\":\"string\"},{\"name\":\"jobName\",\"in\":\"query\",\"required\":false,\"type\":\"string\"},{\"name\":\"jobStatus\",\"in\":\"query\",\"required\":false,\"type\":\"string\"},{\"name\":\"jobType\",\"in\":\"query\",\"required\":false,\"type\":\"string\",\"enum\":[\"CRON\",\"SIMPLE\"]},{\"name\":\"withIntervalInSeconds\",\"in\":\"query\",\"required\":false,\"type\":\"integer\",\"format\":\"int32\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"originalRef\":\"Return\",\"$ref\":\"#/definitions/Return\"}},\"201\":{\"description\":\"Created\"},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\"},\"404\":{\"description\":\"Not Found\"}},\"security\":[{\"BearerToken\":[\"global\"]},{\"BearerToken1\":[\"global\"]}],\"deprecated\":false,\"x-order\":\"2147483647\"}}},\"definitions\":{\"AlarmRuleTriggerCondition\":{\"type\":\"object\",\"properties\":{\"condDesc\":{\"type\":\"string\",\"description\":\"条件描述\"},\"condExpression\":{\"type\":\"string\",\"description\":\"条件表达式\"},\"condParam\":{\"type\":\"string\",\"description\":\"条件参数    kv形式来组织    eg：    X：value1，Y：value2，M：value3\"},\"createDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"createTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"createUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"createUserIp\":{\"type\":\"string\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"msgTemplate\":{\"type\":\"string\",\"description\":\"消息模板\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"状态    1启用0未启用\"},\"triggerId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"触发ID\"},\"updateDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"updateUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateUserIp\":{\"type\":\"string\"}},\"title\":\"AlarmRuleTriggerCondition\"},\"File\":{\"type\":\"object\",\"properties\":{\"absolute\":{\"type\":\"boolean\"},\"absoluteFile\":{\"originalRef\":\"File\",\"$ref\":\"#/definitions/File\"},\"absolutePath\":{\"type\":\"string\"},\"canonicalFile\":{\"originalRef\":\"File\",\"$ref\":\"#/definitions/File\"},\"canonicalPath\":{\"type\":\"string\"},\"directory\":{\"type\":\"boolean\"},\"executable\":{\"type\":\"boolean\"},\"file\":{\"type\":\"boolean\"},\"freeSpace\":{\"type\":\"integer\",\"format\":\"int64\"},\"hidden\":{\"type\":\"boolean\"},\"lastModified\":{\"type\":\"integer\",\"format\":\"int64\"},\"name\":{\"type\":\"string\"},\"parent\":{\"type\":\"string\"},\"parentFile\":{\"originalRef\":\"File\",\"$ref\":\"#/definitions/File\"},\"path\":{\"type\":\"string\"},\"readable\":{\"type\":\"boolean\"},\"totalSpace\":{\"type\":\"integer\",\"format\":\"int64\"},\"usableSpace\":{\"type\":\"integer\",\"format\":\"int64\"},\"writable\":{\"type\":\"boolean\"}},\"title\":\"File\"},\"ICO图片对象\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"string\",\"description\":\"code\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"id\"},\"name\":{\"type\":\"string\",\"description\":\"ICO名称\"},\"url\":{\"type\":\"string\",\"description\":\"图片地址\"}},\"title\":\"ICO图片对象\"},\"InputStream\":{\"type\":\"object\",\"title\":\"InputStream\"},\"MQTT协议的主题配置«协议的属性配置»\":{\"type\":\"object\",\"required\":[\"properties\",\"qos\",\"topic\",\"type\"],\"properties\":{\"properties\":{\"type\":\"array\",\"description\":\"属性\",\"items\":{\"originalRef\":\"协议的属性配置\",\"$ref\":\"#/definitions/协议的属性配置\"}},\"qos\":{\"type\":\"string\",\"description\":\"qos\"},\"topic\":{\"type\":\"string\",\"description\":\"主题\"},\"type\":{\"type\":\"string\",\"description\":\"操作类型\"}},\"title\":\"MQTT协议的主题配置«协议的属性配置»\"},\"MQTT协议的主题配置«设备的功能，包含是否选择»\":{\"type\":\"object\",\"required\":[\"properties\",\"qos\",\"topic\",\"type\"],\"properties\":{\"properties\":{\"type\":\"array\",\"description\":\"属性\",\"items\":{\"originalRef\":\"设备的功能，包含是否选择\",\"$ref\":\"#/definitions/设备的功能，包含是否选择\"}},\"qos\":{\"type\":\"string\",\"description\":\"qos\"},\"topic\":{\"type\":\"string\",\"description\":\"主题\"},\"type\":{\"type\":\"string\",\"description\":\"操作类型\"}},\"title\":\"MQTT协议的主题配置«设备的功能，包含是否选择»\"},\"MQTT协议的配置VO«MQTT协议的主题配置«协议的属性配置»»\":{\"type\":\"object\",\"required\":[\"ip\",\"password\",\"port\",\"topics\",\"username\"],\"properties\":{\"ip\":{\"type\":\"string\",\"description\":\"IP\"},\"password\":{\"type\":\"string\",\"description\":\"服务器密码\"},\"port\":{\"type\":\"string\",\"description\":\"端口\"},\"protocol\":{\"type\":\"string\",\"example\":\"mqtt\",\"description\":\"协议\"},\"topics\":{\"type\":\"array\",\"description\":\"订阅主题\",\"items\":{\"originalRef\":\"MQTT协议的主题配置«协议的属性配置»\",\"$ref\":\"#/definitions/MQTT协议的主题配置«协议的属性配置»\"}},\"username\":{\"type\":\"string\",\"description\":\"服务器帐号\"}},\"title\":\"MQTT协议的配置VO«MQTT协议的主题配置«协议的属性配置»»\"},\"MQTT协议的配置VO«MQTT协议的主题配置«设备的功能，包含是否选择»»\":{\"type\":\"object\",\"required\":[\"ip\",\"password\",\"port\",\"topics\",\"username\"],\"properties\":{\"ip\":{\"type\":\"string\",\"description\":\"IP\"},\"password\":{\"type\":\"string\",\"description\":\"服务器密码\"},\"port\":{\"type\":\"string\",\"description\":\"端口\"},\"protocol\":{\"type\":\"string\",\"example\":\"mqtt\",\"description\":\"协议\"},\"topics\":{\"type\":\"array\",\"description\":\"订阅主题\",\"items\":{\"originalRef\":\"MQTT协议的主题配置«设备的功能，包含是否选择»\",\"$ref\":\"#/definitions/MQTT协议的主题配置«设备的功能，包含是否选择»\"}},\"username\":{\"type\":\"string\",\"description\":\"服务器帐号\"}},\"title\":\"MQTT协议的配置VO«MQTT协议的主题配置«设备的功能，包含是否选择»»\"},\"MQTT协议的配置VO«object»\":{\"type\":\"object\",\"required\":[\"ip\",\"password\",\"port\",\"topics\",\"username\"],\"properties\":{\"ip\":{\"type\":\"string\",\"description\":\"IP\"},\"password\":{\"type\":\"string\",\"description\":\"服务器密码\"},\"port\":{\"type\":\"string\",\"description\":\"端口\"},\"protocol\":{\"type\":\"string\",\"example\":\"mqtt\",\"description\":\"协议\"},\"topics\":{\"type\":\"array\",\"description\":\"订阅主题\",\"items\":{\"type\":\"object\"}},\"username\":{\"type\":\"string\",\"description\":\"服务器帐号\"}},\"title\":\"MQTT协议的配置VO«object»\"},\"Map«string,List«通道可关联设备VO»»\":{\"type\":\"object\",\"title\":\"Map«string,List«通道可关联设备VO»»\",\"additionalProperties\":{\"originalRef\":\"List\",\"$ref\":\"#/definitions/List\"}},\"MqttSendMessageVO\":{\"type\":\"object\",\"properties\":{\"payload\":{\"type\":\"string\"},\"topic\":{\"type\":\"string\"}},\"title\":\"MqttSendMessageVO\"},\"PageInfo«供应商»\":{\"type\":\"object\",\"properties\":{\"endRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"hasNextPage\":{\"type\":\"boolean\"},\"hasPreviousPage\":{\"type\":\"boolean\"},\"isFirstPage\":{\"type\":\"boolean\"},\"isLastPage\":{\"type\":\"boolean\"},\"list\":{\"type\":\"array\",\"items\":{\"originalRef\":\"供应商\",\"$ref\":\"#/definitions/供应商\"}},\"navigateFirstPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigateLastPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatePages\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatepageNums\":{\"type\":\"array\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}},\"nextPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageNum\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageSize\":{\"type\":\"integer\",\"format\":\"int32\"},\"pages\":{\"type\":\"integer\",\"format\":\"int32\"},\"prePage\":{\"type\":\"integer\",\"format\":\"int32\"},\"size\":{\"type\":\"integer\",\"format\":\"int32\"},\"startRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"total\":{\"type\":\"integer\",\"format\":\"int64\"}},\"title\":\"PageInfo«供应商»\"},\"PageInfo«协议»\":{\"type\":\"object\",\"properties\":{\"endRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"hasNextPage\":{\"type\":\"boolean\"},\"hasPreviousPage\":{\"type\":\"boolean\"},\"isFirstPage\":{\"type\":\"boolean\"},\"isLastPage\":{\"type\":\"boolean\"},\"list\":{\"type\":\"array\",\"items\":{\"originalRef\":\"协议\",\"$ref\":\"#/definitions/协议\"}},\"navigateFirstPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigateLastPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatePages\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatepageNums\":{\"type\":\"array\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}},\"nextPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageNum\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageSize\":{\"type\":\"integer\",\"format\":\"int32\"},\"pages\":{\"type\":\"integer\",\"format\":\"int32\"},\"prePage\":{\"type\":\"integer\",\"format\":\"int32\"},\"size\":{\"type\":\"integer\",\"format\":\"int32\"},\"startRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"total\":{\"type\":\"integer\",\"format\":\"int64\"}},\"title\":\"PageInfo«协议»\"},\"PageInfo«平台协议部署记录»\":{\"type\":\"object\",\"properties\":{\"endRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"hasNextPage\":{\"type\":\"boolean\"},\"hasPreviousPage\":{\"type\":\"boolean\"},\"isFirstPage\":{\"type\":\"boolean\"},\"isLastPage\":{\"type\":\"boolean\"},\"list\":{\"type\":\"array\",\"items\":{\"originalRef\":\"平台协议部署记录\",\"$ref\":\"#/definitions/平台协议部署记录\"}},\"navigateFirstPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigateLastPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatePages\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatepageNums\":{\"type\":\"array\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}},\"nextPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageNum\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageSize\":{\"type\":\"integer\",\"format\":\"int32\"},\"pages\":{\"type\":\"integer\",\"format\":\"int32\"},\"prePage\":{\"type\":\"integer\",\"format\":\"int32\"},\"size\":{\"type\":\"integer\",\"format\":\"int32\"},\"startRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"total\":{\"type\":\"integer\",\"format\":\"int64\"}},\"title\":\"PageInfo«平台协议部署记录»\"},\"PageInfo«当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表»\":{\"type\":\"object\",\"properties\":{\"endRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"hasNextPage\":{\"type\":\"boolean\"},\"hasPreviousPage\":{\"type\":\"boolean\"},\"isFirstPage\":{\"type\":\"boolean\"},\"isLastPage\":{\"type\":\"boolean\"},\"list\":{\"type\":\"array\",\"items\":{\"originalRef\":\"当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表\",\"$ref\":\"#/definitions/当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表\"}},\"navigateFirstPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigateLastPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatePages\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatepageNums\":{\"type\":\"array\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}},\"nextPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageNum\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageSize\":{\"type\":\"integer\",\"format\":\"int32\"},\"pages\":{\"type\":\"integer\",\"format\":\"int32\"},\"prePage\":{\"type\":\"integer\",\"format\":\"int32\"},\"size\":{\"type\":\"integer\",\"format\":\"int32\"},\"startRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"total\":{\"type\":\"integer\",\"format\":\"int64\"}},\"title\":\"PageInfo«当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表»\"},\"PageInfo«报警消息列表对象»\":{\"type\":\"object\",\"properties\":{\"endRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"hasNextPage\":{\"type\":\"boolean\"},\"hasPreviousPage\":{\"type\":\"boolean\"},\"isFirstPage\":{\"type\":\"boolean\"},\"isLastPage\":{\"type\":\"boolean\"},\"list\":{\"type\":\"array\",\"items\":{\"originalRef\":\"报警消息列表对象\",\"$ref\":\"#/definitions/报警消息列表对象\"}},\"navigateFirstPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigateLastPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatePages\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatepageNums\":{\"type\":\"array\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}},\"nextPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageNum\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageSize\":{\"type\":\"integer\",\"format\":\"int32\"},\"pages\":{\"type\":\"integer\",\"format\":\"int32\"},\"prePage\":{\"type\":\"integer\",\"format\":\"int32\"},\"size\":{\"type\":\"integer\",\"format\":\"int32\"},\"startRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"total\":{\"type\":\"integer\",\"format\":\"int64\"}},\"title\":\"PageInfo«报警消息列表对象»\"},\"PageInfo«有报警规则的设备VO»\":{\"type\":\"object\",\"properties\":{\"endRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"hasNextPage\":{\"type\":\"boolean\"},\"hasPreviousPage\":{\"type\":\"boolean\"},\"isFirstPage\":{\"type\":\"boolean\"},\"isLastPage\":{\"type\":\"boolean\"},\"list\":{\"type\":\"array\",\"items\":{\"originalRef\":\"有报警规则的设备VO\",\"$ref\":\"#/definitions/有报警规则的设备VO\"}},\"navigateFirstPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigateLastPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatePages\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatepageNums\":{\"type\":\"array\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}},\"nextPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageNum\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageSize\":{\"type\":\"integer\",\"format\":\"int32\"},\"pages\":{\"type\":\"integer\",\"format\":\"int32\"},\"prePage\":{\"type\":\"integer\",\"format\":\"int32\"},\"size\":{\"type\":\"integer\",\"format\":\"int32\"},\"startRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"total\":{\"type\":\"integer\",\"format\":\"int64\"}},\"title\":\"PageInfo«有报警规则的设备VO»\"},\"PageInfo«网关协议部署记录»\":{\"type\":\"object\",\"properties\":{\"endRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"hasNextPage\":{\"type\":\"boolean\"},\"hasPreviousPage\":{\"type\":\"boolean\"},\"isFirstPage\":{\"type\":\"boolean\"},\"isLastPage\":{\"type\":\"boolean\"},\"list\":{\"type\":\"array\",\"items\":{\"originalRef\":\"网关协议部署记录\",\"$ref\":\"#/definitions/网关协议部署记录\"}},\"navigateFirstPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigateLastPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatePages\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatepageNums\":{\"type\":\"array\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}},\"nextPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageNum\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageSize\":{\"type\":\"integer\",\"format\":\"int32\"},\"pages\":{\"type\":\"integer\",\"format\":\"int32\"},\"prePage\":{\"type\":\"integer\",\"format\":\"int32\"},\"size\":{\"type\":\"integer\",\"format\":\"int32\"},\"startRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"total\":{\"type\":\"integer\",\"format\":\"int64\"}},\"title\":\"PageInfo«网关协议部署记录»\"},\"PageInfo«网关表-列表展示数据VO»\":{\"type\":\"object\",\"properties\":{\"endRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"hasNextPage\":{\"type\":\"boolean\"},\"hasPreviousPage\":{\"type\":\"boolean\"},\"isFirstPage\":{\"type\":\"boolean\"},\"isLastPage\":{\"type\":\"boolean\"},\"list\":{\"type\":\"array\",\"items\":{\"originalRef\":\"网关表-列表展示数据VO\",\"$ref\":\"#/definitions/网关表-列表展示数据VO\"}},\"navigateFirstPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigateLastPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatePages\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatepageNums\":{\"type\":\"array\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}},\"nextPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageNum\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageSize\":{\"type\":\"integer\",\"format\":\"int32\"},\"pages\":{\"type\":\"integer\",\"format\":\"int32\"},\"prePage\":{\"type\":\"integer\",\"format\":\"int32\"},\"size\":{\"type\":\"integer\",\"format\":\"int32\"},\"startRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"total\":{\"type\":\"integer\",\"format\":\"int64\"}},\"title\":\"PageInfo«网关表-列表展示数据VO»\"},\"PageInfo«网关采集通道»\":{\"type\":\"object\",\"properties\":{\"endRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"hasNextPage\":{\"type\":\"boolean\"},\"hasPreviousPage\":{\"type\":\"boolean\"},\"isFirstPage\":{\"type\":\"boolean\"},\"isLastPage\":{\"type\":\"boolean\"},\"list\":{\"type\":\"array\",\"items\":{\"originalRef\":\"网关采集通道\",\"$ref\":\"#/definitions/网关采集通道\"}},\"navigateFirstPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigateLastPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatePages\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatepageNums\":{\"type\":\"array\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}},\"nextPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageNum\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageSize\":{\"type\":\"integer\",\"format\":\"int32\"},\"pages\":{\"type\":\"integer\",\"format\":\"int32\"},\"prePage\":{\"type\":\"integer\",\"format\":\"int32\"},\"size\":{\"type\":\"integer\",\"format\":\"int32\"},\"startRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"total\":{\"type\":\"integer\",\"format\":\"int64\"}},\"title\":\"PageInfo«网关采集通道»\"},\"PageInfo«设备表»\":{\"type\":\"object\",\"properties\":{\"endRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"hasNextPage\":{\"type\":\"boolean\"},\"hasPreviousPage\":{\"type\":\"boolean\"},\"isFirstPage\":{\"type\":\"boolean\"},\"isLastPage\":{\"type\":\"boolean\"},\"list\":{\"type\":\"array\",\"items\":{\"originalRef\":\"设备表\",\"$ref\":\"#/definitions/设备表\"}},\"navigateFirstPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigateLastPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatePages\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatepageNums\":{\"type\":\"array\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}},\"nextPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageNum\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageSize\":{\"type\":\"integer\",\"format\":\"int32\"},\"pages\":{\"type\":\"integer\",\"format\":\"int32\"},\"prePage\":{\"type\":\"integer\",\"format\":\"int32\"},\"size\":{\"type\":\"integer\",\"format\":\"int32\"},\"startRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"total\":{\"type\":\"integer\",\"format\":\"int64\"}},\"title\":\"PageInfo«设备表»\"},\"PageInfo«设备规则查询对象»\":{\"type\":\"object\",\"properties\":{\"endRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"hasNextPage\":{\"type\":\"boolean\"},\"hasPreviousPage\":{\"type\":\"boolean\"},\"isFirstPage\":{\"type\":\"boolean\"},\"isLastPage\":{\"type\":\"boolean\"},\"list\":{\"type\":\"array\",\"items\":{\"originalRef\":\"设备规则查询对象\",\"$ref\":\"#/definitions/设备规则查询对象\"}},\"navigateFirstPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigateLastPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatePages\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatepageNums\":{\"type\":\"array\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}},\"nextPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageNum\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageSize\":{\"type\":\"integer\",\"format\":\"int32\"},\"pages\":{\"type\":\"integer\",\"format\":\"int32\"},\"prePage\":{\"type\":\"integer\",\"format\":\"int32\"},\"size\":{\"type\":\"integer\",\"format\":\"int32\"},\"startRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"total\":{\"type\":\"integer\",\"format\":\"int64\"}},\"title\":\"PageInfo«设备规则查询对象»\"},\"PageInfo«项目模板表»\":{\"type\":\"object\",\"properties\":{\"endRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"hasNextPage\":{\"type\":\"boolean\"},\"hasPreviousPage\":{\"type\":\"boolean\"},\"isFirstPage\":{\"type\":\"boolean\"},\"isLastPage\":{\"type\":\"boolean\"},\"list\":{\"type\":\"array\",\"items\":{\"originalRef\":\"项目模板表\",\"$ref\":\"#/definitions/项目模板表\"}},\"navigateFirstPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigateLastPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatePages\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatepageNums\":{\"type\":\"array\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}},\"nextPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageNum\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageSize\":{\"type\":\"integer\",\"format\":\"int32\"},\"pages\":{\"type\":\"integer\",\"format\":\"int32\"},\"prePage\":{\"type\":\"integer\",\"format\":\"int32\"},\"size\":{\"type\":\"integer\",\"format\":\"int32\"},\"startRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"total\":{\"type\":\"integer\",\"format\":\"int64\"}},\"title\":\"PageInfo«项目模板表»\"},\"PageInfo«项目表»\":{\"type\":\"object\",\"properties\":{\"endRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"hasNextPage\":{\"type\":\"boolean\"},\"hasPreviousPage\":{\"type\":\"boolean\"},\"isFirstPage\":{\"type\":\"boolean\"},\"isLastPage\":{\"type\":\"boolean\"},\"list\":{\"type\":\"array\",\"items\":{\"originalRef\":\"项目表\",\"$ref\":\"#/definitions/项目表\"}},\"navigateFirstPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigateLastPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatePages\":{\"type\":\"integer\",\"format\":\"int32\"},\"navigatepageNums\":{\"type\":\"array\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}},\"nextPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageNum\":{\"type\":\"integer\",\"format\":\"int32\"},\"pageSize\":{\"type\":\"integer\",\"format\":\"int32\"},\"pages\":{\"type\":\"integer\",\"format\":\"int32\"},\"prePage\":{\"type\":\"integer\",\"format\":\"int32\"},\"size\":{\"type\":\"integer\",\"format\":\"int32\"},\"startRow\":{\"type\":\"integer\",\"format\":\"int32\"},\"total\":{\"type\":\"integer\",\"format\":\"int64\"}},\"title\":\"PageInfo«项目表»\"},\"Resource\":{\"type\":\"object\",\"properties\":{\"description\":{\"type\":\"string\"},\"file\":{\"originalRef\":\"File\",\"$ref\":\"#/definitions/File\"},\"filename\":{\"type\":\"string\"},\"inputStream\":{\"originalRef\":\"InputStream\",\"$ref\":\"#/definitions/InputStream\"},\"open\":{\"type\":\"boolean\"},\"readable\":{\"type\":\"boolean\"},\"uri\":{\"originalRef\":\"URI\",\"$ref\":\"#/definitions/URI\"},\"url\":{\"originalRef\":\"URL\",\"$ref\":\"#/definitions/URL\"}},\"title\":\"Resource\"},\"Return\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return\"},\"Return«List«ICO图片对象»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"ICO图片对象\",\"$ref\":\"#/definitions/ICO图片对象\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«ICO图片对象»»\"},\"Return«List«供应商下拉选择VO»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"供应商下拉选择VO\",\"$ref\":\"#/definitions/供应商下拉选择VO\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«供应商下拉选择VO»»\"},\"Return«List«分类列表展示VO»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"分类列表展示VO\",\"$ref\":\"#/definitions/分类列表展示VO\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«分类列表展示VO»»\"},\"Return«List«分类树»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"分类树\",\"$ref\":\"#/definitions/分类树\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«分类树»»\"},\"Return«List«分类表»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"分类表\",\"$ref\":\"#/definitions/分类表\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«分类表»»\"},\"Return«List«包含属性的设备»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"包含属性的设备\",\"$ref\":\"#/definitions/包含属性的设备\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«包含属性的设备»»\"},\"Return«List«协议配置--网关采集通道展示VO»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"协议配置--网关采集通道展示VO\",\"$ref\":\"#/definitions/协议配置--网关采集通道展示VO\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«协议配置--网关采集通道展示VO»»\"},\"Return«List«告警消息»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"告警消息\",\"$ref\":\"#/definitions/告警消息\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«告警消息»»\"},\"Return«List«字典项»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"字典项\",\"$ref\":\"#/definitions/字典项\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«字典项»»\"},\"Return«List«机构用户»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"机构用户\",\"$ref\":\"#/definitions/机构用户\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«机构用户»»\"},\"Return«List«用户推送»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"用户推送\",\"$ref\":\"#/definitions/用户推送\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«用户推送»»\"},\"Return«List«简易协议VO»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"简易协议VO\",\"$ref\":\"#/definitions/简易协议VO\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«简易协议VO»»\"},\"Return«List«设备分类-设备树»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"设备分类-设备树\",\"$ref\":\"#/definitions/设备分类-设备树\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«设备分类-设备树»»\"},\"Return«List«设备功能»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"设备功能\",\"$ref\":\"#/definitions/设备功能\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«设备功能»»\"},\"Return«List«设备属性值»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"设备属性值\",\"$ref\":\"#/definitions/设备属性值\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«设备属性值»»\"},\"Return«List«设备属性规则»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"设备属性规则\",\"$ref\":\"#/definitions/设备属性规则\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«设备属性规则»»\"},\"Return«List«设备组下的设备(包含设备协议、网关协议)列表»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"设备组下的设备(包含设备协议、网关协议)列表\",\"$ref\":\"#/definitions/设备组下的设备(包含设备协议、网关协议)列表\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«设备组下的设备(包含设备协议、网关协议)列表»»\"},\"Return«List«运营方-客户信(租户)»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"运营方-客户信(租户)\",\"$ref\":\"#/definitions/运营方-客户信(租户)\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«运营方-客户信(租户)»»\"},\"Return«List«项目表»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"项目表\",\"$ref\":\"#/definitions/项目表\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«项目表»»\"},\"Return«List«项目资源菜单表»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"originalRef\":\"项目资源菜单表\",\"$ref\":\"#/definitions/项目资源菜单表\"}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«List«项目资源菜单表»»\"},\"Return«Map«string,List«通道可关联设备VO»»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"array\",\"items\":{\"originalRef\":\"通道可关联设备VO\",\"$ref\":\"#/definitions/通道可关联设备VO\"}}},\"message\":{\"type\":\"string\"}},\"title\":\"Return«Map«string,List«通道可关联设备VO»»»\"},\"Return«Map«string,object»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«Map«string,object»»\"},\"Return«PageInfo«供应商»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"PageInfo«供应商»\",\"$ref\":\"#/definitions/PageInfo«供应商»\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«PageInfo«供应商»»\"},\"Return«PageInfo«协议»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"PageInfo«协议»\",\"$ref\":\"#/definitions/PageInfo«协议»\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«PageInfo«协议»»\"},\"Return«PageInfo«平台协议部署记录»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"PageInfo«平台协议部署记录»\",\"$ref\":\"#/definitions/PageInfo«平台协议部署记录»\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«PageInfo«平台协议部署记录»»\"},\"Return«PageInfo«当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"PageInfo«当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表»\",\"$ref\":\"#/definitions/PageInfo«当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表»\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«PageInfo«当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表»»\"},\"Return«PageInfo«报警消息列表对象»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"PageInfo«报警消息列表对象»\",\"$ref\":\"#/definitions/PageInfo«报警消息列表对象»\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«PageInfo«报警消息列表对象»»\"},\"Return«PageInfo«有报警规则的设备VO»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"PageInfo«有报警规则的设备VO»\",\"$ref\":\"#/definitions/PageInfo«有报警规则的设备VO»\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«PageInfo«有报警规则的设备VO»»\"},\"Return«PageInfo«网关协议部署记录»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"PageInfo«网关协议部署记录»\",\"$ref\":\"#/definitions/PageInfo«网关协议部署记录»\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«PageInfo«网关协议部署记录»»\"},\"Return«PageInfo«网关表-列表展示数据VO»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"PageInfo«网关表-列表展示数据VO»\",\"$ref\":\"#/definitions/PageInfo«网关表-列表展示数据VO»\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«PageInfo«网关表-列表展示数据VO»»\"},\"Return«PageInfo«网关采集通道»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"PageInfo«网关采集通道»\",\"$ref\":\"#/definitions/PageInfo«网关采集通道»\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«PageInfo«网关采集通道»»\"},\"Return«PageInfo«设备表»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"PageInfo«设备表»\",\"$ref\":\"#/definitions/PageInfo«设备表»\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«PageInfo«设备表»»\"},\"Return«PageInfo«设备规则查询对象»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"PageInfo«设备规则查询对象»\",\"$ref\":\"#/definitions/PageInfo«设备规则查询对象»\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«PageInfo«设备规则查询对象»»\"},\"Return«PageInfo«项目模板表»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"PageInfo«项目模板表»\",\"$ref\":\"#/definitions/PageInfo«项目模板表»\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«PageInfo«项目模板表»»\"},\"Return«PageInfo«项目表»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"PageInfo«项目表»\",\"$ref\":\"#/definitions/PageInfo«项目表»\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«PageInfo«项目表»»\"},\"Return«long»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"integer\",\"format\":\"int64\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«long»\"},\"Return«object»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«object»\"},\"Return«string»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"string\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«string»\"},\"Return«协议»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"协议\",\"$ref\":\"#/definitions/协议\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«协议»\"},\"Return«基础字典»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"基础字典\",\"$ref\":\"#/definitions/基础字典\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«基础字典»\"},\"Return«属性的规则列表»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"属性的规则列表\",\"$ref\":\"#/definitions/属性的规则列表\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«属性的规则列表»\"},\"Return«报警消息字典»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"报警消息字典\",\"$ref\":\"#/definitions/报警消息字典\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«报警消息字典»\"},\"Return«数据设置字典»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"数据设置字典\",\"$ref\":\"#/definitions/数据设置字典\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«数据设置字典»\"},\"Return«网关字典»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"网关字典\",\"$ref\":\"#/definitions/网关字典\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«网关字典»\"},\"Return«网关详情VO»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"网关详情VO\",\"$ref\":\"#/definitions/网关详情VO\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«网关详情VO»\"},\"Return«设备Modbus协议的配置»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"设备Modbus协议的配置\",\"$ref\":\"#/definitions/设备Modbus协议的配置\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«设备Modbus协议的配置»\"},\"Return«设备Mqtt协议的配置«MQTT协议的主题配置«设备的功能，包含是否选择»»»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"设备Mqtt协议的配置«MQTT协议的主题配置«设备的功能，包含是否选择»»\",\"$ref\":\"#/definitions/设备Mqtt协议的配置«MQTT协议的主题配置«设备的功能，包含是否选择»»\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«设备Mqtt协议的配置«MQTT协议的主题配置«设备的功能，包含是否选择»»»\"},\"Return«设备Mqtt协议的配置»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"设备Mqtt协议的配置\",\"$ref\":\"#/definitions/设备Mqtt协议的配置\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«设备Mqtt协议的配置»\"},\"Return«设备历史记录及统计对象»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"设备历史记录及统计对象\",\"$ref\":\"#/definitions/设备历史记录及统计对象\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«设备历史记录及统计对象»\"},\"Return«设备地图信息表»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"设备地图信息表\",\"$ref\":\"#/definitions/设备地图信息表\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«设备地图信息表»\"},\"Return«设备字典»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"设备字典\",\"$ref\":\"#/definitions/设备字典\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«设备字典»\"},\"Return«设备对象»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"设备对象\",\"$ref\":\"#/definitions/设备对象\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«设备对象»\"},\"Return«设备表»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"设备表\",\"$ref\":\"#/definitions/设备表\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«设备表»\"},\"Return«项目表»\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"originalRef\":\"项目表\",\"$ref\":\"#/definitions/项目表\"},\"message\":{\"type\":\"string\"}},\"title\":\"Return«项目表»\"},\"TriggerCondition\":{\"type\":\"object\",\"properties\":{\"condDesc\":{\"type\":\"string\"},\"expression\":{\"type\":\"string\"},\"id\":{\"type\":\"integer\",\"format\":\"int32\"},\"value\":{\"type\":\"string\"}},\"title\":\"TriggerCondition\"},\"URI\":{\"type\":\"object\",\"properties\":{\"absolute\":{\"type\":\"boolean\"},\"authority\":{\"type\":\"string\"},\"fragment\":{\"type\":\"string\"},\"host\":{\"type\":\"string\"},\"opaque\":{\"type\":\"boolean\"},\"path\":{\"type\":\"string\"},\"port\":{\"type\":\"integer\",\"format\":\"int32\"},\"query\":{\"type\":\"string\"},\"rawAuthority\":{\"type\":\"string\"},\"rawFragment\":{\"type\":\"string\"},\"rawPath\":{\"type\":\"string\"},\"rawQuery\":{\"type\":\"string\"},\"rawSchemeSpecificPart\":{\"type\":\"string\"},\"rawUserInfo\":{\"type\":\"string\"},\"scheme\":{\"type\":\"string\"},\"schemeSpecificPart\":{\"type\":\"string\"},\"userInfo\":{\"type\":\"string\"}},\"title\":\"URI\"},\"URL\":{\"type\":\"object\",\"properties\":{\"authority\":{\"type\":\"string\"},\"content\":{\"type\":\"object\"},\"defaultPort\":{\"type\":\"integer\",\"format\":\"int32\"},\"deserializedFields\":{\"originalRef\":\"URLStreamHandler\",\"$ref\":\"#/definitions/URLStreamHandler\"},\"file\":{\"type\":\"string\"},\"host\":{\"type\":\"string\"},\"path\":{\"type\":\"string\"},\"port\":{\"type\":\"integer\",\"format\":\"int32\"},\"protocol\":{\"type\":\"string\"},\"query\":{\"type\":\"string\"},\"ref\":{\"type\":\"string\"},\"serializedHashCode\":{\"type\":\"integer\",\"format\":\"int32\"},\"userInfo\":{\"type\":\"string\"}},\"title\":\"URL\"},\"URLStreamHandler\":{\"type\":\"object\",\"title\":\"URLStreamHandler\"},\"供应商\":{\"type\":\"object\",\"properties\":{\"address\":{\"type\":\"string\",\"description\":\"地址\"},\"areaCode\":{\"type\":\"string\",\"description\":\"地区编码\"},\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"分类ID\"},\"contactPerson\":{\"type\":\"string\",\"description\":\"联系人\"},\"createDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"createTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"createUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"createUserIp\":{\"type\":\"string\"},\"developmentDate\":{\"type\":\"string\",\"format\":\"date-time\",\"description\":\"发展日期\"},\"email\":{\"type\":\"string\",\"description\":\"邮箱地址\"},\"enterpriseType\":{\"type\":\"string\",\"description\":\"企业类型, 国企: STATE_OWNED, 私企: PRIVATELY_OWNED\"},\"fax\":{\"type\":\"string\",\"description\":\"传真\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"industry\":{\"type\":\"string\",\"description\":\"所属行业\"},\"isForeign\":{\"type\":\"boolean\",\"description\":\"是否国外, 是: true, 否: false\"},\"legalPerson\":{\"type\":\"string\",\"description\":\"法人\"},\"mobilePhone\":{\"type\":\"string\",\"description\":\"手机\"},\"name\":{\"type\":\"string\",\"description\":\"名称\"},\"no\":{\"type\":\"string\",\"description\":\"编号\"},\"postCode\":{\"type\":\"string\",\"description\":\"邮政编码\"},\"remarks\":{\"type\":\"string\",\"description\":\"备注\"},\"shortName\":{\"type\":\"string\",\"description\":\"简称\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"状态\"},\"taxpayerNumber\":{\"type\":\"string\",\"description\":\"纳税人登记号\"},\"telephone\":{\"type\":\"string\",\"description\":\"电话\"},\"updateDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"updateUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateUserIp\":{\"type\":\"string\"}},\"title\":\"供应商\"},\"供应商下拉选择VO\":{\"type\":\"object\",\"properties\":{\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"分类ID\"},\"categoryName\":{\"type\":\"string\",\"description\":\"分类名称\"},\"suppers\":{\"type\":\"array\",\"description\":\"供应商集合\",\"items\":{\"originalRef\":\"供应商\",\"$ref\":\"#/definitions/供应商\"}}},\"title\":\"供应商下拉选择VO\"},\"保存设备Mqtt协议的配置«MQTT协议的主题配置«协议的属性配置»»\":{\"type\":\"object\",\"required\":[\"equipId\",\"mqttSetting\",\"platformGatherGatewayId\",\"platformGatherProtocolId\"],\"properties\":{\"equipId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备ID\"},\"mqttSetting\":{\"description\":\"mqtt设置\",\"originalRef\":\"MQTT协议的配置VO«MQTT协议的主题配置«协议的属性配置»»\",\"$ref\":\"#/definitions/MQTT协议的配置VO«MQTT协议的主题配置«协议的属性配置»»\"},\"platformGatherGatewayId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"网关ID\"},\"platformGatherProtocolId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"协议ID\"}},\"title\":\"保存设备Mqtt协议的配置«MQTT协议的主题配置«协议的属性配置»»\"},\"保存通道关联设备VO\":{\"type\":\"object\",\"properties\":{\"channelId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备通道ID\"},\"channelModel\":{\"type\":\"object\",\"description\":\"设备通道模型\",\"additionalProperties\":{\"type\":\"object\"}},\"equipChannels\":{\"type\":\"array\",\"description\":\"通道与设备关系集合\",\"items\":{\"originalRef\":\"通道可关联设备VO\",\"$ref\":\"#/definitions/通道可关联设备VO\"}}},\"title\":\"保存通道关联设备VO\"},\"分类列表展示VO\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"string\",\"description\":\"编码\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"isCustomized\":{\"type\":\"boolean\",\"description\":\"是否项目自定义\"},\"name\":{\"type\":\"string\",\"description\":\"名称\"},\"orderNum\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"排序号\"},\"parentId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"父级\"},\"parentName\":{\"type\":\"string\",\"description\":\"父级名称\"},\"projectId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"项目ID\"},\"projectName\":{\"type\":\"string\",\"description\":\"项目名称\"},\"remarks\":{\"type\":\"string\",\"description\":\"备注\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"状态\"}},\"title\":\"分类列表展示VO\"},\"分类树\":{\"type\":\"object\",\"properties\":{\"children\":{\"type\":\"array\",\"description\":\"下级\",\"items\":{\"originalRef\":\"分类树\",\"$ref\":\"#/definitions/分类树\"}},\"code\":{\"type\":\"string\",\"description\":\"编码\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"isCustomized\":{\"type\":\"boolean\",\"description\":\"是否项目自定义\"},\"name\":{\"type\":\"string\",\"description\":\"名称\"},\"orderNum\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"排序号\"},\"parentId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"父级\"},\"parentName\":{\"type\":\"string\",\"description\":\"父级名称\"},\"projectId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"项目ID\"},\"projectName\":{\"type\":\"string\",\"description\":\"项目名称\"},\"remarks\":{\"type\":\"string\",\"description\":\"备注\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"状态\"},\"type\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"类型1-EQUIPMENT：设备；2-GATEWAY：网关；3-PROTOCOL：协议\"}},\"title\":\"分类树\"},\"分类表\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"string\",\"description\":\"编码\"},\"createDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"createTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"createUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"createUserIp\":{\"type\":\"string\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"isCustomized\":{\"type\":\"boolean\",\"description\":\"是否项目自定义\"},\"name\":{\"type\":\"string\",\"description\":\"名称\"},\"orderNum\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"排序号\"},\"parentId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"父级\"},\"projectId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"项目ID\"},\"remarks\":{\"type\":\"string\",\"description\":\"备注\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"状态\"},\"type\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"类型1-EQUIPMENT：设备；2-GATEWAY：网关；3-PROTOCOL：协议4-SUPPLIER：供应商\"},\"updateDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"updateUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateUserIp\":{\"type\":\"string\"}},\"title\":\"分类表\"},\"创建设备功能VO\":{\"type\":\"object\",\"properties\":{\"createDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"createTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"createUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"createUserIp\":{\"type\":\"string\"},\"equipId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备ID\"},\"equipmentFeatureVOS\":{\"type\":\"array\",\"description\":\"设备功能协议集合\",\"items\":{\"originalRef\":\"设备功能操作VO\",\"$ref\":\"#/definitions/设备功能操作VO\"}},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"updateUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateUserIp\":{\"type\":\"string\"}},\"title\":\"创建设备功能VO\"},\"删除报警规则条件\":{\"type\":\"object\",\"required\":[\"type\"],\"properties\":{\"conditionId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"条件ID\"},\"equipId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备ID\"},\"equipPropertyId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"属性ID\"},\"type\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"类型:1:设备 2：属性 3：条件\"}},\"title\":\"删除报警规则条件\"},\"包含属性的设备\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备ID\"},\"name\":{\"type\":\"string\",\"description\":\"设备名称\"},\"properties\":{\"type\":\"array\",\"description\":\"属性\",\"items\":{\"originalRef\":\"设备属性\",\"$ref\":\"#/definitions/设备属性\"}}},\"title\":\"包含属性的设备\"},\"协议\":{\"type\":\"object\",\"properties\":{\"categoryDesc\":{\"type\":\"string\",\"description\":\"分类描述\"},\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"分类ID\"},\"description\":{\"type\":\"string\",\"description\":\"简介\"},\"fileContent\":{\"type\":\"string\",\"description\":\"文件内容\"},\"fileName\":{\"type\":\"string\",\"description\":\"文件名\"},\"fileUrl\":{\"type\":\"string\",\"description\":\"文件URL\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"ID\"},\"introduction\":{\"type\":\"string\",\"description\":\"详细介绍(存储base64编码)\"},\"isPrivate\":{\"type\":\"boolean\",\"description\":\"是否私有\"},\"name\":{\"type\":\"string\",\"description\":\"协议名称\"},\"orderNum\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"排序\"},\"owner\":{\"type\":\"string\",\"description\":\"拥有者\"},\"remarks\":{\"type\":\"string\",\"description\":\"备注\"},\"versionNo\":{\"type\":\"string\",\"description\":\"版本号\"}},\"title\":\"协议\"},\"协议的属性配置\":{\"type\":\"object\",\"required\":[\"identifier\",\"name\",\"select\"],\"properties\":{\"identifier\":{\"type\":\"string\",\"example\":\"temperature\",\"description\":\"属性的唯一标识符\"},\"name\":{\"type\":\"string\",\"example\":\"温度\",\"description\":\"属性名称\"},\"select\":{\"type\":\"boolean\",\"description\":\"是否选择\"}},\"title\":\"协议的属性配置\"},\"协议配置--网关采集通道展示VO\":{\"type\":\"object\",\"properties\":{\"gatewayName\":{\"type\":\"string\",\"description\":\"网关名称\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"ID\"},\"model\":{\"type\":\"object\",\"description\":\"通道模型\",\"additionalProperties\":{\"type\":\"object\"}},\"no\":{\"type\":\"string\",\"description\":\"采集口编号\"},\"projectId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"网关所属项目ID\"},\"protocolId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"通道协议ID\"},\"protocolName\":{\"type\":\"string\",\"description\":\"通道协议名称\"}},\"title\":\"协议配置--网关采集通道展示VO\"},\"告警消息\":{\"type\":\"object\",\"properties\":{\"content\":{\"type\":\"string\",\"description\":\"内容\"},\"createTime\":{\"type\":\"string\",\"format\":\"date-time\",\"description\":\"报警时间\"},\"equipId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备ID\"},\"equipPropertyId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备属性ID\"},\"equipPropertyIdentifier\":{\"type\":\"string\",\"description\":\"设备属性标识符\"},\"equipPropertyName\":{\"type\":\"string\",\"description\":\"设备属性名称\"},\"failureReason\":{\"type\":\"string\",\"description\":\"失败原因\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"ID\"},\"receiveId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"消息接收者多个用逗号拼接\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"状态0失败 1成功\"},\"type\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"告警方式1-MSG：消息2-SMS：短信3-WECHAT：微信4-EMAIL：邮件\"}},\"title\":\"告警消息\"},\"基础字典\":{\"type\":\"object\",\"properties\":{\"status\":{\"type\":\"array\",\"description\":\"状态\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}}},\"title\":\"基础字典\"},\"字典项\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"string\",\"description\":\"编码\"},\"dictCode\":{\"type\":\"string\",\"description\":\"字典编码\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"ID\"},\"name\":{\"type\":\"string\",\"description\":\"名称\"},\"orderNum\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"排序号\"},\"remarks\":{\"type\":\"string\",\"description\":\"说明\"}},\"title\":\"字典项\"},\"对象操作\":{\"type\":\"object\",\"required\":[\"id\"],\"properties\":{\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"id\"}},\"title\":\"对象操作\"},\"属性的规则列表\":{\"type\":\"object\",\"properties\":{\"allRules\":{\"type\":\"array\",\"description\":\"全部规则\",\"items\":{\"originalRef\":\"TriggerCondition\",\"$ref\":\"#/definitions/TriggerCondition\"}},\"existsRules\":{\"type\":\"array\",\"description\":\"已设置的规则\",\"items\":{\"originalRef\":\"AlarmRuleTriggerCondition\",\"$ref\":\"#/definitions/AlarmRuleTriggerCondition\"}}},\"title\":\"属性的规则列表\"},\"平台协议部署记录\":{\"type\":\"object\",\"properties\":{\"channelId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"通道ID\"},\"createDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"createTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"createUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"createUserIp\":{\"type\":\"string\"},\"endTime\":{\"type\":\"string\",\"format\":\"date-time\",\"description\":\"结束时间\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"model\":{\"type\":\"object\",\"description\":\"模型\",\"additionalProperties\":{\"type\":\"object\"}},\"startTime\":{\"type\":\"string\",\"format\":\"date-time\",\"description\":\"开始时间\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"状态\"},\"updateDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"updateUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateUserIp\":{\"type\":\"string\"}},\"title\":\"平台协议部署记录\"},\"当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表\":{\"type\":\"object\",\"properties\":{\"channelId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"通道ID\"},\"equipId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备ID\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"model\":{\"type\":\"array\",\"description\":\"模型描述\",\"items\":{\"type\":\"object\"}}},\"title\":\"当前网关物理采集口与设备的关系是1:N.并非多对多为扩展考虑,使用关联表\"},\"报警消息列表对象\":{\"type\":\"object\",\"properties\":{\"alarmType\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"告警方式1-MSG：消息2-SMS：短信3-WECHAT：微信4-EMAIL：邮件\"},\"alarmTypeName\":{\"type\":\"string\",\"description\":\"告警方式描述\"},\"content\":{\"type\":\"string\",\"description\":\"内容\"},\"createTime\":{\"type\":\"string\",\"description\":\"报警时间\"},\"equipCategoryName\":{\"type\":\"string\",\"description\":\"设备组名称\"},\"equipName\":{\"type\":\"string\",\"description\":\"设备名称\"},\"equipPropertyName\":{\"type\":\"string\",\"description\":\"属性名称\"},\"equipType\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"设备类型\"},\"equipTypeName\":{\"type\":\"string\",\"description\":\"设备类型描述\"},\"failureReason\":{\"type\":\"string\",\"description\":\"失败原因\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"状态0失败 1成功\"}},\"title\":\"报警消息列表对象\"},\"报警消息字典\":{\"type\":\"object\",\"properties\":{\"msgTemplate\":{\"type\":\"array\",\"description\":\"消息模版\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"msgType\":{\"type\":\"array\",\"description\":\"消息类型\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}}},\"title\":\"报警消息字典\"},\"改变状态通用VO\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"相关业务的主键id\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"状态, 0 启用, 9 禁用\"}},\"title\":\"改变状态通用VO\"},\"数据设置字典\":{\"type\":\"object\",\"properties\":{\"qos\":{\"type\":\"array\",\"description\":\"qos\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"topicType\":{\"type\":\"array\",\"description\":\"发布订阅类型\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}}},\"title\":\"数据设置字典\"},\"新增告警规则\":{\"type\":\"object\",\"required\":[\"equipCategoryId\",\"equipProperties\",\"triggerConditions\",\"users\"],\"properties\":{\"equipCategoryId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"分类ID\"},\"equipProperties\":{\"type\":\"array\",\"description\":\"设备属性\",\"items\":{\"originalRef\":\"设备和属性\",\"$ref\":\"#/definitions/设备和属性\"}},\"triggerConditions\":{\"type\":\"array\",\"description\":\"报警规则\",\"items\":{\"originalRef\":\"设备属性规则VO\",\"$ref\":\"#/definitions/设备属性规则VO\"}},\"users\":{\"type\":\"array\",\"description\":\"通知用户\",\"items\":{\"originalRef\":\"用户推送\",\"$ref\":\"#/definitions/用户推送\"}}},\"title\":\"新增告警规则\"},\"更新协议请求\":{\"type\":\"object\",\"required\":[\"categoryId\",\"name\",\"versionNo\"],\"properties\":{\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"分类ID\"},\"description\":{\"type\":\"string\",\"description\":\"简介\"},\"fileUrl\":{\"type\":\"string\",\"description\":\"文件URL\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"ID\"},\"introduction\":{\"type\":\"string\",\"description\":\"详细介绍(存储base64编码)\"},\"isPrivate\":{\"type\":\"boolean\",\"description\":\"是否私有\"},\"name\":{\"type\":\"string\",\"description\":\"协议名称\"},\"orderNum\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"排序\"},\"owner\":{\"type\":\"string\",\"description\":\"拥有者\"},\"remarks\":{\"type\":\"string\",\"description\":\"备注\"},\"versionNo\":{\"type\":\"string\",\"description\":\"版本号\"}},\"title\":\"更新协议请求\"},\"更新告警规则\":{\"type\":\"object\",\"required\":[\"equipId\",\"equipPropertyIds\",\"triggerConditions\",\"users\"],\"properties\":{\"equipId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备ID\"},\"equipPropertyIds\":{\"type\":\"array\",\"description\":\"属性id\",\"items\":{\"type\":\"integer\",\"format\":\"int64\"}},\"triggerConditions\":{\"type\":\"array\",\"description\":\"报警规则\",\"items\":{\"originalRef\":\"设备属性规则VO\",\"$ref\":\"#/definitions/设备属性规则VO\"}},\"users\":{\"type\":\"array\",\"description\":\"通知用户\",\"items\":{\"originalRef\":\"用户推送\",\"$ref\":\"#/definitions/用户推送\"}}},\"title\":\"更新告警规则\"},\"有报警规则的设备VO\":{\"type\":\"object\",\"properties\":{\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"分类ID\"},\"categoryName\":{\"type\":\"string\",\"description\":\"分类名称\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"ID\"},\"lastOnLineDate\":{\"type\":\"string\",\"format\":\"date-time\",\"description\":\"最后上线时间\"},\"name\":{\"type\":\"string\",\"description\":\"名称\"},\"projectId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"项目ID\"},\"projectName\":{\"type\":\"string\",\"description\":\"项目名称\"},\"protocolId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备协议\"},\"protocolName\":{\"type\":\"string\",\"description\":\"协议名称\"},\"statusName\":{\"type\":\"string\",\"description\":\"状态\"},\"type\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"类型0虚拟1实体\"},\"typeName\":{\"type\":\"string\",\"description\":\"类型名称\"}},\"title\":\"有报警规则的设备VO\"},\"机构用户\":{\"type\":\"object\",\"properties\":{\"children\":{\"type\":\"array\",\"description\":\"下级机构列表\",\"items\":{\"originalRef\":\"机构用户\",\"$ref\":\"#/definitions/机构用户\"}},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"机构id\"},\"name\":{\"type\":\"string\",\"description\":\"机构名\"},\"users\":{\"type\":\"array\",\"description\":\"用户列表\",\"items\":{\"originalRef\":\"用户推送\",\"$ref\":\"#/definitions/用户推送\"}}},\"title\":\"机构用户\"},\"添加协议请求\":{\"type\":\"object\",\"required\":[\"categoryId\",\"name\",\"versionNo\"],\"properties\":{\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"分类ID\"},\"description\":{\"type\":\"string\",\"description\":\"简介\"},\"fileUrl\":{\"type\":\"string\",\"description\":\"文件URL\"},\"introduction\":{\"type\":\"string\",\"description\":\"详细介绍(存储base64编码)\"},\"isPrivate\":{\"type\":\"boolean\",\"description\":\"是否私有\"},\"name\":{\"type\":\"string\",\"description\":\"协议名称\"},\"orderNum\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"排序\"},\"owner\":{\"type\":\"string\",\"description\":\"拥有者\"},\"remarks\":{\"type\":\"string\",\"description\":\"备注\"},\"versionNo\":{\"type\":\"string\",\"description\":\"版本号\"}},\"title\":\"添加协议请求\"},\"用户推送\":{\"type\":\"object\",\"required\":[\"id\",\"name\"],\"properties\":{\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"用户id\"},\"name\":{\"type\":\"string\",\"description\":\"姓名\"},\"selected\":{\"type\":\"boolean\",\"description\":\"是否已经选择\"},\"sendMail\":{\"type\":\"boolean\"},\"sendMassage\":{\"type\":\"boolean\"},\"sendSms\":{\"type\":\"boolean\"},\"sendWechat\":{\"type\":\"boolean\"}},\"title\":\"用户推送\"},\"简易协议VO\":{\"type\":\"object\",\"properties\":{\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"分类ID\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"ID\"},\"name\":{\"type\":\"string\",\"description\":\"协议名称\"},\"versionNo\":{\"type\":\"string\",\"description\":\"版本号\"}},\"title\":\"简易协议VO\"},\"网关协议部署记录\":{\"type\":\"object\",\"properties\":{\"createDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"createTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"createUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"createUserIp\":{\"type\":\"string\"},\"endTime\":{\"type\":\"string\",\"format\":\"date-time\",\"description\":\"结束时间\"},\"gatewayId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"网关ID\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"model\":{\"type\":\"object\",\"description\":\"模型\",\"additionalProperties\":{\"type\":\"object\"}},\"startTime\":{\"type\":\"string\",\"format\":\"date-time\",\"description\":\"开始时间\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"状态\"},\"updateDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"updateUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateUserIp\":{\"type\":\"string\"}},\"title\":\"网关协议部署记录\"},\"网关字典\":{\"type\":\"object\",\"properties\":{\"baudRateType\":{\"type\":\"array\",\"description\":\"Modbus - RTU 波特率\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"dataBitType\":{\"type\":\"array\",\"description\":\"Modbus - RTU 数据位\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"gatewayNameType\":{\"type\":\"array\",\"description\":\"网关名称\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"mqttQosType\":{\"type\":\"array\",\"description\":\"MQTT 发布订阅Qos\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"mqttTopicType\":{\"type\":\"array\",\"description\":\"MQTT 发布/订阅\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"parityBitType\":{\"type\":\"array\",\"description\":\"Modbus - RTU 检验位\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"securityModeType\":{\"type\":\"array\",\"description\":\"OPCUA 安全模式\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"securityPolicyType\":{\"type\":\"array\",\"description\":\"OPCUA 安全策略\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"serialPortType\":{\"type\":\"array\",\"description\":\"Modbus - RTU WINDOWS串口\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"stopBitType\":{\"type\":\"array\",\"description\":\"Modbus - RTU 停止位\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"timeUnitType\":{\"type\":\"array\",\"description\":\"OPCUA 时间单位\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}}},\"title\":\"网关字典\"},\"网关表\":{\"type\":\"object\",\"properties\":{\"anotherName\":{\"type\":\"string\",\"description\":\"别名、自定义名称\"},\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"分类ID\"},\"createDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"createTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"createUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"createUserIp\":{\"type\":\"string\"},\"hasDeployed\":{\"type\":\"boolean\",\"description\":\"是否已部署\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"imageUrl\":{\"type\":\"string\",\"description\":\"图片地址\"},\"ipAddress\":{\"type\":\"string\",\"description\":\"IP地址\"},\"isHard\":{\"type\":\"boolean\",\"description\":\"是否硬网关\"},\"isThirdparty\":{\"type\":\"boolean\",\"description\":\"是否第三方\"},\"name\":{\"type\":\"string\",\"description\":\"名称\"},\"no\":{\"type\":\"string\",\"description\":\"编号或网关ID\"},\"port\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"端口\"},\"projectId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"项目ID\"},\"supplierId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"供应商ID\"},\"supplierName\":{\"type\":\"string\",\"description\":\"供应商名称\"},\"updateDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"updateUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateUserIp\":{\"type\":\"string\"}},\"title\":\"网关表\"},\"网关表-列表展示数据VO\":{\"type\":\"object\",\"properties\":{\"anotherName\":{\"type\":\"string\",\"description\":\"别名、自定义名称\"},\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"分类ID\"},\"categoryName\":{\"type\":\"string\",\"description\":\"分类名称\"},\"hasDeployed\":{\"type\":\"boolean\",\"description\":\"是否已部署\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"ID\"},\"imageUrl\":{\"type\":\"string\",\"description\":\"图片地址\"},\"ipAddress\":{\"type\":\"string\",\"description\":\"IP地址\"},\"isHard\":{\"type\":\"boolean\",\"description\":\"是否硬网关\"},\"isThirdparty\":{\"type\":\"boolean\",\"description\":\"是否第三方\"},\"name\":{\"type\":\"string\",\"description\":\"名称\"},\"no\":{\"type\":\"string\",\"description\":\"编号或网关ID\"},\"port\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"端口\"},\"projectId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"项目ID\"},\"projectName\":{\"type\":\"string\",\"description\":\"项目名称\"},\"supplierId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"供应商ID\"},\"supplierName\":{\"type\":\"string\",\"description\":\"供应商名称\"}},\"title\":\"网关表-列表展示数据VO\"},\"网关详情--网关采集通道展示VO\":{\"type\":\"object\",\"properties\":{\"channelEquipNames\":{\"type\":\"array\",\"description\":\"通道连接设备名称\",\"items\":{\"type\":\"string\"}},\"gatewayName\":{\"type\":\"string\",\"description\":\"网关名称\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"ID\"},\"model\":{\"type\":\"object\",\"description\":\"通道模型\",\"additionalProperties\":{\"type\":\"object\"}},\"no\":{\"type\":\"string\",\"description\":\"采集口编号\"},\"protocolName\":{\"type\":\"string\",\"description\":\"通道协议名称\"}},\"title\":\"网关详情--网关采集通道展示VO\"},\"网关详情VO\":{\"type\":\"object\",\"properties\":{\"anotherName\":{\"type\":\"string\",\"description\":\"别名、自定义名称\"},\"categoryName\":{\"type\":\"string\",\"description\":\"分类名称\"},\"channelList\":{\"type\":\"array\",\"description\":\"网关采集通道集合\",\"items\":{\"originalRef\":\"网关详情--网关采集通道展示VO\",\"$ref\":\"#/definitions/网关详情--网关采集通道展示VO\"}},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"ID\"},\"imageUrl\":{\"type\":\"string\",\"description\":\"设备图片URL\"},\"ipAddress\":{\"type\":\"string\",\"description\":\"IP地址\"},\"isOnline\":{\"type\":\"boolean\",\"description\":\"网关是否在线\"},\"name\":{\"type\":\"string\",\"description\":\"名称\"},\"no\":{\"type\":\"string\",\"description\":\"编号或网关ID\"},\"port\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"端口\"}},\"title\":\"网关详情VO\"},\"网关采集通道\":{\"type\":\"object\",\"properties\":{\"createDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"createTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"createUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"createUserIp\":{\"type\":\"string\"},\"gatewayId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"网关ID\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"model\":{\"type\":\"object\",\"description\":\"通道模型\",\"additionalProperties\":{\"type\":\"object\"}},\"no\":{\"type\":\"string\",\"description\":\"采集口编号\"},\"protocolId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"通道协议\"},\"updateDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"updateUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateUserIp\":{\"type\":\"string\"}},\"title\":\"网关采集通道\"},\"网关采集通道--保存通道VO\":{\"type\":\"object\",\"properties\":{\"gatewayId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"网关ID\"},\"model\":{\"type\":\"object\",\"description\":\"通道模型\",\"additionalProperties\":{\"type\":\"object\"}},\"no\":{\"type\":\"string\",\"description\":\"采集口编号\"},\"protocolId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"通道协议\"}},\"title\":\"网关采集通道--保存通道VO\"},\"获取供应商实例VO\":{\"type\":\"object\",\"required\":[\"pageNum\",\"pageSize\"],\"properties\":{\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"分类ID\"},\"enterpriseType\":{\"type\":\"string\",\"description\":\"企业类型\"},\"isForeign\":{\"type\":\"boolean\",\"description\":\"是否外企\"},\"name\":{\"type\":\"string\",\"description\":\"关键字\"},\"pageNum\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"请求页码\"},\"pageSize\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"页容量\"}},\"title\":\"获取供应商实例VO\"},\"设备Modbus协议的配置\":{\"type\":\"object\",\"properties\":{\"equip\":{\"description\":\"设备信息\",\"originalRef\":\"设备概况VO\",\"$ref\":\"#/definitions/设备概况VO\"},\"featureList\":{\"type\":\"array\",\"description\":\"设备属性列表\",\"items\":{\"originalRef\":\"设备的功能，包含是否选择\",\"$ref\":\"#/definitions/设备的功能，包含是否选择\"}}},\"title\":\"设备Modbus协议的配置\"},\"设备Mqtt协议的配置\":{\"type\":\"object\",\"properties\":{\"equip\":{\"description\":\"设备信息\",\"originalRef\":\"设备概况VO\",\"$ref\":\"#/definitions/设备概况VO\"},\"mqttSetting\":{\"description\":\"mqtt设置\",\"originalRef\":\"MQTT协议的配置VO«object»\",\"$ref\":\"#/definitions/MQTT协议的配置VO«object»\"},\"properties\":{\"type\":\"array\",\"items\":{\"originalRef\":\"设备的功能，包含是否选择\",\"$ref\":\"#/definitions/设备的功能，包含是否选择\"}}},\"title\":\"设备Mqtt协议的配置\"},\"设备Mqtt协议的配置«MQTT协议的主题配置«设备的功能，包含是否选择»»\":{\"type\":\"object\",\"properties\":{\"equip\":{\"description\":\"设备信息\",\"originalRef\":\"设备概况VO\",\"$ref\":\"#/definitions/设备概况VO\"},\"mqttSetting\":{\"description\":\"mqtt设置\",\"originalRef\":\"MQTT协议的配置VO«MQTT协议的主题配置«设备的功能，包含是否选择»»\",\"$ref\":\"#/definitions/MQTT协议的配置VO«MQTT协议的主题配置«设备的功能，包含是否选择»»\"},\"properties\":{\"type\":\"array\",\"items\":{\"originalRef\":\"设备的功能，包含是否选择\",\"$ref\":\"#/definitions/设备的功能，包含是否选择\"}}},\"title\":\"设备Mqtt协议的配置«MQTT协议的主题配置«设备的功能，包含是否选择»»\"},\"设备分类-设备树\":{\"type\":\"object\",\"properties\":{\"children\":{\"type\":\"array\",\"description\":\"下级\",\"items\":{\"originalRef\":\"设备分类-设备树\",\"$ref\":\"#/definitions/设备分类-设备树\"}},\"childrenEquipmentNum\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"子分类下设备的总体数量\"},\"code\":{\"type\":\"string\",\"description\":\"编码\"},\"displayRequired\":{\"type\":\"boolean\",\"description\":\"是否需要显示\"},\"equipmentList\":{\"type\":\"array\",\"description\":\"分类下的设备\",\"items\":{\"originalRef\":\"设备表\",\"$ref\":\"#/definitions/设备表\"}},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"isCustomized\":{\"type\":\"boolean\",\"description\":\"是否项目自定义\"},\"name\":{\"type\":\"string\",\"description\":\"名称\"},\"orderNum\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"排序号\"},\"parentId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"父级\"},\"parentName\":{\"type\":\"string\",\"description\":\"父级名称\"},\"projectId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"项目ID\"},\"projectName\":{\"type\":\"string\",\"description\":\"项目名称\"},\"remarks\":{\"type\":\"string\",\"description\":\"备注\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"状态\"},\"tenantId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"租户ID\"},\"type\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"类型1-EQUIPMENT：设备；2-GATEWAY：网关；3-PROTOCOL：协议\"}},\"title\":\"设备分类-设备树\"},\"设备功能\":{\"type\":\"object\",\"properties\":{\"createDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"createTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"createUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"createUserIp\":{\"type\":\"string\"},\"equipId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备ID\"},\"equipNo\":{\"type\":\"string\",\"description\":\"设备编号\"},\"icoCode\":{\"type\":\"string\",\"description\":\"ICO标识符\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"identifier\":{\"type\":\"string\",\"description\":\"标识符\"},\"model\":{\"type\":\"object\",\"description\":\"功能模型(TSL)\",\"additionalProperties\":{\"type\":\"object\"}},\"name\":{\"type\":\"string\",\"description\":\"名称\"},\"no\":{\"type\":\"string\",\"description\":\"功能ID\"},\"orderNum\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"排序\"},\"type\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"类型1:property;2:service;3:event;在Modbus中只传1\"},\"updateDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"updateUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateUserIp\":{\"type\":\"string\"},\"value\":{\"description\":\"设备功能属性值\",\"originalRef\":\"设备属性值\",\"$ref\":\"#/definitions/设备属性值\"}},\"title\":\"设备功能\"},\"设备功能操作VO\":{\"type\":\"object\",\"properties\":{\"createDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"createTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"createUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"createUserIp\":{\"type\":\"string\"},\"equipId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备ID\"},\"icoCode\":{\"type\":\"string\",\"description\":\"ICO标识符\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"identifier\":{\"type\":\"string\",\"description\":\"标识符\"},\"model\":{\"type\":\"object\",\"description\":\"功能模型(TSL)\",\"additionalProperties\":{\"type\":\"object\"}},\"name\":{\"type\":\"string\",\"description\":\"名称\"},\"no\":{\"type\":\"string\",\"description\":\"功能ID\"},\"orderNum\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"排序\"},\"type\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"类型1:property;2:service;3:event;在Modbus中只传1\"},\"updateDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"updateUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateUserIp\":{\"type\":\"string\"}},\"title\":\"设备功能操作VO\"},\"设备历史记录及统计对象\":{\"type\":\"object\",\"properties\":{\"avgValue\":{\"type\":\"number\",\"description\":\"平均值\"},\"difference\":{\"type\":\"number\"},\"maxValue\":{\"type\":\"number\",\"description\":\"最大值\"},\"minValue\":{\"type\":\"number\",\"description\":\"最小值\"},\"totalValue\":{\"type\":\"number\",\"description\":\"累计值\"},\"type\":{\"type\":\"string\",\"description\":\"数据类型\"},\"values\":{\"type\":\"array\",\"description\":\"历史记录数据集合\",\"items\":{\"originalRef\":\"设备属性值\",\"$ref\":\"#/definitions/设备属性值\"}}},\"title\":\"设备历史记录及统计对象\"},\"设备和属性\":{\"type\":\"object\",\"required\":[\"equipId\"],\"properties\":{\"equipId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备ID\"},\"equipPropertyId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"属性ID\"}},\"title\":\"设备和属性\"},\"设备地图信息表\":{\"type\":\"object\",\"properties\":{\"anotherName\":{\"type\":\"string\",\"description\":\"别名\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"id\"},\"locationCoord\":{\"type\":\"string\",\"description\":\"位置坐标逗号拼接x轴y轴\"},\"name\":{\"type\":\"string\",\"description\":\"名称\"},\"no\":{\"type\":\"string\",\"description\":\"编号或设备ID\"}},\"title\":\"设备地图信息表\"},\"设备字典\":{\"type\":\"object\",\"properties\":{\"equipType\":{\"type\":\"array\",\"description\":\"设备类型\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"locationType\":{\"type\":\"array\",\"description\":\"布局类型\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"modbusDecimalPlaces\":{\"type\":\"array\",\"description\":\"数据小数位数\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"modbusFunctionCode\":{\"type\":\"array\",\"description\":\"功能码\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"modbusOriginalByteOrder\":{\"type\":\"array\",\"description\":\"字节顺序\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"modbusOriginalDataType\":{\"type\":\"array\",\"description\":\"数据格式\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"modbusPollingTime\":{\"type\":\"array\",\"description\":\"字节顺序\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}},\"protocolDataType\":{\"type\":\"array\",\"description\":\"数据类型\",\"items\":{\"originalRef\":\"通用id+name\",\"$ref\":\"#/definitions/通用id+name\"}}},\"title\":\"设备字典\"},\"设备对象\":{\"type\":\"object\",\"properties\":{\"equipCategoryId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备分类ID\"},\"equipCategoryName\":{\"type\":\"string\",\"description\":\"设备分类名称\"},\"equipId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备ID\"},\"equipName\":{\"type\":\"string\",\"description\":\"设备名称\"},\"properties\":{\"type\":\"array\",\"description\":\"属性ID\",\"items\":{\"originalRef\":\"设备属性对象\",\"$ref\":\"#/definitions/设备属性对象\"}}},\"title\":\"设备对象\"},\"设备属性\":{\"type\":\"object\",\"properties\":{\"equipmentId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备ID\"},\"equipmentName\":{\"type\":\"string\",\"description\":\"设备名称\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"属性ID\"},\"name\":{\"type\":\"string\",\"description\":\"属性名称\"}},\"title\":\"设备属性\"},\"设备属性值\":{\"type\":\"object\",\"properties\":{\"time\":{\"type\":\"string\",\"description\":\"时间\"},\"value\":{\"type\":\"string\",\"description\":\"值\"}},\"title\":\"设备属性值\"},\"设备属性对象\":{\"type\":\"object\",\"properties\":{\"equipPropertyId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"属性ID\"},\"equipPropertyIdentifier\":{\"type\":\"string\",\"description\":\"属性标识符\"},\"rule\":{\"type\":\"boolean\"}},\"title\":\"设备属性对象\"},\"设备属性规则\":{\"type\":\"object\",\"required\":[\"condDesc\",\"condParam\"],\"properties\":{\"condDesc\":{\"type\":\"string\",\"description\":\"条件表达式\"},\"condParam\":{\"type\":\"string\",\"description\":\"条件参数\"},\"conditionId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"条件ID\"},\"equipPropertyId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"属性ID\"},\"equipPropertyIdentifier\":{\"type\":\"string\",\"description\":\"属性标识符\"},\"msgTemplate\":{\"type\":\"string\",\"description\":\"消息模板\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"状态    0启用9未启用\"},\"userNum\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"用户数\"}},\"title\":\"设备属性规则\"},\"设备属性规则VO\":{\"type\":\"object\",\"required\":[\"id\",\"status\"],\"properties\":{\"condParam\":{\"type\":\"string\",\"example\":\"X:value1,Y:value2,M:value3\",\"description\":\"条件参数\"},\"id\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"条件表达式ID\"},\"msgTemplate\":{\"type\":\"string\",\"description\":\"消息模板\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"状态    1启用0未启用\"}},\"title\":\"设备属性规则VO\"},\"设备操作VO\":{\"type\":\"object\",\"properties\":{\"anotherName\":{\"type\":\"string\",\"description\":\"别名\"},\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"分类ID\"},\"extra\":{\"type\":\"object\",\"description\":\"扩展信息\",\"additionalProperties\":{\"type\":\"object\"}},\"featureIsCustomized\":{\"type\":\"boolean\",\"description\":\"功能是否自定义\"},\"icoUrl\":{\"type\":\"string\",\"description\":\"ICO地址\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"ID\"},\"ipAddress\":{\"type\":\"string\",\"description\":\"IP地址\"},\"locationCoord\":{\"type\":\"string\",\"description\":\"位置坐标逗号拼接x轴y轴\"},\"locationImageUrl\":{\"type\":\"string\",\"description\":\"位置图\"},\"locationType\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"位置类型1-MAP：地图2-LAYOUT：布局图\"},\"model\":{\"type\":\"string\",\"description\":\"型号\"},\"name\":{\"type\":\"string\",\"description\":\"名称\"},\"no\":{\"type\":\"string\",\"description\":\"编号或设备ID\"},\"offlineDelayTime\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"离线延迟\"},\"offlineDelayTimeUnit\":{\"type\":\"string\",\"description\":\"离线延迟时间单位MICROSECOND:微秒MILLISECOND:毫秒CENTISECOND:厘秒SECOND:秒MINUTE:分HOUR:小时\"},\"port\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"端口\"},\"projectId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"项目ID\"},\"protocolId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备协议\"},\"protocolName\":{\"type\":\"string\",\"description\":\"协议名称\"},\"supplierId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"供应商ID(DICT_ITEM_ID)\"},\"supplierName\":{\"type\":\"string\",\"description\":\"供应商名称\"},\"type\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"类型0虚拟1实体\"},\"typeName\":{\"type\":\"string\",\"description\":\"类型名称\"}},\"title\":\"设备操作VO\"},\"设备概况VO\":{\"type\":\"object\",\"properties\":{\"categoryName\":{\"type\":\"string\",\"description\":\"分类名称\"},\"equipId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备ID\"},\"equipName\":{\"type\":\"string\",\"description\":\"设备名称\"},\"gatewayId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"网关ID\"},\"lastOnLineDate\":{\"type\":\"string\",\"format\":\"date-time\",\"description\":\"最后上线时间\"},\"platformGatherGatewayId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"平台采集网关ID\"},\"platformGatherProtocolId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"平台采集协议ID\"},\"platformGatherProtocolName\":{\"type\":\"string\",\"description\":\"协议名称\"},\"projectName\":{\"type\":\"string\",\"description\":\"项目名称\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"设备状态\"},\"type\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"设备类型\"},\"typeName\":{\"type\":\"string\",\"description\":\"设备类型文本\"}},\"title\":\"设备概况VO\"},\"设备的功能，包含是否选择\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"属性ID\"},\"identifier\":{\"type\":\"string\",\"description\":\"标识符\"},\"model\":{\"type\":\"object\",\"description\":\"功能模型(TSL)\",\"additionalProperties\":{\"type\":\"object\"}},\"name\":{\"type\":\"string\",\"description\":\"名称\"},\"orderNum\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"排序\"},\"select\":{\"type\":\"boolean\",\"description\":\"是否已选择\"}},\"title\":\"设备的功能，包含是否选择\"},\"设备组下的设备(包含设备协议、网关协议)列表\":{\"type\":\"object\",\"properties\":{\"equipId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备ID\"},\"equipName\":{\"type\":\"string\",\"description\":\"设备名称\"},\"equipProtocol\":{\"type\":\"string\",\"description\":\"设备协议\"},\"gatewayProtocol\":{\"type\":\"string\",\"description\":\"网关协议\"},\"platformGatherGatewayId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"网关ID\"},\"platformGatherProtocolId\":{\"type\":\"string\",\"description\":\"平台采集协议ID\"}},\"title\":\"设备组下的设备(包含设备协议、网关协议)列表\"},\"设备表\":{\"type\":\"object\",\"properties\":{\"anotherName\":{\"type\":\"string\",\"description\":\"别名\"},\"categoryCode\":{\"type\":\"string\",\"description\":\"分类code\"},\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"分类ID\"},\"categoryName\":{\"type\":\"string\",\"description\":\"分类名称\"},\"createDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"createTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"createUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"createUserIp\":{\"type\":\"string\"},\"equipState\":{\"type\":\"string\",\"description\":\"状态\"},\"extra\":{\"type\":\"object\",\"description\":\"扩展信息\",\"additionalProperties\":{\"type\":\"object\"}},\"featureIsCustomized\":{\"type\":\"boolean\",\"description\":\"功能是否自定义\"},\"featureList\":{\"type\":\"array\",\"description\":\"功能集合\",\"items\":{\"originalRef\":\"设备功能\",\"$ref\":\"#/definitions/设备功能\"}},\"icoUrl\":{\"type\":\"string\",\"description\":\"ICO地址\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"ipAddress\":{\"type\":\"string\",\"description\":\"IP地址\"},\"lastOnLineDate\":{\"type\":\"string\",\"format\":\"date-time\",\"description\":\"最后上线时间\"},\"locationCoord\":{\"type\":\"string\",\"description\":\"位置坐标逗号拼接x轴y轴\"},\"locationImageUrl\":{\"type\":\"string\",\"description\":\"位置图\"},\"locationType\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"位置类型1-MAP：地图2-LAYOUT：布局图\"},\"model\":{\"type\":\"string\",\"description\":\"型号\"},\"name\":{\"type\":\"string\",\"description\":\"名称\"},\"no\":{\"type\":\"string\",\"description\":\"编号或设备ID\"},\"offlineDelayTime\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"离线延迟\"},\"offlineDelayTimeUnit\":{\"type\":\"string\",\"description\":\"离线延迟时间单位MICROSECOND:微秒MILLISECOND:毫秒CENTISECOND:厘秒SECOND:秒MINUTE:分HOUR:小时\"},\"port\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"端口\"},\"projectId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"项目ID\"},\"projectName\":{\"type\":\"string\",\"description\":\"项目名称\"},\"protocolId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备协议\"},\"protocolName\":{\"type\":\"string\",\"description\":\"协议名称\"},\"supplierId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"供应商ID(DICT_ITEM_ID)\"},\"supplierName\":{\"type\":\"string\",\"description\":\"供应商名称\"},\"tenantId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"租户ID\"},\"type\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"类型0虚拟1实体\"},\"typeName\":{\"type\":\"string\",\"description\":\"类型名称\"},\"updateDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"updateUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateUserIp\":{\"type\":\"string\"}},\"title\":\"设备表\"},\"设备规则查询对象\":{\"type\":\"object\",\"properties\":{\"categoryName\":{\"type\":\"string\",\"description\":\"分类名称\"},\"equipId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备ID\"},\"equipName\":{\"type\":\"string\",\"description\":\"设备名称\"},\"lastOnLineDate\":{\"type\":\"string\",\"format\":\"date-time\",\"description\":\"最后上线时间\"},\"platformGatherChannelId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"平台采集ID\"},\"platformGatherGatewayId\":{\"type\":\"string\",\"description\":\"平台采集网关ID\"},\"platformGatherProtocolId\":{\"type\":\"string\",\"description\":\"平台采集协议ID\"},\"platformGatherProtocolName\":{\"type\":\"string\",\"description\":\"平台采集协议名称\"},\"projectName\":{\"type\":\"string\",\"description\":\"项目名称\"},\"protocolName\":{\"type\":\"string\",\"description\":\"协议名称\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"状态\"},\"type\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"类型0虚拟1实体\"},\"typeName\":{\"type\":\"string\",\"description\":\"类型名称\"}},\"title\":\"设备规则查询对象\"},\"设置选择属性\":{\"type\":\"object\",\"required\":[\"equipId\",\"platformGatherGatewayId\",\"platformGatherProtocolId\",\"propertyId\",\"select\"],\"properties\":{\"equipId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备ID\"},\"platformGatherGatewayId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"网关ID\"},\"platformGatherProtocolId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"协议ID\"},\"propertyId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"属性ID\"},\"select\":{\"type\":\"boolean\",\"description\":\"是否选择\"}},\"title\":\"设置选择属性\"},\"运营方-客户信(租户)\":{\"type\":\"object\",\"properties\":{\"address\":{\"type\":\"string\",\"description\":\"客户公司地址\"},\"adminId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"租户管理员唯一标识\"},\"code\":{\"type\":\"string\",\"description\":\"编码(企业标识)\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"唯一标识\"},\"legalPerson\":{\"type\":\"string\",\"description\":\"法人\"},\"name\":{\"type\":\"string\",\"description\":\"客户公司名称\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"租户状态(0：启用，9：停用，及其他状态值）\"}},\"title\":\"运营方-客户信(租户)\"},\"通用id+name\":{\"type\":\"object\",\"properties\":{\"desc\":{\"type\":\"string\",\"description\":\"描述信息\"},\"id\":{\"type\":\"object\",\"description\":\"id\"}},\"title\":\"通用id+name\"},\"通道可关联设备VO\":{\"type\":\"object\",\"properties\":{\"channelId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备通道ID\"},\"equipGroupName\":{\"type\":\"string\",\"description\":\"设备分类名称\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"设备ID\"},\"model\":{\"type\":\"array\",\"description\":\"模型描述\",\"items\":{\"type\":\"object\"}},\"name\":{\"type\":\"string\",\"description\":\"设备名称\"}},\"title\":\"通道可关联设备VO\"},\"项目模板表\":{\"type\":\"object\",\"properties\":{\"createDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"createTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"createUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"createUserIp\":{\"type\":\"string\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"updateUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateUserIp\":{\"type\":\"string\"}},\"title\":\"项目模板表\"},\"项目菜单关联维护表\":{\"type\":\"object\",\"properties\":{\"menus\":{\"type\":\"array\",\"description\":\"项目所分配的菜单ID集合\",\"items\":{\"type\":\"integer\",\"format\":\"int64\"}},\"projectId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"项目ID\"}},\"title\":\"项目菜单关联维护表\"},\"项目表\":{\"type\":\"object\",\"properties\":{\"contactWay\":{\"type\":\"string\",\"description\":\"联系方式\"},\"createDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"createTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"createUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"createUserIp\":{\"type\":\"string\"},\"deploymentEnvironment\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"部署环境1本地2云端\"},\"endDate\":{\"type\":\"string\",\"format\":\"date-time\",\"description\":\"结束日期\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"locationImageUrl\":{\"type\":\"string\",\"description\":\"位置图\"},\"locationType\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"位置类型1-MAP：地图2-LAYOUT：布局图\"},\"menus\":{\"type\":\"array\",\"description\":\"项目所分配的菜单ID集合\",\"items\":{\"type\":\"integer\",\"format\":\"int64\"}},\"name\":{\"type\":\"string\",\"description\":\"项目名称\"},\"responsiblePerson\":{\"type\":\"string\",\"description\":\"项目负责人\"},\"startDate\":{\"type\":\"string\",\"format\":\"date-time\",\"description\":\"开始日期\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"状态\"},\"templateId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"模板IDV1.0版，统一默认为0，表示自定义\"},\"tenantContactPerson\":{\"type\":\"string\",\"description\":\"客户联系人\"},\"tenantContactWay\":{\"type\":\"string\",\"description\":\"客户联系方式\"},\"tenantId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"客户ID\"},\"tenantLogoUrl\":{\"type\":\"string\",\"description\":\"客户LOGO，LOGO在MONOI的存放地址\"},\"tenantName\":{\"type\":\"string\",\"description\":\"客户姓名\"},\"updateDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"updateUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateUserIp\":{\"type\":\"string\"}},\"title\":\"项目表\"},\"项目资源菜单表\":{\"type\":\"object\",\"properties\":{\"children\":{\"type\":\"array\",\"description\":\"子资源菜单\",\"items\":{\"originalRef\":\"项目资源菜单表\",\"$ref\":\"#/definitions/项目资源菜单表\"}},\"createDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"createTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"createUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"createUserIp\":{\"type\":\"string\"},\"enable\":{\"type\":\"boolean\",\"description\":\"是否需要默认选中，在查询回显时，前端根据此字段判断是否进行checkbox选中\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"projectId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"项目ID\"},\"resourceMenuId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"资源菜单ID(VBP中资源菜单表的主键)\"},\"resourceMenuName\":{\"type\":\"string\",\"description\":\"资源菜单名称\"},\"updateDeptId\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"updateUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"updateUserIp\":{\"type\":\"string\"}},\"title\":\"项目资源菜单表\"}}}");
+
+/***/ }),
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(41);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
  /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(20);
-            var content = __webpack_require__(41);
+            var content = __webpack_require__(42);
 
             content = content.__esModule ? content.default : content;
 
@@ -15635,83 +15793,35 @@ var update = api(content, options);
 module.exports = content.locals || {};
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(22);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".app-container {\n  background: #999999;\n}\n.sortable-ghost {\n  opacity: .8;\n  color: #fff !important;\n  background: #42b983 !important;\n}\n", ""]);
+exports.push([module.i, ".app-container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  padding: 10px 5px 10px 10px;\n  /*background: #999999;*/\n}\n.sortable-ghost {\n  opacity: .8;\n  color: #fff !important;\n  background: #42b983 !important;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_f31ea1a2_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(43);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_f31ea1a2_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_f31ea1a2_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_f31ea1a2_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_f31ea1a2_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_f31ea1a2_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-/* 43 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var api = __webpack_require__(20);
-            var content = __webpack_require__(44);
-
-            content = content.__esModule ? content.default : content;
-
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = api(content, options);
-
-
-
-module.exports = content.locals || {};
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_f31ea1a2_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_f31ea1a2_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_f31ea1a2_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_f31ea1a2_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_f31ea1a2_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_f31ea1a2_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 /* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(22);
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-exports.push([module.i, ".icon-star[data-v-f31ea1a2] {\n  margin-right: 2px;\n}\n.drag-handler[data-v-f31ea1a2] {\n  width: 20px;\n  height: 20px;\n  cursor: pointer;\n}\n.show-d[data-v-f31ea1a2] {\n  margin-top: 15px;\n}\n", ""]);
-// Exports
-module.exports = exports;
-
-
-/***/ }),
-/* 45 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(46);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-/* 46 */
-/***/ (function(module, exports, __webpack_require__) {
-
 var api = __webpack_require__(20);
-            var content = __webpack_require__(47);
+            var content = __webpack_require__(45);
 
             content = content.__esModule ? content.default : content;
 
@@ -15731,7 +15841,55 @@ var update = api(content, options);
 module.exports = content.locals || {};
 
 /***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(22);
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, "@charset \"UTF-8\";\n[data-v-f31ea1a2] .el-table__body-wrapper {\n  scrollbar-arrow-color: #000;\n  /*顶部/底部图标颜色*/\n  scrollbar-face-color: #333;\n  /*滚动条颜色*/\n  scrollbar-shadow-color: #999;\n  /*滚动条阴影颜色*/\n}\n[data-v-f31ea1a2] .el-table__body-wrapper::-webkit-scrollbar {\n  width: 6px;\n  height: 6px;\n  background-color: #F5F5F5;\n}\n[data-v-f31ea1a2] .el-table__body-wrapper::-webkit-scrollbar-track {\n  /*background-color: #f8f8f8;*/\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5;\n}\n[data-v-f31ea1a2] .el-table__body-wrapper::-webkit-scrollbar-thumb {\n  /*background-color: #f8f8f8;*/\n  border-radius: 3px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #1890ff;\n}\n.table-box[data-v-f31ea1a2] {\n  flex: 1;\n  position: relative;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  background: #fff;\n  overflow: hidden;\n}\n.icon-star[data-v-f31ea1a2] {\n  margin-right: 2px;\n}\n.drag-handler[data-v-f31ea1a2] {\n  width: 20px;\n  height: 20px;\n  cursor: pointer;\n}\n.show-d[data-v-f31ea1a2] {\n  margin-top: 15px;\n}\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+/* 46 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(47);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
 /* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(20);
+            var content = __webpack_require__(48);
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+
+
+module.exports = content.locals || {};
+
+/***/ }),
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -15744,7 +15902,7 @@ module.exports = exports;
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports =
@@ -15838,37 +15996,37 @@ module.exports =
 /* 0 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(49);
+module.exports = __webpack_require__(50);
 
 /***/ }),
 /* 1 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(57);
+module.exports = __webpack_require__(58);
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(55);
+module.exports = __webpack_require__(56);
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(58);
+module.exports = __webpack_require__(59);
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(59);
+module.exports = __webpack_require__(60);
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(60);
+module.exports = __webpack_require__(61);
 
 /***/ }),
 /* 6 */
@@ -15880,229 +16038,229 @@ module.exports = __webpack_require__(1);
 /* 7 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(62);
+module.exports = __webpack_require__(63);
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(66);
+module.exports = __webpack_require__(67);
 
 /***/ }),
 /* 9 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(67);
+module.exports = __webpack_require__(68);
 
 /***/ }),
 /* 10 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(69);
+module.exports = __webpack_require__(70);
 
 /***/ }),
 /* 11 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(51);
+module.exports = __webpack_require__(52);
 
 /***/ }),
 /* 12 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(70);
+module.exports = __webpack_require__(71);
 
 /***/ }),
 /* 13 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(71);
+module.exports = __webpack_require__(72);
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(61);
+module.exports = __webpack_require__(62);
 
 /***/ }),
 /* 15 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(73);
+module.exports = __webpack_require__(74);
 
 /***/ }),
 /* 16 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(75);
+module.exports = __webpack_require__(76);
 
 /***/ }),
 /* 17 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(76);
+module.exports = __webpack_require__(77);
 
 /***/ }),
 /* 18 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(56);
+module.exports = __webpack_require__(57);
 
 /***/ }),
 /* 19 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(68);
+module.exports = __webpack_require__(69);
 
 /***/ }),
 /* 20 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(50);
+module.exports = __webpack_require__(51);
 
 /***/ }),
 /* 21 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(77);
+module.exports = __webpack_require__(78);
 
 /***/ }),
 /* 22 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(78);
+module.exports = __webpack_require__(79);
 
 /***/ }),
 /* 23 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(79);
+module.exports = __webpack_require__(80);
 
 /***/ }),
 /* 24 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(80);
+module.exports = __webpack_require__(81);
 
 /***/ }),
 /* 25 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(74);
+module.exports = __webpack_require__(75);
 
 /***/ }),
 /* 26 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(81);
+module.exports = __webpack_require__(82);
 
 /***/ }),
 /* 27 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(82);
+module.exports = __webpack_require__(83);
 
 /***/ }),
 /* 28 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(83);
+module.exports = __webpack_require__(84);
 
 /***/ }),
 /* 29 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(84);
+module.exports = __webpack_require__(85);
 
 /***/ }),
 /* 30 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(85);
+module.exports = __webpack_require__(86);
 
 /***/ }),
 /* 31 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(64);
+module.exports = __webpack_require__(65);
 
 /***/ }),
 /* 32 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(86);
+module.exports = __webpack_require__(87);
 
 /***/ }),
 /* 33 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(87);
+module.exports = __webpack_require__(88);
 
 /***/ }),
 /* 34 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(88);
+module.exports = __webpack_require__(89);
 
 /***/ }),
 /* 35 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(89);
+module.exports = __webpack_require__(90);
 
 /***/ }),
 /* 36 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(90);
+module.exports = __webpack_require__(91);
 
 /***/ }),
 /* 37 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(91);
+module.exports = __webpack_require__(92);
 
 /***/ }),
 /* 38 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(92);
+module.exports = __webpack_require__(93);
 
 /***/ }),
 /* 39 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(97);
+module.exports = __webpack_require__(98);
 
 /***/ }),
 /* 40 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(98);
+module.exports = __webpack_require__(99);
 
 /***/ }),
 /* 41 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(195);
+module.exports = __webpack_require__(196);
 
 /***/ }),
 /* 42 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(196);
+module.exports = __webpack_require__(197);
 
 /***/ }),
 /* 43 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(197);
+module.exports = __webpack_require__(198);
 
 /***/ }),
 /* 44 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(198);
+module.exports = __webpack_require__(199);
 
 /***/ }),
 /* 45 */
@@ -57358,7 +57516,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 /******/ ])["default"];
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57367,11 +57525,11 @@ if (typeof window !== 'undefined' && window.Vue) {
 exports.__esModule = true;
 exports.validateRangeInOneMonth = exports.extractTimeFormat = exports.extractDateFormat = exports.nextYear = exports.prevYear = exports.nextMonth = exports.prevMonth = exports.changeYearMonthAndClampDate = exports.timeWithinRange = exports.limitTimeRange = exports.clearMilliseconds = exports.clearTime = exports.modifyWithTimeString = exports.modifyTime = exports.modifyDate = exports.range = exports.getRangeMinutes = exports.getMonthDays = exports.getPrevMonthLastDays = exports.getRangeHours = exports.getWeekNumber = exports.getStartDateOfMonth = exports.nextDate = exports.prevDate = exports.getFirstDayOfMonth = exports.getDayCountOfYear = exports.getDayCountOfMonth = exports.parseDate = exports.formatDate = exports.isDateObject = exports.isDate = exports.toDate = exports.getI18nSettings = undefined;
 
-var _date = __webpack_require__(50);
+var _date = __webpack_require__(51);
 
 var _date2 = _interopRequireDefault(_date);
 
-var _locale = __webpack_require__(51);
+var _locale = __webpack_require__(52);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -57684,7 +57842,7 @@ var validateRangeInOneMonth = exports.validateRangeInOneMonth = function validat
 };
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58058,7 +58216,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
 })(undefined);
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58067,7 +58225,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
 exports.__esModule = true;
 exports.i18n = exports.use = exports.t = undefined;
 
-var _zhCN = __webpack_require__(52);
+var _zhCN = __webpack_require__(53);
 
 var _zhCN2 = _interopRequireDefault(_zhCN);
 
@@ -58075,11 +58233,11 @@ var _vue = __webpack_require__(1);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _deepmerge = __webpack_require__(53);
+var _deepmerge = __webpack_require__(54);
 
 var _deepmerge2 = _interopRequireDefault(_deepmerge);
 
-var _format = __webpack_require__(54);
+var _format = __webpack_require__(55);
 
 var _format2 = _interopRequireDefault(_format);
 
@@ -58127,7 +58285,7 @@ var i18n = exports.i18n = function i18n(fn) {
 exports.default = { use: use, t: t, i18n: i18n };
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58256,7 +58414,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58360,7 +58518,7 @@ module.exports = deepmerge_1;
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58412,7 +58570,7 @@ exports.default = function (Vue) {
   return template;
 };
 
-var _util = __webpack_require__(55);
+var _util = __webpack_require__(56);
 
 var RE_NARGS = /(%|)\{([0-9a-zA-Z_]+)\}/g;
 /**
@@ -58422,7 +58580,7 @@ var RE_NARGS = /(%|)\{([0-9a-zA-Z_]+)\}/g;
  */
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58444,7 +58602,7 @@ var _vue = __webpack_require__(1);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _types = __webpack_require__(56);
+var _types = __webpack_require__(57);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -58696,7 +58854,7 @@ function objToArray(obj) {
 }
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58732,7 +58890,7 @@ var isDefined = exports.isDefined = function isDefined(val) {
 };
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58972,7 +59130,7 @@ var isInContainer = exports.isInContainer = function isInContainer(el, container
 };
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59014,7 +59172,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59022,7 +59180,7 @@ exports.default = {
 
 exports.__esModule = true;
 
-var _locale = __webpack_require__(51);
+var _locale = __webpack_require__(52);
 
 exports.default = {
   methods: {
@@ -59037,7 +59195,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59049,11 +59207,11 @@ var _vue = __webpack_require__(1);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _popup = __webpack_require__(61);
+var _popup = __webpack_require__(62);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var PopperJS = _vue2.default.prototype.$isServer ? function () {} : __webpack_require__(65);
+var PopperJS = _vue2.default.prototype.$isServer ? function () {} : __webpack_require__(66);
 var stop = function stop(e) {
   return e.stopPropagation();
 };
@@ -59245,7 +59403,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59258,19 +59416,19 @@ var _vue = __webpack_require__(1);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _merge = __webpack_require__(62);
+var _merge = __webpack_require__(63);
 
 var _merge2 = _interopRequireDefault(_merge);
 
-var _popupManager = __webpack_require__(63);
+var _popupManager = __webpack_require__(64);
 
 var _popupManager2 = _interopRequireDefault(_popupManager);
 
-var _scrollbarWidth = __webpack_require__(64);
+var _scrollbarWidth = __webpack_require__(65);
 
 var _scrollbarWidth2 = _interopRequireDefault(_scrollbarWidth);
 
-var _dom = __webpack_require__(57);
+var _dom = __webpack_require__(58);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -59484,7 +59642,7 @@ exports.default = {
 exports.PopupManager = _popupManager2.default;
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59511,7 +59669,7 @@ exports.default = function (target) {
 ;
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59523,7 +59681,7 @@ var _vue = __webpack_require__(1);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _dom = __webpack_require__(57);
+var _dom = __webpack_require__(58);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -59722,7 +59880,7 @@ if (!_vue2.default.prototype.$isServer) {
 exports.default = PopupManager;
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59767,7 +59925,7 @@ var scrollBarWidth = void 0;
 ;
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61030,7 +61188,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 });
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports =
@@ -61227,21 +61385,21 @@ function normalizeComponent (
 /***/ 11:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(67);
+module.exports = __webpack_require__(68);
 
 /***/ }),
 
 /***/ 21:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(68);
+module.exports = __webpack_require__(69);
 
 /***/ }),
 
 /***/ 4:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(58);
+module.exports = __webpack_require__(59);
 
 /***/ }),
 
@@ -62018,14 +62176,14 @@ input.install = function (Vue) {
 /***/ 9:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(62);
+module.exports = __webpack_require__(63);
 
 /***/ })
 
 /******/ });
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62033,7 +62191,7 @@ module.exports = __webpack_require__(62);
 
 exports.__esModule = true;
 
-var _util = __webpack_require__(55);
+var _util = __webpack_require__(56);
 
 /**
  * Show migrating guide in browser console.
@@ -62100,7 +62258,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62118,7 +62276,7 @@ function isKorean(text) {
 }
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62130,7 +62288,7 @@ var _vue = __webpack_require__(1);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _dom = __webpack_require__(57);
+var _dom = __webpack_require__(58);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -62203,7 +62361,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports =
@@ -62564,7 +62722,7 @@ src_button.install = function (Vue) {
 /******/ });
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62573,7 +62731,7 @@ src_button.install = function (Vue) {
 exports.__esModule = true;
 exports.removeResizeListener = exports.addResizeListener = undefined;
 
-var _resizeObserverPolyfill = __webpack_require__(72);
+var _resizeObserverPolyfill = __webpack_require__(73);
 
 var _resizeObserverPolyfill2 = _interopRequireDefault(_resizeObserverPolyfill);
 
@@ -62627,7 +62785,7 @@ var removeResizeListener = exports.removeResizeListener = function removeResizeL
 };
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -63564,12 +63722,12 @@ var index = (function () {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(2)))
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* eslint-disable no-undefined */
 
-var throttle = __webpack_require__(74);
+var throttle = __webpack_require__(75);
 
 /**
  * Debounce execution of a function. Debouncing, unlike throttling,
@@ -63591,7 +63749,7 @@ module.exports = function ( delay, atBegin, callback ) {
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports) {
 
 /* eslint-disable no-undefined,no-param-reassign,no-shadow */
@@ -63688,7 +63846,7 @@ module.exports = function ( delay, noTrailing, callback, debounceMode ) {
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports =
@@ -63885,7 +64043,7 @@ function normalizeComponent (
 /***/ 4:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(58);
+module.exports = __webpack_require__(59);
 
 /***/ }),
 
@@ -64319,7 +64477,7 @@ src_checkbox.install = function (Vue) {
 /******/ });
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports =
@@ -64718,35 +64876,35 @@ main.install = function (Vue) {
 /***/ 16:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(71);
+module.exports = __webpack_require__(72);
 
 /***/ }),
 
 /***/ 2:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(57);
+module.exports = __webpack_require__(58);
 
 /***/ }),
 
 /***/ 3:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(55);
+module.exports = __webpack_require__(56);
 
 /***/ }),
 
 /***/ 39:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(64);
+module.exports = __webpack_require__(65);
 
 /***/ })
 
 /******/ });
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64754,7 +64912,7 @@ module.exports = __webpack_require__(64);
 
 exports.__esModule = true;
 
-var _dom = __webpack_require__(57);
+var _dom = __webpack_require__(58);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -64843,7 +65001,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64864,7 +65022,7 @@ exports.default = function (ref) {
 ;
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64876,14 +65034,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.isVNode = isVNode;
 
-var _util = __webpack_require__(55);
+var _util = __webpack_require__(56);
 
 function isVNode(node) {
   return node !== null && (typeof node === 'undefined' ? 'undefined' : _typeof(node)) === 'object' && (0, _util.hasOwn)(node, 'componentOptions');
 };
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports) {
 
 var nestRE = /^(attrs|props|on|nativeOn|class|style|hook)$/
@@ -64939,7 +65097,7 @@ function mergeFn (a, b) {
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports =
@@ -65332,28 +65490,28 @@ main.install = function (Vue) {
 /***/ 17:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(73);
+module.exports = __webpack_require__(74);
 
 /***/ }),
 
 /***/ 2:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(57);
+module.exports = __webpack_require__(58);
 
 /***/ }),
 
 /***/ 3:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(55);
+module.exports = __webpack_require__(56);
 
 /***/ }),
 
 /***/ 5:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(60);
+module.exports = __webpack_require__(61);
 
 /***/ }),
 
@@ -65367,7 +65525,7 @@ module.exports = __webpack_require__(1);
 /******/ });
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -65411,7 +65569,7 @@ function scrollIntoView(container, selected) {
 }
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -65543,7 +65701,7 @@ aria.Utils.keys = {
 exports.default = aria.Utils;
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports =
@@ -65809,7 +65967,7 @@ button_group.install = function (Vue) {
 /******/ });
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports =
@@ -66117,7 +66275,7 @@ tag.install = function (Vue) {
 /******/ });
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports =
@@ -66314,7 +66472,7 @@ function normalizeComponent (
 /***/ 4:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(58);
+module.exports = __webpack_require__(59);
 
 /***/ }),
 
@@ -66434,7 +66592,7 @@ checkbox_group.install = function (Vue) {
 /******/ });
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -66475,7 +66633,7 @@ exports.default = function (instance, callback) {
    */
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports =
@@ -67055,11 +67213,11 @@ progress.install = function (Vue) {
 /******/ });
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var throttle = __webpack_require__(74);
-var debounce = __webpack_require__(73);
+var throttle = __webpack_require__(75);
+var debounce = __webpack_require__(74);
 
 module.exports = {
 	throttle: throttle,
@@ -67068,7 +67226,7 @@ module.exports = {
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports =
@@ -67265,25 +67423,25 @@ function normalizeComponent (
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(55);
+module.exports = __webpack_require__(56);
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(58);
+module.exports = __webpack_require__(59);
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(60);
+module.exports = __webpack_require__(61);
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(59);
+module.exports = __webpack_require__(60);
 
 /***/ }),
 /* 7 */,
@@ -67292,54 +67450,54 @@ module.exports = __webpack_require__(59);
 /* 10 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(66);
+module.exports = __webpack_require__(67);
 
 /***/ }),
 /* 11 */,
 /* 12 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(69);
+module.exports = __webpack_require__(70);
 
 /***/ }),
 /* 13 */,
 /* 14 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(76);
+module.exports = __webpack_require__(77);
 
 /***/ }),
 /* 15 */,
 /* 16 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(71);
+module.exports = __webpack_require__(72);
 
 /***/ }),
 /* 17 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(73);
+module.exports = __webpack_require__(74);
 
 /***/ }),
 /* 18 */,
 /* 19 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(51);
+module.exports = __webpack_require__(52);
 
 /***/ }),
 /* 20 */,
 /* 21 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(68);
+module.exports = __webpack_require__(69);
 
 /***/ }),
 /* 22 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(78);
+module.exports = __webpack_require__(79);
 
 /***/ }),
 /* 23 */,
@@ -67353,7 +67511,7 @@ module.exports = __webpack_require__(78);
 /* 31 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(82);
+module.exports = __webpack_require__(83);
 
 /***/ }),
 /* 32 */,
@@ -67614,7 +67772,7 @@ component.options.__file = "packages/select/src/option.vue"
 /* 38 */
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(85);
+module.exports = __webpack_require__(86);
 
 /***/ }),
 /* 39 */,
@@ -69273,7 +69431,7 @@ src_select.install = function (Vue) {
 /******/ ]);
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports =
@@ -69470,7 +69628,7 @@ function normalizeComponent (
 /***/ 3:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(55);
+module.exports = __webpack_require__(56);
 
 /***/ }),
 
@@ -69728,7 +69886,7 @@ component.options.__file = "packages/select/src/option.vue"
 /***/ 4:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(58);
+module.exports = __webpack_require__(59);
 
 /***/ }),
 
@@ -69752,14 +69910,14 @@ _select_src_option__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"].install = fun
 /******/ });
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(93);
+module.exports = __webpack_require__(94);
 
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69777,9 +69935,9 @@ module.exports = __webpack_require__(93);
 
 
 
-var UserAgent_DEPRECATED = __webpack_require__(94);
+var UserAgent_DEPRECATED = __webpack_require__(95);
 
-var isEventSupported = __webpack_require__(95);
+var isEventSupported = __webpack_require__(96);
 
 
 // Reasonable defaults
@@ -69947,7 +70105,7 @@ module.exports = normalizeWheel;
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports) {
 
 /**
@@ -70235,7 +70393,7 @@ module.exports = UserAgent_DEPRECATED;
 
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70252,7 +70410,7 @@ module.exports = UserAgent_DEPRECATED;
 
 
 
-var ExecutionEnvironment = __webpack_require__(96);
+var ExecutionEnvironment = __webpack_require__(97);
 
 var useHasFeature;
 if (ExecutionEnvironment.canUseDOM) {
@@ -70305,7 +70463,7 @@ module.exports = isEventSupported;
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70355,7 +70513,7 @@ module.exports = ExecutionEnvironment;
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70365,7 +70523,7 @@ exports.__esModule = true;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _ariaUtils = __webpack_require__(83);
+var _ariaUtils = __webpack_require__(84);
 
 var _ariaUtils2 = _interopRequireDefault(_ariaUtils);
 
@@ -70465,18 +70623,18 @@ aria.Dialog.prototype.trapFocus = function (event) {
 exports.default = aria.Dialog;
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(99);
+/* harmony import */ var babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(100);
 /* harmony import */ var babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(138);
+/* harmony import */ var babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(139);
 /* harmony import */ var babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(171);
-/* harmony import */ var _validator___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(172);
-/* harmony import */ var _messages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(194);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(172);
+/* harmony import */ var _validator___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(173);
+/* harmony import */ var _messages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(195);
 
 
 
@@ -70741,7 +70899,7 @@ Schema.messages = _messages__WEBPACK_IMPORTED_MODULE_4__["messages"];
 /* harmony default export */ __webpack_exports__["default"] = (Schema);
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70749,7 +70907,7 @@ Schema.messages = _messages__WEBPACK_IMPORTED_MODULE_4__["messages"];
 
 exports.__esModule = true;
 
-var _assign = __webpack_require__(100);
+var _assign = __webpack_require__(101);
 
 var _assign2 = _interopRequireDefault(_assign);
 
@@ -70770,38 +70928,38 @@ exports.default = _assign2.default || function (target) {
 };
 
 /***/ }),
-/* 100 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(101), __esModule: true };
-
-/***/ }),
 /* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(102);
-module.exports = __webpack_require__(105).Object.assign;
-
+module.exports = { "default": __webpack_require__(102), __esModule: true };
 
 /***/ }),
 /* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// 19.1.3.1 Object.assign(target, source)
-var $export = __webpack_require__(103);
-
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(119) });
+__webpack_require__(103);
+module.exports = __webpack_require__(106).Object.assign;
 
 
 /***/ }),
 /* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(104);
-var core = __webpack_require__(105);
-var ctx = __webpack_require__(106);
-var hide = __webpack_require__(108);
-var has = __webpack_require__(118);
+// 19.1.3.1 Object.assign(target, source)
+var $export = __webpack_require__(104);
+
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(120) });
+
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var global = __webpack_require__(105);
+var core = __webpack_require__(106);
+var ctx = __webpack_require__(107);
+var hide = __webpack_require__(109);
+var has = __webpack_require__(119);
 var PROTOTYPE = 'prototype';
 
 var $export = function (type, name, source) {
@@ -70862,7 +71020,7 @@ module.exports = $export;
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports) {
 
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -70874,7 +71032,7 @@ if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports) {
 
 var core = module.exports = { version: '2.6.11' };
@@ -70882,11 +71040,11 @@ if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
-var aFunction = __webpack_require__(107);
+var aFunction = __webpack_require__(108);
 module.exports = function (fn, that, length) {
   aFunction(fn);
   if (that === undefined) return fn;
@@ -70908,7 +71066,7 @@ module.exports = function (fn, that, length) {
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -70918,12 +71076,12 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP = __webpack_require__(109);
-var createDesc = __webpack_require__(117);
-module.exports = __webpack_require__(113) ? function (object, key, value) {
+var dP = __webpack_require__(110);
+var createDesc = __webpack_require__(118);
+module.exports = __webpack_require__(114) ? function (object, key, value) {
   return dP.f(object, key, createDesc(1, value));
 } : function (object, key, value) {
   object[key] = value;
@@ -70932,15 +71090,15 @@ module.exports = __webpack_require__(113) ? function (object, key, value) {
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var anObject = __webpack_require__(110);
-var IE8_DOM_DEFINE = __webpack_require__(112);
-var toPrimitive = __webpack_require__(116);
+var anObject = __webpack_require__(111);
+var IE8_DOM_DEFINE = __webpack_require__(113);
+var toPrimitive = __webpack_require__(117);
 var dP = Object.defineProperty;
 
-exports.f = __webpack_require__(113) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+exports.f = __webpack_require__(114) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
   anObject(O);
   P = toPrimitive(P, true);
   anObject(Attributes);
@@ -70954,10 +71112,10 @@ exports.f = __webpack_require__(113) ? Object.defineProperty : function definePr
 
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(111);
+var isObject = __webpack_require__(112);
 module.exports = function (it) {
   if (!isObject(it)) throw TypeError(it + ' is not an object!');
   return it;
@@ -70965,7 +71123,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -70974,26 +71132,26 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 112 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = !__webpack_require__(113) && !__webpack_require__(114)(function () {
-  return Object.defineProperty(__webpack_require__(115)('div'), 'a', { get: function () { return 7; } }).a != 7;
-});
-
-
-/***/ }),
 /* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// Thank's IE8 for his funny defineProperty
-module.exports = !__webpack_require__(114)(function () {
-  return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
+module.exports = !__webpack_require__(114) && !__webpack_require__(115)(function () {
+  return Object.defineProperty(__webpack_require__(116)('div'), 'a', { get: function () { return 7; } }).a != 7;
 });
 
 
 /***/ }),
 /* 114 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Thank's IE8 for his funny defineProperty
+module.exports = !__webpack_require__(115)(function () {
+  return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
+});
+
+
+/***/ }),
+/* 115 */
 /***/ (function(module, exports) {
 
 module.exports = function (exec) {
@@ -71006,11 +71164,11 @@ module.exports = function (exec) {
 
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(111);
-var document = __webpack_require__(104).document;
+var isObject = __webpack_require__(112);
+var document = __webpack_require__(105).document;
 // typeof document.createElement is 'object' in old IE
 var is = isObject(document) && isObject(document.createElement);
 module.exports = function (it) {
@@ -71019,11 +71177,11 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
-var isObject = __webpack_require__(111);
+var isObject = __webpack_require__(112);
 // instead of the ES6 spec version, we didn't implement @@toPrimitive case
 // and the second argument - flag - preferred type is a string
 module.exports = function (it, S) {
@@ -71037,7 +71195,7 @@ module.exports = function (it, S) {
 
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports) {
 
 module.exports = function (bitmap, value) {
@@ -71051,7 +71209,7 @@ module.exports = function (bitmap, value) {
 
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports) {
 
 var hasOwnProperty = {}.hasOwnProperty;
@@ -71061,22 +71219,22 @@ module.exports = function (it, key) {
 
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
-var DESCRIPTORS = __webpack_require__(113);
-var getKeys = __webpack_require__(120);
-var gOPS = __webpack_require__(135);
-var pIE = __webpack_require__(136);
-var toObject = __webpack_require__(137);
-var IObject = __webpack_require__(123);
+var DESCRIPTORS = __webpack_require__(114);
+var getKeys = __webpack_require__(121);
+var gOPS = __webpack_require__(136);
+var pIE = __webpack_require__(137);
+var toObject = __webpack_require__(138);
+var IObject = __webpack_require__(124);
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
-module.exports = !$assign || __webpack_require__(114)(function () {
+module.exports = !$assign || __webpack_require__(115)(function () {
   var A = {};
   var B = {};
   // eslint-disable-next-line no-undef
@@ -71106,12 +71264,12 @@ module.exports = !$assign || __webpack_require__(114)(function () {
 
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = __webpack_require__(121);
-var enumBugKeys = __webpack_require__(134);
+var $keys = __webpack_require__(122);
+var enumBugKeys = __webpack_require__(135);
 
 module.exports = Object.keys || function keys(O) {
   return $keys(O, enumBugKeys);
@@ -71119,13 +71277,13 @@ module.exports = Object.keys || function keys(O) {
 
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var has = __webpack_require__(118);
-var toIObject = __webpack_require__(122);
-var arrayIndexOf = __webpack_require__(126)(false);
-var IE_PROTO = __webpack_require__(130)('IE_PROTO');
+var has = __webpack_require__(119);
+var toIObject = __webpack_require__(123);
+var arrayIndexOf = __webpack_require__(127)(false);
+var IE_PROTO = __webpack_require__(131)('IE_PROTO');
 
 module.exports = function (object, names) {
   var O = toIObject(object);
@@ -71142,23 +71300,23 @@ module.exports = function (object, names) {
 
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(123);
-var defined = __webpack_require__(125);
+var IObject = __webpack_require__(124);
+var defined = __webpack_require__(126);
 module.exports = function (it) {
   return IObject(defined(it));
 };
 
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(124);
+var cof = __webpack_require__(125);
 // eslint-disable-next-line no-prototype-builtins
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
@@ -71166,7 +71324,7 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -71177,7 +71335,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports) {
 
 // 7.2.1 RequireObjectCoercible(argument)
@@ -71188,14 +71346,14 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
 // true  -> Array#includes
-var toIObject = __webpack_require__(122);
-var toLength = __webpack_require__(127);
-var toAbsoluteIndex = __webpack_require__(129);
+var toIObject = __webpack_require__(123);
+var toLength = __webpack_require__(128);
+var toAbsoluteIndex = __webpack_require__(130);
 module.exports = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
     var O = toIObject($this);
@@ -71217,11 +71375,11 @@ module.exports = function (IS_INCLUDES) {
 
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
-var toInteger = __webpack_require__(128);
+var toInteger = __webpack_require__(129);
 var min = Math.min;
 module.exports = function (it) {
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
@@ -71229,7 +71387,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports) {
 
 // 7.1.4 ToInteger
@@ -71241,10 +71399,10 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(128);
+var toInteger = __webpack_require__(129);
 var max = Math.max;
 var min = Math.min;
 module.exports = function (index, length) {
@@ -71254,22 +71412,22 @@ module.exports = function (index, length) {
 
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var shared = __webpack_require__(131)('keys');
-var uid = __webpack_require__(133);
+var shared = __webpack_require__(132)('keys');
+var uid = __webpack_require__(134);
 module.exports = function (key) {
   return shared[key] || (shared[key] = uid(key));
 };
 
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var core = __webpack_require__(105);
-var global = __webpack_require__(104);
+var core = __webpack_require__(106);
+var global = __webpack_require__(105);
 var SHARED = '__core-js_shared__';
 var store = global[SHARED] || (global[SHARED] = {});
 
@@ -71277,20 +71435,20 @@ var store = global[SHARED] || (global[SHARED] = {});
   return store[key] || (store[key] = value !== undefined ? value : {});
 })('versions', []).push({
   version: core.version,
-  mode: __webpack_require__(132) ? 'pure' : 'global',
+  mode: __webpack_require__(133) ? 'pure' : 'global',
   copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
 });
 
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports) {
 
 module.exports = true;
 
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports) {
 
 var id = 0;
@@ -71301,7 +71459,7 @@ module.exports = function (key) {
 
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -71311,32 +71469,32 @@ module.exports = (
 
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports) {
 
 exports.f = {}.propertyIsEnumerable;
 
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.13 ToObject(argument)
-var defined = __webpack_require__(125);
+var defined = __webpack_require__(126);
 module.exports = function (it) {
   return Object(defined(it));
 };
 
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -71344,11 +71502,11 @@ module.exports = function (it) {
 
 exports.__esModule = true;
 
-var _iterator = __webpack_require__(139);
+var _iterator = __webpack_require__(140);
 
 var _iterator2 = _interopRequireDefault(_iterator);
 
-var _symbol = __webpack_require__(158);
+var _symbol = __webpack_require__(159);
 
 var _symbol2 = _interopRequireDefault(_symbol);
 
@@ -71363,30 +71521,30 @@ exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.d
 };
 
 /***/ }),
-/* 139 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(140), __esModule: true };
-
-/***/ }),
 /* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(141);
-__webpack_require__(153);
-module.exports = __webpack_require__(157).f('iterator');
-
+module.exports = { "default": __webpack_require__(141), __esModule: true };
 
 /***/ }),
 /* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(142);
+__webpack_require__(154);
+module.exports = __webpack_require__(158).f('iterator');
+
+
+/***/ }),
+/* 142 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
-var $at = __webpack_require__(142)(true);
+var $at = __webpack_require__(143)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(143)(String, 'String', function (iterated) {
+__webpack_require__(144)(String, 'String', function (iterated) {
   this._t = String(iterated); // target
   this._i = 0;                // next index
 // 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -71402,11 +71560,11 @@ __webpack_require__(143)(String, 'String', function (iterated) {
 
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(128);
-var defined = __webpack_require__(125);
+var toInteger = __webpack_require__(129);
+var defined = __webpack_require__(126);
 // true  -> String#at
 // false -> String#codePointAt
 module.exports = function (TO_STRING) {
@@ -71425,20 +71583,20 @@ module.exports = function (TO_STRING) {
 
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var LIBRARY = __webpack_require__(132);
-var $export = __webpack_require__(103);
-var redefine = __webpack_require__(144);
-var hide = __webpack_require__(108);
-var Iterators = __webpack_require__(145);
-var $iterCreate = __webpack_require__(146);
-var setToStringTag = __webpack_require__(150);
-var getPrototypeOf = __webpack_require__(152);
-var ITERATOR = __webpack_require__(151)('iterator');
+var LIBRARY = __webpack_require__(133);
+var $export = __webpack_require__(104);
+var redefine = __webpack_require__(145);
+var hide = __webpack_require__(109);
+var Iterators = __webpack_require__(146);
+var $iterCreate = __webpack_require__(147);
+var setToStringTag = __webpack_require__(151);
+var getPrototypeOf = __webpack_require__(153);
+var ITERATOR = __webpack_require__(152)('iterator');
 var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
 var FF_ITERATOR = '@@iterator';
 var KEYS = 'keys';
@@ -71501,32 +71659,32 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
 
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(108);
+module.exports = __webpack_require__(109);
 
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports) {
 
 module.exports = {};
 
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var create = __webpack_require__(147);
-var descriptor = __webpack_require__(117);
-var setToStringTag = __webpack_require__(150);
+var create = __webpack_require__(148);
+var descriptor = __webpack_require__(118);
+var setToStringTag = __webpack_require__(151);
 var IteratorPrototype = {};
 
 // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-__webpack_require__(108)(IteratorPrototype, __webpack_require__(151)('iterator'), function () { return this; });
+__webpack_require__(109)(IteratorPrototype, __webpack_require__(152)('iterator'), function () { return this; });
 
 module.exports = function (Constructor, NAME, next) {
   Constructor.prototype = create(IteratorPrototype, { next: descriptor(1, next) });
@@ -71535,27 +71693,27 @@ module.exports = function (Constructor, NAME, next) {
 
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-var anObject = __webpack_require__(110);
-var dPs = __webpack_require__(148);
-var enumBugKeys = __webpack_require__(134);
-var IE_PROTO = __webpack_require__(130)('IE_PROTO');
+var anObject = __webpack_require__(111);
+var dPs = __webpack_require__(149);
+var enumBugKeys = __webpack_require__(135);
+var IE_PROTO = __webpack_require__(131)('IE_PROTO');
 var Empty = function () { /* empty */ };
 var PROTOTYPE = 'prototype';
 
 // Create object with fake `null` prototype: use iframe Object with cleared prototype
 var createDict = function () {
   // Thrash, waste and sodomy: IE GC bug
-  var iframe = __webpack_require__(115)('iframe');
+  var iframe = __webpack_require__(116)('iframe');
   var i = enumBugKeys.length;
   var lt = '<';
   var gt = '>';
   var iframeDocument;
   iframe.style.display = 'none';
-  __webpack_require__(149).appendChild(iframe);
+  __webpack_require__(150).appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -71582,14 +71740,14 @@ module.exports = Object.create || function create(O, Properties) {
 
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP = __webpack_require__(109);
-var anObject = __webpack_require__(110);
-var getKeys = __webpack_require__(120);
+var dP = __webpack_require__(110);
+var anObject = __webpack_require__(111);
+var getKeys = __webpack_require__(121);
 
-module.exports = __webpack_require__(113) ? Object.defineProperties : function defineProperties(O, Properties) {
+module.exports = __webpack_require__(114) ? Object.defineProperties : function defineProperties(O, Properties) {
   anObject(O);
   var keys = getKeys(Properties);
   var length = keys.length;
@@ -71601,20 +71759,20 @@ module.exports = __webpack_require__(113) ? Object.defineProperties : function d
 
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var document = __webpack_require__(104).document;
+var document = __webpack_require__(105).document;
 module.exports = document && document.documentElement;
 
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var def = __webpack_require__(109).f;
-var has = __webpack_require__(118);
-var TAG = __webpack_require__(151)('toStringTag');
+var def = __webpack_require__(110).f;
+var has = __webpack_require__(119);
+var TAG = __webpack_require__(152)('toStringTag');
 
 module.exports = function (it, tag, stat) {
   if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
@@ -71622,12 +71780,12 @@ module.exports = function (it, tag, stat) {
 
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var store = __webpack_require__(131)('wks');
-var uid = __webpack_require__(133);
-var Symbol = __webpack_require__(104).Symbol;
+var store = __webpack_require__(132)('wks');
+var uid = __webpack_require__(134);
+var Symbol = __webpack_require__(105).Symbol;
 var USE_SYMBOL = typeof Symbol == 'function';
 
 var $exports = module.exports = function (name) {
@@ -71639,13 +71797,13 @@ $exports.store = store;
 
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-var has = __webpack_require__(118);
-var toObject = __webpack_require__(137);
-var IE_PROTO = __webpack_require__(130)('IE_PROTO');
+var has = __webpack_require__(119);
+var toObject = __webpack_require__(138);
+var IE_PROTO = __webpack_require__(131)('IE_PROTO');
 var ObjectProto = Object.prototype;
 
 module.exports = Object.getPrototypeOf || function (O) {
@@ -71658,14 +71816,14 @@ module.exports = Object.getPrototypeOf || function (O) {
 
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(154);
-var global = __webpack_require__(104);
-var hide = __webpack_require__(108);
-var Iterators = __webpack_require__(145);
-var TO_STRING_TAG = __webpack_require__(151)('toStringTag');
+__webpack_require__(155);
+var global = __webpack_require__(105);
+var hide = __webpack_require__(109);
+var Iterators = __webpack_require__(146);
+var TO_STRING_TAG = __webpack_require__(152)('toStringTag');
 
 var DOMIterables = ('CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,' +
   'DOMTokenList,DataTransferItemList,FileList,HTMLAllCollection,HTMLCollection,HTMLFormElement,HTMLSelectElement,' +
@@ -71683,21 +71841,21 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var addToUnscopables = __webpack_require__(155);
-var step = __webpack_require__(156);
-var Iterators = __webpack_require__(145);
-var toIObject = __webpack_require__(122);
+var addToUnscopables = __webpack_require__(156);
+var step = __webpack_require__(157);
+var Iterators = __webpack_require__(146);
+var toIObject = __webpack_require__(123);
 
 // 22.1.3.4 Array.prototype.entries()
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(143)(Array, 'Array', function (iterated, kind) {
+module.exports = __webpack_require__(144)(Array, 'Array', function (iterated, kind) {
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
@@ -71724,14 +71882,14 @@ addToUnscopables('entries');
 
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports) {
 
 module.exports = function () { /* empty */ };
 
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports) {
 
 module.exports = function (done, value) {
@@ -71740,63 +71898,63 @@ module.exports = function (done, value) {
 
 
 /***/ }),
-/* 157 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports.f = __webpack_require__(151);
-
-
-/***/ }),
 /* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(159), __esModule: true };
+exports.f = __webpack_require__(152);
+
 
 /***/ }),
 /* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(160);
-__webpack_require__(168);
-__webpack_require__(169);
-__webpack_require__(170);
-module.exports = __webpack_require__(105).Symbol;
-
+module.exports = { "default": __webpack_require__(160), __esModule: true };
 
 /***/ }),
 /* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(161);
+__webpack_require__(169);
+__webpack_require__(170);
+__webpack_require__(171);
+module.exports = __webpack_require__(106).Symbol;
+
+
+/***/ }),
+/* 161 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 // ECMAScript 6 symbols shim
-var global = __webpack_require__(104);
-var has = __webpack_require__(118);
-var DESCRIPTORS = __webpack_require__(113);
-var $export = __webpack_require__(103);
-var redefine = __webpack_require__(144);
-var META = __webpack_require__(161).KEY;
-var $fails = __webpack_require__(114);
-var shared = __webpack_require__(131);
-var setToStringTag = __webpack_require__(150);
-var uid = __webpack_require__(133);
-var wks = __webpack_require__(151);
-var wksExt = __webpack_require__(157);
-var wksDefine = __webpack_require__(162);
-var enumKeys = __webpack_require__(163);
-var isArray = __webpack_require__(164);
-var anObject = __webpack_require__(110);
-var isObject = __webpack_require__(111);
-var toObject = __webpack_require__(137);
-var toIObject = __webpack_require__(122);
-var toPrimitive = __webpack_require__(116);
-var createDesc = __webpack_require__(117);
-var _create = __webpack_require__(147);
-var gOPNExt = __webpack_require__(165);
-var $GOPD = __webpack_require__(167);
-var $GOPS = __webpack_require__(135);
-var $DP = __webpack_require__(109);
-var $keys = __webpack_require__(120);
+var global = __webpack_require__(105);
+var has = __webpack_require__(119);
+var DESCRIPTORS = __webpack_require__(114);
+var $export = __webpack_require__(104);
+var redefine = __webpack_require__(145);
+var META = __webpack_require__(162).KEY;
+var $fails = __webpack_require__(115);
+var shared = __webpack_require__(132);
+var setToStringTag = __webpack_require__(151);
+var uid = __webpack_require__(134);
+var wks = __webpack_require__(152);
+var wksExt = __webpack_require__(158);
+var wksDefine = __webpack_require__(163);
+var enumKeys = __webpack_require__(164);
+var isArray = __webpack_require__(165);
+var anObject = __webpack_require__(111);
+var isObject = __webpack_require__(112);
+var toObject = __webpack_require__(138);
+var toIObject = __webpack_require__(123);
+var toPrimitive = __webpack_require__(117);
+var createDesc = __webpack_require__(118);
+var _create = __webpack_require__(148);
+var gOPNExt = __webpack_require__(166);
+var $GOPD = __webpack_require__(168);
+var $GOPS = __webpack_require__(136);
+var $DP = __webpack_require__(110);
+var $keys = __webpack_require__(121);
 var gOPD = $GOPD.f;
 var dP = $DP.f;
 var gOPN = gOPNExt.f;
@@ -71919,11 +72077,11 @@ if (!USE_NATIVE) {
 
   $GOPD.f = $getOwnPropertyDescriptor;
   $DP.f = $defineProperty;
-  __webpack_require__(166).f = gOPNExt.f = $getOwnPropertyNames;
-  __webpack_require__(136).f = $propertyIsEnumerable;
+  __webpack_require__(167).f = gOPNExt.f = $getOwnPropertyNames;
+  __webpack_require__(137).f = $propertyIsEnumerable;
   $GOPS.f = $getOwnPropertySymbols;
 
-  if (DESCRIPTORS && !__webpack_require__(132)) {
+  if (DESCRIPTORS && !__webpack_require__(133)) {
     redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
   }
 
@@ -72007,7 +72165,7 @@ $JSON && $export($export.S + $export.F * (!USE_NATIVE || $fails(function () {
 });
 
 // 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
-$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(108)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
+$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(109)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
 // 19.4.3.5 Symbol.prototype[@@toStringTag]
 setToStringTag($Symbol, 'Symbol');
 // 20.2.1.9 Math[@@toStringTag]
@@ -72017,18 +72175,18 @@ setToStringTag(global.JSON, 'JSON', true);
 
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var META = __webpack_require__(133)('meta');
-var isObject = __webpack_require__(111);
-var has = __webpack_require__(118);
-var setDesc = __webpack_require__(109).f;
+var META = __webpack_require__(134)('meta');
+var isObject = __webpack_require__(112);
+var has = __webpack_require__(119);
+var setDesc = __webpack_require__(110).f;
 var id = 0;
 var isExtensible = Object.isExtensible || function () {
   return true;
 };
-var FREEZE = !__webpack_require__(114)(function () {
+var FREEZE = !__webpack_require__(115)(function () {
   return isExtensible(Object.preventExtensions({}));
 });
 var setMeta = function (it) {
@@ -72076,14 +72234,14 @@ var meta = module.exports = {
 
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(104);
-var core = __webpack_require__(105);
-var LIBRARY = __webpack_require__(132);
-var wksExt = __webpack_require__(157);
-var defineProperty = __webpack_require__(109).f;
+var global = __webpack_require__(105);
+var core = __webpack_require__(106);
+var LIBRARY = __webpack_require__(133);
+var wksExt = __webpack_require__(158);
+var defineProperty = __webpack_require__(110).f;
 module.exports = function (name) {
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
   if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: wksExt.f(name) });
@@ -72091,13 +72249,13 @@ module.exports = function (name) {
 
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // all enumerable object keys, includes symbols
-var getKeys = __webpack_require__(120);
-var gOPS = __webpack_require__(135);
-var pIE = __webpack_require__(136);
+var getKeys = __webpack_require__(121);
+var gOPS = __webpack_require__(136);
+var pIE = __webpack_require__(137);
 module.exports = function (it) {
   var result = getKeys(it);
   var getSymbols = gOPS.f;
@@ -72112,23 +72270,23 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 164 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
-var cof = __webpack_require__(124);
+var cof = __webpack_require__(125);
 module.exports = Array.isArray || function isArray(arg) {
   return cof(arg) == 'Array';
 };
 
 
 /***/ }),
-/* 165 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-var toIObject = __webpack_require__(122);
-var gOPN = __webpack_require__(166).f;
+var toIObject = __webpack_require__(123);
+var gOPN = __webpack_require__(167).f;
 var toString = {}.toString;
 
 var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
@@ -72148,12 +72306,12 @@ module.exports.f = function getOwnPropertyNames(it) {
 
 
 /***/ }),
-/* 166 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys = __webpack_require__(121);
-var hiddenKeys = __webpack_require__(134).concat('length', 'prototype');
+var $keys = __webpack_require__(122);
+var hiddenKeys = __webpack_require__(135).concat('length', 'prototype');
 
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
   return $keys(O, hiddenKeys);
@@ -72161,18 +72319,18 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var pIE = __webpack_require__(136);
-var createDesc = __webpack_require__(117);
-var toIObject = __webpack_require__(122);
-var toPrimitive = __webpack_require__(116);
-var has = __webpack_require__(118);
-var IE8_DOM_DEFINE = __webpack_require__(112);
+var pIE = __webpack_require__(137);
+var createDesc = __webpack_require__(118);
+var toIObject = __webpack_require__(123);
+var toPrimitive = __webpack_require__(117);
+var has = __webpack_require__(119);
+var IE8_DOM_DEFINE = __webpack_require__(113);
 var gOPD = Object.getOwnPropertyDescriptor;
 
-exports.f = __webpack_require__(113) ? gOPD : function getOwnPropertyDescriptor(O, P) {
+exports.f = __webpack_require__(114) ? gOPD : function getOwnPropertyDescriptor(O, P) {
   O = toIObject(O);
   P = toPrimitive(P, true);
   if (IE8_DOM_DEFINE) try {
@@ -72183,27 +72341,27 @@ exports.f = __webpack_require__(113) ? gOPD : function getOwnPropertyDescriptor(
 
 
 /***/ }),
-/* 168 */
+/* 169 */
 /***/ (function(module, exports) {
 
-
-
-/***/ }),
-/* 169 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(162)('asyncIterator');
 
 
 /***/ }),
 /* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(162)('observable');
+__webpack_require__(163)('asyncIterator');
 
 
 /***/ }),
 /* 171 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(163)('observable');
+
+
+/***/ }),
+/* 172 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72215,9 +72373,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "asyncMap", function() { return asyncMap; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "complementError", function() { return complementError; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deepMerge", function() { return deepMerge; });
-/* harmony import */ var babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(99);
+/* harmony import */ var babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(100);
 /* harmony import */ var babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(138);
+/* harmony import */ var babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(139);
 /* harmony import */ var babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -72409,25 +72567,25 @@ function deepMerge(target, source) {
 }
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _string__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(173);
-/* harmony import */ var _method__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(181);
-/* harmony import */ var _number__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(182);
-/* harmony import */ var _boolean__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(183);
-/* harmony import */ var _regexp__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(184);
-/* harmony import */ var _integer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(185);
-/* harmony import */ var _float__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(186);
-/* harmony import */ var _array__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(187);
-/* harmony import */ var _object__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(188);
-/* harmony import */ var _enum__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(189);
-/* harmony import */ var _pattern__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(190);
-/* harmony import */ var _date__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(191);
-/* harmony import */ var _required__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(192);
-/* harmony import */ var _type__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(193);
+/* harmony import */ var _string__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(174);
+/* harmony import */ var _method__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(182);
+/* harmony import */ var _number__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(183);
+/* harmony import */ var _boolean__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(184);
+/* harmony import */ var _regexp__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(185);
+/* harmony import */ var _integer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(186);
+/* harmony import */ var _float__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(187);
+/* harmony import */ var _array__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(188);
+/* harmony import */ var _object__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(189);
+/* harmony import */ var _enum__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(190);
+/* harmony import */ var _pattern__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(191);
+/* harmony import */ var _date__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(192);
+/* harmony import */ var _required__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(193);
+/* harmony import */ var _type__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(194);
 
 
 
@@ -72463,13 +72621,13 @@ __webpack_require__.r(__webpack_exports__);
 });
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(174);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(171);
+/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(175);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(172);
 
 
 
@@ -72506,17 +72664,17 @@ function string(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["default"] = (string);
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _required__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(175);
-/* harmony import */ var _whitespace__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(176);
-/* harmony import */ var _type__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(177);
-/* harmony import */ var _range__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(178);
-/* harmony import */ var _enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(179);
-/* harmony import */ var _pattern__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(180);
+/* harmony import */ var _required__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(176);
+/* harmony import */ var _whitespace__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(177);
+/* harmony import */ var _type__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(178);
+/* harmony import */ var _range__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(179);
+/* harmony import */ var _enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(180);
+/* harmony import */ var _pattern__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(181);
 
 
 
@@ -72534,12 +72692,12 @@ __webpack_require__.r(__webpack_exports__);
 });
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(171);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(172);
 
 
 /**
@@ -72562,12 +72720,12 @@ function required(rule, value, source, errors, options, type) {
 /* harmony default export */ __webpack_exports__["default"] = (required);
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(171);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(172);
 
 
 /**
@@ -72590,15 +72748,15 @@ function whitespace(rule, value, source, errors, options) {
 /* harmony default export */ __webpack_exports__["default"] = (whitespace);
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(138);
+/* harmony import */ var babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(139);
 /* harmony import */ var babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(171);
-/* harmony import */ var _required__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(175);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(172);
+/* harmony import */ var _required__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(176);
 
 
 
@@ -72689,12 +72847,12 @@ function type(rule, value, source, errors, options) {
 /* harmony default export */ __webpack_exports__["default"] = (type);
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(171);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(172);
 
 
 /**
@@ -72755,12 +72913,12 @@ function range(rule, value, source, errors, options) {
 /* harmony default export */ __webpack_exports__["default"] = (range);
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(171);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(172);
 
 var ENUM = 'enum';
 
@@ -72785,12 +72943,12 @@ function enumerable(rule, value, source, errors, options) {
 /* harmony default export */ __webpack_exports__["default"] = (enumerable);
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(171);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(172);
 
 
 /**
@@ -72826,13 +72984,13 @@ function pattern(rule, value, source, errors, options) {
 /* harmony default export */ __webpack_exports__["default"] = (pattern);
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(174);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(171);
+/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(175);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(172);
 
 
 
@@ -72864,13 +73022,13 @@ function method(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["default"] = (method);
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(174);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(171);
+/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(175);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(172);
 
 
 
@@ -72903,13 +73061,13 @@ function number(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["default"] = (number);
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(171);
-/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(174);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(172);
+/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(175);
 
 
 
@@ -72941,13 +73099,13 @@ function boolean(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["default"] = (boolean);
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(174);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(171);
+/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(175);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(172);
 
 
 
@@ -72979,13 +73137,13 @@ function regexp(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["default"] = (regexp);
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(174);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(171);
+/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(175);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(172);
 
 
 
@@ -73018,13 +73176,13 @@ function integer(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["default"] = (integer);
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(174);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(171);
+/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(175);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(172);
 
 
 
@@ -73057,13 +73215,13 @@ function floatFn(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["default"] = (floatFn);
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(174);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(171);
+/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(175);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(172);
 
 
 /**
@@ -73095,13 +73253,13 @@ function array(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["default"] = (array);
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(174);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(171);
+/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(175);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(172);
 
 
 
@@ -73133,13 +73291,13 @@ function object(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["default"] = (object);
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(174);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(171);
+/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(175);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(172);
 
 
 var ENUM = 'enum';
@@ -73172,13 +73330,13 @@ function enumerable(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["default"] = (enumerable);
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(174);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(171);
+/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(175);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(172);
 
 
 
@@ -73213,13 +73371,13 @@ function pattern(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["default"] = (pattern);
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(174);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(171);
+/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(175);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(172);
 
 
 
@@ -73254,14 +73412,14 @@ function date(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["default"] = (date);
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(138);
+/* harmony import */ var babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(139);
 /* harmony import */ var babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(174);
+/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(175);
 
 
 
@@ -73275,13 +73433,13 @@ function required(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["default"] = (required);
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(174);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(171);
+/* harmony import */ var _rule___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(175);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(172);
 
 
 
@@ -73304,7 +73462,7 @@ function type(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["default"] = (type);
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73369,7 +73527,7 @@ function newMessages() {
 var messages = newMessages();
 
 /***/ }),
-/* 195 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports =
@@ -73566,7 +73724,7 @@ function normalizeComponent (
 /***/ 10:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(66);
+module.exports = __webpack_require__(67);
 
 /***/ }),
 
@@ -74065,14 +74223,14 @@ input_number.install = function (Vue) {
 /***/ 2:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(57);
+module.exports = __webpack_require__(58);
 
 /***/ }),
 
 /***/ 22:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(78);
+module.exports = __webpack_require__(79);
 
 /***/ }),
 
@@ -74114,7 +74272,7 @@ module.exports = __webpack_require__(78);
 /******/ });
 
 /***/ }),
-/* 196 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports =
@@ -74311,56 +74469,56 @@ function normalizeComponent (
 /***/ 14:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(76);
+module.exports = __webpack_require__(77);
 
 /***/ }),
 
 /***/ 18:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(75);
+module.exports = __webpack_require__(76);
 
 /***/ }),
 
 /***/ 21:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(68);
+module.exports = __webpack_require__(69);
 
 /***/ }),
 
 /***/ 26:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(80);
+module.exports = __webpack_require__(81);
 
 /***/ }),
 
 /***/ 3:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(55);
+module.exports = __webpack_require__(56);
 
 /***/ }),
 
 /***/ 31:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(82);
+module.exports = __webpack_require__(83);
 
 /***/ }),
 
 /***/ 32:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(83);
+module.exports = __webpack_require__(84);
 
 /***/ }),
 
 /***/ 51:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(197);
+module.exports = __webpack_require__(198);
 
 /***/ }),
 
@@ -75659,21 +75817,21 @@ cascader_panel.install = function (Vue) {
 /***/ 6:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(59);
+module.exports = __webpack_require__(60);
 
 /***/ }),
 
 /***/ 9:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(62);
+module.exports = __webpack_require__(63);
 
 /***/ })
 
 /******/ });
 
 /***/ }),
-/* 197 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports =
@@ -76165,14 +76323,14 @@ src_radio.install = function (Vue) {
 /***/ 4:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(58);
+module.exports = __webpack_require__(59);
 
 /***/ })
 
 /******/ });
 
 /***/ }),
-/* 198 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports =
@@ -76369,21 +76527,21 @@ function normalizeComponent (
 /***/ 2:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(57);
+module.exports = __webpack_require__(58);
 
 /***/ }),
 
 /***/ 3:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(55);
+module.exports = __webpack_require__(56);
 
 /***/ }),
 
 /***/ 5:
 /***/ (function(module, exports) {
 
-module.exports = __webpack_require__(60);
+module.exports = __webpack_require__(61);
 
 /***/ }),
 
@@ -76786,11 +76944,11 @@ main.directive = directive;
 /******/ });
 
 /***/ }),
-/* 199 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(20);
-            var content = __webpack_require__(200);
+            var content = __webpack_require__(201);
 
             content = content.__esModule ? content.default : content;
 
@@ -76810,14 +76968,14 @@ var update = api(content, options);
 module.exports = content.locals || {};
 
 /***/ }),
-/* 200 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(22);
 var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(26);
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(201);
-var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__(202);
+var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(202);
+var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__(203);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);
@@ -76828,20 +76986,20 @@ module.exports = exports;
 
 
 /***/ }),
-/* 201 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "313f7dacf2076822059d2dca26dedfc6.woff");
-
-/***/ }),
 /* 202 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "4520188144a17fb24a6af28a70dae0ce.ttf");
+/* harmony default export */ __webpack_exports__["default"] = ("data:font/woff;base64,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");
+
+/***/ }),
+/* 203 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("data:font/ttf;base64,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5qkAAOapAAAABwAA5qoAAOaqAAAACAAA5qsAAOarAAAACQAA5qwAAOasAAAACgAA5q0AAOatAAAACwAA5q4AAOauAAAADAAA5q8AAOavAAAADQAA5rAAAOawAAAADgAA5rEAAOaxAAAADwAA5rIAAOayAAAAEAAA5rMAAOazAAAAEQAA5rQAAOa0AAAAEgAA5rUAAOa1AAAAEwAA5rYAAOa2AAAAFAAA5rgAAOa4AAAAFQAA5rkAAOa5AAAAFgAA5roAAOa6AAAAFwAA5rsAAOa7AAAAGAAA5rwAAOa8AAAAGQAA5r0AAOa9AAAAGgAA5r4AAOa+AAAAGwAA5r8AAOa/AAAAHAAA5sEAAObBAAAAHQAA5sIAAObCAAAAHgAA5sMAAObDAAAAHwAA5sQAAObEAAAAIAAA5sUAAObFAAAAIQAA5sYAAObGAAAAIgAA5scAAObHAAAAIwAA5sgAAObIAAAAJAAA5skAAObJAAAAJQAA5soAAObKAAAAJgAA5ssAAObLAAAAJwAA5swAAObMAAAAKAAA5s0AAObNAAAAKQAA5s4AAObOAAAAKgAA5s8AAObPAAAAKwAA5tAAAObQAAAALAAA5tEAAObRAAAALQAA5tIAAObSAAAALgAA5tMAAObTAAAALwAA5tQAAObUAAAAMAAA5tUAAObVAAAAMQAA5tYAAObWAAAAMgAA5tcAAObXAAAAMwAA5tgAAObYAAAANAAA5tkAAObZAAAANQAA5toAAObaAAAANgAA5tsAAObbAAAANwAA5twAAObcAAAAOAAA5t0AAObdAAAAOQAA5t4AAObeAAAAOgAA5t8AAObfAAAAOwAA5uAAAObgAAAAPAAA5uEAAObhAAAAPQAA5uIAAObiAAAAPgAA5uMAAObjAAAAPwAA5uQAAObkAAAAQAAA5uUAAOblAAAAQQAA5uYAAObmAAAAQgAA5ucAAObnAAAAQwAA5ugAAOboAAAARAAA5ukAAObpAAAARQAA5uoAAObqAAAARgAA5usAAObrAAAARwAA5uwAAObsAAAASAAA5u0AAObtAAAASQAA5u4AAObuAAAASgAA5vAAAObwAAAASwAA5vEAAObxAAAATAAA5vIAAObyAAAATQAA5vMAAObzAAAATgAA5vYAAOb2AAAATwAA5vcAAOb3AAAAUAAA5vgAAOb4AAAAUQAA5vkAAOb5AAAAUgAA5voAAOb6AAAAUwAA5vsAAOb7AAAAVAAA5vwAAOb8AAAAVQAA5v0AAOb9AAAAVgAA5v4AAOb+AAAAVwAA5v8AAOb/AAAAWAAA5wIAAOcCAAAAWQAA5wMAAOcDAAAAWgAA5wQAAOcEAAAAWwAA5wUAAOcFAAAAXAAA5wYAAOcGAAAAXQAA5wcAAOcHAAAAXgAA5wgAAOcIAAAAXwAA5wkAAOcJAAAAYAAA5woAAOcKAAAAYQAA5wsAAOcLAAAAYgAA5wwAAOcMAAAAYwAA5w0AAOcNAAAAZAAA5w4AAOcOAAAAZQAA5w8AAOcPAAAAZgAA5xAAAOcQAAAAZwAA5xEAAOcRAAAAaAAA5xIAAOcSAAAAaQAA5xMAAOcTAAAAagAA5xUAAOcVAAAAawAA5xYAAOcWAAAAbAAA5xcAAOcXAAAAbQAA5xgAAOcYAAAAbgAA5xkAAOcZAAAAbwAA5xsAAOcbAAAAcAAA5xwAAOccAAAAcQAA5x0AAOcdAAAAcgAA5x4AAOceAAAAcwAA5x8AAOcfAAAAdAAA5yAAAOcgAAAAdQAA5yIAAOciAAAAdgAA5yMAAOcjAAAAdwAA5yQAAOckAAAAeAAA5yUAAOclAAAAeQAA5yYAAOcmAAAAegAA5ycAAOcnAAAAewAA5ygAAOcoAAAAfAAA5ykAAOcpAAAAfQAA5yoAAOcqAAAAfgAA5ysAAOcrAAAAfwAA5y0AAOctAAAAgAAA5y4AAOcuAAAAgQAA5y8AAOcvAAAAggAA5zAAAOcwAAAAgwAA5zEAAOcxAAAAhAAA5zIAAOcyAAAAhQAA5zMAAOczAAAAhgAA5zQAAOc0AAAAhwAA5zUAAOc1AAAAiAAA5zYAAOc2AAAAiQAA5zcAAOc3AAAAigAA5zgAAOc4AAAAiwAA5zkAAOc5AAAAjAAA5zoAAOc6AAAAjQAA5zsAAOc7AAAAjgAA5zwAAOc8AAAAjwAA5z0AAOc9AAAAkAAA5z4AAOc+AAAAkQAA5z8AAOc/AAAAkgAA50AAAOdAAAAAkwAA50EAAOdBAAAAlAAA50QAAOdEAAAAlQAA50UAAOdFAAAAlgAA50cAAOdHAAAAlwAA50gAAOdIAAAAmAAA50kAAOdJAAAAmQAA50oAAOdKAAAAmgAA50sAAOdLAAAAmwAA50wAAOdMAAAAnAAA500AAOdNAAAAnQAA504AAOdOAAAAngAA508AAOdPAAAAnwAA51AAAOdQAAAAoAAA51EAAOdRAAAAoQAA51IAAOdSAAAAogAA51MAAOdTAAAAowAA51QAAOdUAAAApAAA51UAAOdVAAAApQAA51YAAOdWAAAApgAA51cAAOdXAAAApwAA51gAAOdYAAAAqAAA51kAAOdZAAAAqQAA51oAAOdaAAAAqgAA51sAAOdbAAAAqwAA51wAAOdcAAAArAAA510AAOddAAAArQAA514AAOdeAAAArgAA518AAOdfAAAArwAA52AAAOdgAAAAsAAA52EAAOdhAAAAsQAA52MAAOdjAAAAsgAA52QAAOdkAAAAswAA52UAAOdlAAAAtAAA52YAAOdmAAAAtQAA52cAAOdnAAAAtgAA52gAAOdoAAAAtwAA52kAAOdpAAAAuAAA52oAAOdqAAAAuQAA52sAAOdrAAAAugAA52wAAOdsAAAAuwAA520AAOdtAAAAvAAA524AAOduAAAAvQAA528AAOdvAAAAvgAA53AAAOdwAAAAvwAA53EAAOdxAAAAwAAA53IAAOdyAAAAwQAA53MAAOdzAAAAwgAA53QAAOd0AAAAwwAA53UAAOd1AAAAxAAA53YAAOd2AAAAxQAA53cAAOd3AAAAxgAA53gAAOd4AAAAxwAA53kAAOd5AAAAyAAA53oAAOd6AAAAyQAA53sAAOd7AAAAygAA53wAAOd8AAAAywAA530AAOd9AAAAzAAA534AAOd+AAAAzQAA538AAOd/AAAA1QAA54AAAOeAAAAA1gAA54EAAOeBAAAA1wAA54IAAOeCAAAAzgAA54MAAOeDAAAA2AAA54QAAOeEAAAA2QAA54UAAOeFAAAAzwAA54YAAOeGAAAA0AAA54cAAOeHAAAA0QAA54gAAOeIAAAA0gAA54kAAOeJAAAA0wAA54oAAOeKAAAA2gAA54sAAOeLAAAA1AAA54wAAOeMAAAA2wAA540AAOeNAAAA3AAA544AAOeOAAAA3QAA548AAOePAAAA3gAA55AAAOeQAAAA3wAA55EAAOeRAAAA4AAA55IAAOeSAAAA4QAA55MAAOeTAAAA4gAA55QAAOeUAAAA4wAA55UAAOeVAAAA5AAA55YAAOeWAAAA5QAA55cAAOeXAAAA5gAA55gAAOeYAAAA5wAA55kAAOeZAAAA6AAA55oAAOeaAAAA6QAA55sAAOebAAAA6gAA55wAAOecAAAA6wAA550AAOedAAAA7AAA554AAOeeAAAA7QAA558AAOefAAAA7gAA56AAAOegAAAA7wAA56EAAOehAAAA8AAA56IAAOeiAAAA8QAA56MAAOejAAAA8gAA56QAAOekAAAA8wAA56UAAOelAAAA9AAA56YAAOemAAAA9QAA56cAAOenAAAA9gAA56gAAOeoAAAA9wAA56kAAOepAAAA+AAA56oAAOeqAAAA+QAA56sAAOerAAAA+gAA56wAAOesAAAA+wAA560AAOetAAAA/AAA564AAOeuAAAA/QAA568AAOevAAAA/gAA57AAAOewAAAA/wAA57EAAOexAAABAAAA57IAAOeyAAABAQAA57MAAOezAAABAgAA57QAAOe0AAABAwAA57UAAOe1AAABBAAA57YAAOe2AAABBQAA57cAAOe3AAABBgAA57gAAOe4AAABBwAA57kAAOe5AAABCAAA57oAAOe6AAABCQAA57sAAOe7AAABCgAA57wAAOe8AAABCwAA570AAOe9AAABDAAA574AAOe+AAABDQAA578AAOe/AAABDgAA58AAAOfAAAABDwAA58EAAOfBAAABEAAA58IAAOfCAAABEQAA58MAAOfDAAABEgAA58QAAOfEAAABEwAA58UAAOfFAAABFAAA58YAAOfGAAABFQAA58cAAOfHAAABFgAA58kAAOfJAAABFwAA58oAAOfKAAABGAAAAAAAAABuALoBLgHeAkYCrAMeA24D9gRaBO4FaAWeBjwGhAbuBywHbAeoCBQIaAiyCTQJign+CooK3gtCC5gMBAx2DPgNQA2GDcgODA5aDvgPUA+4EAwQZBD8EVgRxhIKElYSwhMyE6IUAhQaFEYUZBSSFNQVEhU2FVoVgBWoFe4WQhamFwgXMhdiF5IXvBfuGBgYSBh4GNgZDhlkGaAZ6BqmGuwbXhvCHEwcsB0UHVwdvh5sHtAfUB+wH/wgWiC2IQIhaCGoIiAioiMYI3Ij2iQUJJYk9iWKJiYmoCb+J14ntif0KGQomikOKVwpoingKi4qpCryK1YrwCxOLH4s4C0qLYIt4C5QLogu5i8kL74wGDB0MNwxJDHoMkwymDLsM2Qz8DRINJw1EjWuNfw2UDagNxY3qjgs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LlpbLVpaLQAABAAA/8ADgANAAAIACAAWABoAAAEnFRchESERIQEhAREUBiMhIiY1ETQ2EyEVIQMmpsD/AP6AAoD9YAHgAQASDv1ADhISzgFA/sACQKamQAEA/QADQP8A/aAOEhIOA0AOEv4AQAAAAAAFAAD/wAOAA0AAAwATABcAGwAfAAATESERJSEyFhURFAYjISImNRE0NhMhFSERMxUjESEVIcACgP1gAsAOEhIO/UAOEhKuAYD+gMDAAYD+gAMA/QADAEASDvzADhISDgNADhL+QEABAED+wEAAAAAAAwAAAAADwAMAAAUAFwAdAAATESERISclIRchMhYVERQGIyEiJjURNDYBNxcHJzeAAwD+ZoD++gEggAGgDhISDvzADhISAay1LeKeLQLA/YACAIBAgBIO/cAOEhIOAsAOEv4KtS3jny0AAAAAAwAAAAADwAMAAAUAFwAjAAATESERISclIRchMhYVERQGIyEiJjURNDYBJzcXNxcHFwcnByeAAwD+ZoD++gEggAGgDhISDvzADhISAYFbLlpaLltbLlpaLgLA/YACAIBAgBIO/cAOEhIOAsAOEv5AWi5bWy5aWi5bWy4AAAMAAAAAA8ADAAAFABcAGwAAExEhESEnJSEXITIWFREUBiMhIiY1ETQ2ASEVIYADAP5mgP76ASCAAaAOEhIO/MAOEhIBDgFA/sACwP2AAgCAQIASDv3ADhISDgLADhL+YEAAAAADAAAAAAPAAwAABQAXACMAABMRIREhJyUhFyEyFhURFAYjISImNRE0NgE1MxUzFSMVIzUjNYADAP5mgP76ASCAAaAOEhIO/MAOEhIBjkCAgECAAsD9gAIAgECAEg79wA4SEg4CwA4S/mCAgECAgEAAAwAA//8DugMAAAMADQAkAAABIQMhEzUhJyMRNz4BMwEhIiY1ETQ2MyEXITIWHQEzMhYHAw4BA279hGACfDL+poDmOgMRCwJO/TkOEhIOASCAAWAOEhcPEwNwAxEBwP6AAcBAgP5A6AsN/gASDgLADhKAEg5gGQ/+QAsNAAIAAAAAA8ADAAAFABcAABMRIREhJyUhFyEyFhURFAYjISImNRE0NoADAP5mgP76ASCAAaAOEhIO/MAOEhICwP2AAgCAQIASDv3ADhISDgLADhIAAAUAAP+8A6kDVQADAAYACgAQABQAADcX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APkAAwABBAkACgBWAQcAAwABBAkACwAmAV0KQ3JlYXRlZCBieSBpY29uZm9udAplbGVtZW50UmVndWxhcmVsZW1lbnRlbGVtZW50VmVyc2lvbiAxLjBlbGVtZW50R2VuZXJhdGVkIGJ5IHN2ZzJ0dGYgZnJvbSBGb250ZWxsbyBwcm9qZWN0Lmh0dHA6Ly9mb250ZWxsby5jb20ACgBDAHIAZQBhAHQAZQBkACAAYgB5ACAAaQBjAG8AbgBmAG8AbgB0AAoAZQBsAGUAbQBlAG4AdABSAGUAZwB1AGwAYQByAGUAbABlAG0AZQBuAHQAZQBsAGUAbQBlAG4AdABWAGUAcgBzAGkAbwBuACAAMQAuADAAZQBsAGUAbQBlAG4AdABHAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAHMAdgBnADIAdAB0AGYAIABmAHIAbwBtACAARgBvAG4AdABlAGwAbABvACAAcAByAG8AagBlAGMAdAAuAGgAdAB0AHAAOgAvAC8AZgBvAG4AdABlAGwAbABvAC4AYwBvAG0AAAAAAgAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEZAQIBAwEEAQUBBgEHAQgBCQEKAQsBDAENAQ4BDwEQAREBEgETARQBFQEWARcBGAEZARoBGwEcAR0BHgEfASABIQEiASMBJAElASYBJwEoASkBKgErASwBLQEuAS8BMAExATIBMwE0ATUBNgE3ATgBOQE6ATsBPAE9AT4BPwFAAUEBQgFDAUQBRQFGAUcBSAFJAUoBSwFMAU0BTgFPAVABUQFSAVMBVAFVAVYBVwFYAVkBWgFbAVwBXQFeAV8BYAFhAWIBYwFkAWUBZgFnAWgBaQFqAWsBbAFtAW4BbwFwAXEBcgFzAXQBdQF2AXcBeAF5AXoBewF8AX0BfgF/AYABgQGCAYMBhAGFAYYBhwGIAYkBigGLAYwBjQGOAY8BkAGRAZIBkwGUAZUBlgGXAZgBmQGaAZsBnAGdAZ4BnwGgAaEBogGjAaQBpQGmAacBqAGpAaoBqwGsAa0BrgGvAbABsQGyAbMBtAG1AbYBtwG4AbkBugG7AbwBvQG+Ab8BwAHBAcIBwwHEAcUBxgHHAcgByQHKAcsBzAHNAc4BzwHQAdEB0gHTAdQB1QHWAdcB2AHZAdoB2wHcAd0B3gHfAeAB4QHiAeMB5AHlAeYB5wHoAekB6gHrAewB7QHuAe8B8AHxAfIB8wH0AfUB9gH3AfgB+QH6AfsB/AH9Af4B/wIAAgECAgIDAgQCBQIGAgcCCAIJAgoCCwIMAg0CDgIPAhACEQISAhMCFAIVAhYCFwIYAhkCGgAPaWNlLWNyZWFtLXJvdW5kEGljZS1jcmVhbS1zcXVhcmUIbG9sbGlwb3ANcG90YXRvLXN0cmlwcwhtaWxrLXRlYQlpY2UtZHJpbmsHaWNlLXRlYQZjb2ZmZWUGb3JhbmdlBHBlYXIFYXBwbGUGY2hlcnJ5CndhdGVybWVsb24FZ3JhcGUMcmVmcmlnZXJhdG9yEmdvYmxldC1zcXVhcmUtZnVsbA1nb2JsZXQtc3F1YXJlC2dvYmxldC1mdWxsBmdvYmxldApjb2xkLWRyaW5rCmNvZmZlZS1jdXAJd2F0ZXItY3VwCWhvdC13YXRlcglpY2UtY3JlYW0HZGVzc2VydAVzdWdhcgl0YWJsZXdhcmUGYnVyZ2VyCmtuaWZlLWZvcmsKZm9yay1zcG9vbgdjaGlja2VuBGZvb2QGZGlzaC0xBGRpc2gMcmVmcmVzaC1sZWZ0DXJlZnJlc2gtcmlnaHQPd2FybmluZy1vdXRsaW5lB3NldHRpbmcNcGhvbmUtb3V0bGluZQxtb3JlLW91dGxpbmUIZmluaXNoZWQEdmlldwdsb2FkaW5nB3JlZnJlc2gEcmFuawRzb3J0DG1vYmlsZS1waG9uZQdzZXJ2aWNlBHNlbGwIc29sZC1vdXQGZGVsZXRlBW1pbnVzBHBsdXMFY2hlY2sFY2xvc2UNZC1hcnJvdy1yaWdodAxkLWFycm93LWxlZnQKYXJyb3ctbGVmdAphcnJvdy1kb3duC2Fycm93LXJpZ2h0CGFycm93LXVwA2tleQR1c2VyBnVubG9jawRsb2NrA3RvcAl0b3AtcmlnaHQIdG9wLWxlZnQFcmlnaHQEYmFjawZib3R0b20MYm90dG9tLXJpZ2h0C2JvdHRvbS1sZWZ0Cm1vb24tbmlnaHQEbW9vbhBjbG91ZHktYW5kLXN1bm55DXBhcnRseS1jbG91ZHkGY2xvdWR5BXN1bm55BnN1bnNldAlzdW5yaXNlLTEHc3VucmlzZQpoZWF2eS1yYWluCWxpZ2h0bmluZwpsaWdodC1yYWluCndpbmQtcG93ZXIFd2F0Y2gHd2F0Y2gtMQV0aW1lcgthbGFybS1jbG9jawxtYXAtbG9jYXRpb24PZGVsZXRlLWxvY2F0aW9uDGFkZC1sb2NhdGlvbhRsb2NhdGlvbi1pbmZvcm1hdGlvbhBsb2NhdGlvbi1vdXRsaW5lBXBsYWNlCGRpc2NvdmVyDWZpcnN0LWFpZC1raXQIdHJvcGh5LTEGdHJvcGh5BW1lZGFsB21lZGFsLTEJc3RvcHdhdGNoA21pYwhiYXNlYmFsbAZzb2NjZXIIZm9vdGJhbGwKYmFza2V0YmFsbAhzdGFyLW9mZg1jb3B5LWRvY3VtZW50C2Z1bGwtc2NyZWVuDXN3aXRjaC1idXR0b24DYWltBGNyb3AIb2RvbWV0ZXIEdGltZQxjaXJjbGUtY2hlY2sOcmVtb3ZlLW91dGxpbmUTY2lyY2xlLXBsdXMtb3V0bGluZQdiYW5nemh1BGJlbGwSY2xvc2Utbm90aWZpY2F0aW9uCm1pY3JvcGhvbmUTdHVybi1vZmYtbWljcm9waG9uZQhwb3NpdGlvbghwb3N0Y2FyZAdtZXNzYWdlEGNoYXQtbGluZS1zcXVhcmUPY2hhdC1kb3Qtc3F1YXJlDmNoYXQtZG90LXJvdW5kC2NoYXQtc3F1YXJlD2NoYXQtbGluZS1yb3VuZApjaGF0LXJvdW5kBnNldC11cAh0dXJuLW9mZgRvcGVuCmNvbm5lY3Rpb24EbGluawNjcHUFdGh1bWIGZmVtYWxlBG1hbGUFZ3VpZGUEaGVscARuZXdzBHNoaXAFdHJ1Y2sHYmljeWNsZQlwcmljZS10YWcIZGlzY291bnQGd2FsbGV0BGNvaW4FbW9uZXkJYmFuay1jYXJkA2JveAdwcmVzZW50DnNob3BwaW5nLWJhZy0yDnNob3BwaW5nLWJhZy0xD3Nob3BwaW5nLWNhcnQtMg9zaG9wcGluZy1jYXJ0LTESc2hvcHBpbmctY2FydC1mdWxsB3Ntb2tpbmcKbm8tc21va2luZwVob3VzZQp0YWJsZS1sYW1wBnNjaG9vbA9vZmZpY2UtYnVpbGRpbmcMdG9pbGV0LXBhcGVyCm5vdGVib29rLTIKbm90ZWJvb2stMQVmaWxlcwpjb2xsZWN0aW9uCXJlY2VpdmluZw9waWN0dXJlLW91dGxpbmUVcGljdHVyZS1vdXRsaW5lLXJvdW5kCnN1aXRjYXNlLTEIc3VpdGNhc2UEZmlsbQxlZGl0LW91dGxpbmUOY29sbGVjdGlvbi10YWcNZGF0YS1hbmFseXNpcwlwaWUtY2hhcnQKZGF0YS1ib2FyZAdyZWFkaW5nC21hZ2ljLXN0aWNrCmNvb3JkaW5hdGUFbW91c2UJZGF0YS1saW5lBWJydXNoB2hlYWRzZXQIdW1icmVsbGEIc2Npc3NvcnMMdmlkZW8tY2FtZXJhBm1vYmlsZQdhdHRyYWN0B21vbml0b3IIem9vbS1vdXQHem9vbS1pbgZzZWFyY2gGY2FtZXJhDHRha2Vhd2F5LWJveAd1cGxvYWQyCGRvd25sb2FkCXBhcGVyY2xpcAdwcmludGVyDGRvY3VtZW50LWFkZAhkb2N1bWVudBBkb2N1bWVudC1jaGVja2VkDWRvY3VtZW50LWNvcHkPZG9jdW1lbnQtZGVsZXRlD2RvY3VtZW50LXJlbW92ZQd0aWNrZXRzDmZvbGRlci1jaGVja2VkDWZvbGRlci1kZWxldGUNZm9sZGVyLXJlbW92ZQpmb2xkZXItYWRkDWZvbGRlci1vcGVuZWQGZm9sZGVyBGVkaXQMY2lyY2xlLWNsb3NlBGRhdGUJY2FyZXQtdG9wDGNhcmV0LWJvdHRvbQtjYXJldC1yaWdodApjYXJldC1sZWZ0BXNoYXJlBG1vcmUFcGhvbmUSdmlkZW8tY2FtZXJhLXNvbGlkB3N0YXItb24EbWVudQ1tZXNzYWdlLXNvbGlkB2QtY2FyZXQMY2FtZXJhLXNvbGlkB3N1Y2Nlc3MFZXJyb3IIbG9jYXRpb24HcGljdHVyZQtjaXJjbGUtcGx1cwRpbmZvBnJlbW92ZQd3YXJuaW5nCHF1ZXN0aW9uCnVzZXItc29saWQGcy1ncmlkB3MtY2hlY2sGcy1kYXRhBnMtZm9sZA1zLW9wcG9ydHVuaXR5CHMtY3VzdG9tB3MtdG9vbHMHcy1jbGFpbQlzLWZpbmFuY2UJcy1jb21tZW50BnMtZmxhZwtzLW1hcmtldGluZwdzLWdvb2RzBnMtaGVscAZzLXNob3AGcy1vcGVuDHMtbWFuYWdlbWVudAhzLXRpY2tldAlzLXJlbGVhc2UGcy1ob21lC3MtcHJvbW90aW9uC3Mtb3BlcmF0aW9uCHMtdW5mb2xkCnMtcGxhdGZvcm0Hcy1vcmRlcg1zLWNvb3BlcmF0aW9uCnZpZGVvLXBsYXkLdmlkZW8tcGF1c2UFZ29vZHMGdXBsb2FkCXNvcnQtZG93bgdzb3J0LXVwE2Mtc2NhbGUtdG8tb3JpZ2luYWwFZWxlbWUMZGVsZXRlLXNvbGlkDnBsYXRmb3JtLWVsZW1lAAAA");
 
 /***/ })
 /******/ ]);
