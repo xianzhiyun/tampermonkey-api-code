@@ -1,6 +1,15 @@
 # 代码生成器-api
 
+
 > 根据api生成form表单，table表格组件代码片段
+
+# 开发过程
+1. 获取所有微服务应用接口
+2. 根据url http://xxxx:9123=/doc.html#/system/运营方-客户信息(租户)/saveUsingPOST_29。获取当前服务名称：system，operationId：saveUsingPOST_29
+
+
+
+
 
 # 产品演示
 

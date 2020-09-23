@@ -94,6 +94,7 @@ import Sortable from 'sortablejs'
 import {copyText} from '@/utils'
 import {formCode} from "@/utils/generate-code";
 import apiJson from './demo.json'
+import axios from 'axios';
 
 export default {
     name: '',
@@ -153,26 +154,32 @@ export default {
         }
     },
     created() {
-        this.fromDatByJson()
         this.getList()
+        // 获取所有服务
+        this.getAllService()
     },
     mounted() {
     },
     methods: {
-        // 代码生成
-        generateCode() {
-            let code = formCode(this.tableData)
-            console.log(code)
-            copyText('', code)
+        // 获取当前所有接口文件json
+        // 根据路径获取数据 operationId 唯一标识
+        async getAllService() {
+            let path_url = decodeURIComponent(location.hash)
+            let path_params = path_url.split('/')
+            if (path_params.length !== 4) return false
+            let service_name =  path_params[1]
+            let operationId =  path_params[3]
+            // 获取当前系统中的
+            let res_all_service =  await axios.get('http://10.100.172.6:9123/swagger-resources')
+            let current_service = res_all_service.data.filter(item => item.name === service_name)
+            let current_api_docs =  await axios.get(`http://10.100.172.6:9123/${current_service[0].url}`)
+            if (current_api_docs.data){
+                this.fromDatByJson(current_api_docs.data,operationId)
+            }
         },
-        // 删除某一项
-        deleteItem(scope) {
-            this.list.splice(scope.$index, 1)
-        },
-        fromDatByJson() {
+        // 获取对应结构
+        fromDatByJson(apiJson,path) {
             let schema = ''
-            console.log(apiJson)
-            let path = 'saveUsingPOST_1'
             let paths = apiJson.paths
             let definitions = apiJson.definitions
             Object.keys(paths).forEach((item) => {
@@ -187,7 +194,6 @@ export default {
                 })
             })
             let params = definitions[schema].properties
-            console.log(params)
             const fieldList = Object.keys(params)
             fieldList.forEach(item => {
                 this.tableData.push({
@@ -197,6 +203,16 @@ export default {
                     type: 'input'
                 })
             })
+        },
+        // 代码生成
+        generateCode() {
+            // let code = formCode(this.tableData)
+            // console.log(code)
+            // copyText('', code)
+        },
+        // 删除某一项
+        deleteItem(scope) {
+            this.list.splice(scope.$index, 1)
         },
         async getList() {
             this.listLoading = true

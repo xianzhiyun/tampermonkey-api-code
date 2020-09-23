@@ -13,7 +13,7 @@
             >
                 <i :class="show?'el-icon-close':'el-icon-setting'"/>
             </div>
-            <div class="rightPanel-items" style="height: 100%">
+            <div class="rightPanel-items" style="height: 100%" v-if="show">
                 <slot/>
             </div>
         </div>
