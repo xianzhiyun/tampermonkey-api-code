@@ -6,6 +6,9 @@
             <el-button style="margin: 10px" type="primary" size="mini" @click="generateCode">
                 生成代码
             </el-button>
+            <el-button style="margin: 10px" type="primary" size="mini" @click="generateCode">
+                预览
+            </el-button>
         </div>
         <!-- Note that row-key is necessary to get a correct row order. -->
         <div class="table-box">
@@ -92,7 +95,7 @@
 <script>
 import Sortable from 'sortablejs'
 import {copyText} from '@/utils'
-import {formCode} from "@/utils/generate-code";
+import {formCode} from "@/utils/form-code";
 import apiJson from './demo.json'
 import axios from 'axios';
 
@@ -154,16 +157,25 @@ export default {
         }
     },
     created() {
-        this.getList()
         // 获取所有服务
         this.getAllService()
     },
-    mounted() {
-    },
+    mounted() {},
     methods: {
+        // 根据显示列表内容，生成对应 表单代码
+        generateCode() {
+            let code = formCode(this.tableData)
+            console.log(code)
+            copyText('', code)
+        },
+        // 删除某一项
+        deleteItem(scope) {
+            this.list.splice(scope.$index, 1)
+        },
         // 获取当前所有接口文件json
         // 根据路径获取数据 operationId 唯一标识
         async getAllService() {
+            this.listLoading = true
             let path_url = decodeURIComponent(location.hash)
             let path_params = path_url.split('/')
             if (path_params.length !== 4) return false
@@ -174,11 +186,14 @@ export default {
             let current_service = res_all_service.data.filter(item => item.name === service_name)
             let current_api_docs =  await axios.get(`http://10.100.172.6:9123/${current_service[0].url}`)
             if (current_api_docs.data){
-                this.fromDatByJson(current_api_docs.data,operationId)
+               let _tableData = this.fromDatByJson(current_api_docs.data,operationId)
+                this.tableData = JSON.parse(JSON.stringify(_tableData))
+                await this.copyData()
             }
         },
-        // 获取对应结构
+        // 后期table数据
         fromDatByJson(apiJson,path) {
+            let _tableData = []
             let schema = ''
             let paths = apiJson.paths
             let definitions = apiJson.definitions
@@ -195,27 +210,19 @@ export default {
             })
             let params = definitions[schema].properties
             const fieldList = Object.keys(params)
-            fieldList.forEach(item => {
-                this.tableData.push({
+            fieldList.forEach((item,index) => {
+                _tableData.push({
+                    id: index,
                     value: item,
-                    label: params[item].description.slice(0, 6),
+                    label: params[item].description.slice(0, 20),
                     isParams: true, // 是否是参数
                     type: 'input'
                 })
             })
+            return _tableData
         },
-        // 代码生成
-        generateCode() {
-            // let code = formCode(this.tableData)
-            // console.log(code)
-            // copyText('', code)
-        },
-        // 删除某一项
-        deleteItem(scope) {
-            this.list.splice(scope.$index, 1)
-        },
-        async getList() {
-            this.listLoading = true
+        // copy数据
+        async copyData() {
             this.list = this.tableData
             this.listLoading = false
             this.oldList = this.list.map(v => v.id)
@@ -224,6 +231,7 @@ export default {
                 this.setSort()
             })
         },
+        // 对数据实现排序
         setSort() {
             const el = this.$refs.dragTable.$el.querySelectorAll('.el-table__body-wrapper > table > tbody')[0]
             this.sortable = Sortable.create(el, {
@@ -242,7 +250,7 @@ export default {
                     this.newList.splice(evt.newIndex, 0, tempIndex)
                 }
             })
-        }
+        },
     }
 }
 </script>

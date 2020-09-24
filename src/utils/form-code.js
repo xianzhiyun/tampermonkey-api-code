@@ -1,4 +1,9 @@
-/* 表单生成的代码 */
+/**
+ *  生成表单代码
+ * @param data
+ * @returns {string}
+ */
+
 export const formCode = (data) => {
     let apiJson = {
         "email": {"type": "string", "description": "邮箱"},
