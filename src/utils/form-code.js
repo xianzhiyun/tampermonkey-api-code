@@ -21,16 +21,16 @@ export const formCode = (data) => {
     let config = {
         formInfo: {
             ref: null,
-            count: 3,
+            count: 2,
             data: {
                 name: null,                // 设备名称
             },
             fieldList: [
-                {label: '所属项目', value: 'projectId', type: 'slot'},
-                {label: '功能定义', value: 'featureIsCustomized', type: 'radio', list: 'featureIsCustomizedList'},
+                // {label: '所属项目', value: 'projectId', type: 'slot'},
+                // {label: '功能定义', value: 'featureIsCustomized', type: 'radio', list: 'featureIsCustomizedList'},
             ],
             rules: {
-                projectId: [{required: true, message: '请选择项目名称', trigger: ['blur', 'change']}],
+                // projectId: [{required: true, message: '请选择项目名称', trigger: ['blur', 'change']}],
             }
         },
         listTypeInfo: {},
@@ -43,7 +43,14 @@ export const formCode = (data) => {
             label: item.label,
             value: item.value,
             type: item.type,
+            required: item.required,
         }
+        // 传递数据data
+        if (item.isParams){
+            config.formInfo.data[item.value] = null
+        }
+
+        // 判断是否需要插槽
         switch (item.type) {
             case 'slot':
                 // 需要在html生成代码片段
@@ -58,6 +65,18 @@ export const formCode = (data) => {
             // 图片... 上传统一
         }
         config.formInfo.fieldList.push(fieldItem)
+
+        // 添加rules
+        if (item.required) {
+            config.formInfo.rules[item.value] = [
+                {
+                    required: true,
+                    message: `请${item.type === 'input' ? '输入' : '选择'}${item.label}`,
+                    trigger: ['blur', 'change']
+                }
+            ]
+        }
+
     })
     // html 代码片段
     let html = `<template>
@@ -68,7 +87,7 @@ export const formCode = (data) => {
                 :field-list="formInfo.fieldList"
                 :rules="formInfo.rules"
                 :count="formInfo.count"
-                label-position="left"
+                label-position="top"
                 >${config.slotHtml.join('\n')}</vt-form>
             </template>`
     // js代码
@@ -90,3 +109,4 @@ export const formCode = (data) => {
     const css = `<style scoped lang="scss"></style>`
     return html + script + css
 }
+

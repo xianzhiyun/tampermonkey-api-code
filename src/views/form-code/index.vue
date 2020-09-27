@@ -1,3 +1,4 @@
+<script src="../../../../../../vt/vtcloud-web/src/views/easy-code/EzTable/index.js"></script>
 <template>
     <div class="app-container">
         <div style="margin-left: 10px;">
@@ -9,6 +10,10 @@
             <el-button style="margin: 10px" type="primary" size="mini" @click="generateCode">
                 预览
             </el-button>
+            <el-button style="margin: 10px" type="primary" size="mini" @click="generateCode">template</el-button>
+            <el-button style="margin: 10px" type="primary" size="mini" @click="generateCode">data</el-button>
+            <el-button style="margin: 10px" type="primary" size="mini" @click="generateCode">mounted</el-button>
+            <el-button style="margin: 10px" type="primary" size="mini" @click="generateCode">methods</el-button>
         </div>
         <!-- Note that row-key is necessary to get a correct row order. -->
         <div class="table-box">
@@ -17,7 +22,7 @@
                     v-loading="listLoading"
                     style="flex: 1"
                     max-height="3500"
-                    :data="list"
+                    :data="tableList"
                     row-key="id"
                     height="0"
                     border
@@ -96,14 +101,12 @@
 import Sortable from 'sortablejs'
 import {copyText} from '@/utils'
 import {formCode} from "@/utils/form-code";
-import apiJson from './demo.json'
 import axios from 'axios';
 
 export default {
     name: '',
     data() {
         return {
-            list: [],
             listLoading: true,
             listQuery: {
                 page: 1,
@@ -112,7 +115,7 @@ export default {
             sortable: null,
             oldList: [],
             newList: [],
-            tableData: [],
+            tableList: [],
             typeOptions: [
                 {
                     label: 'Input',
@@ -137,10 +140,6 @@ export default {
             ],
             rulesList: [
                 {
-                    label: '验证为空',
-                    value: '验证为空'
-                },
-                {
                     label: '验证数字',
                     value: '验证数字'
                 },
@@ -164,9 +163,13 @@ export default {
     methods: {
         // 根据显示列表内容，生成对应 表单代码
         generateCode() {
-            let code = formCode(this.tableData)
+            let code = formCode(this.tableList)
             console.log(code)
             copyText('', code)
+            this.$message({
+                message: '代码copy成功',
+                type: 'success'
+            });
         },
         // 删除某一项
         deleteItem(scope) {
@@ -187,7 +190,7 @@ export default {
             let current_api_docs =  await axios.get(`http://10.100.172.6:9123/${current_service[0].url}`)
             if (current_api_docs.data){
                let _tableData = this.fromDatByJson(current_api_docs.data,operationId)
-                this.tableData = JSON.parse(JSON.stringify(_tableData))
+                this.tableList = JSON.parse(JSON.stringify(_tableData))
                 await this.copyData()
             }
         },
@@ -223,9 +226,8 @@ export default {
         },
         // copy数据
         async copyData() {
-            this.list = this.tableData
             this.listLoading = false
-            this.oldList = this.list.map(v => v.id)
+            this.oldList = this.tableList.map(v => v.id)
             this.newList = this.oldList.slice()
             this.$nextTick(() => {
                 this.setSort()
@@ -242,8 +244,8 @@ export default {
                     dataTransfer.setData('Text', '')
                 },
                 onEnd: evt => {
-                    const targetRow = this.list.splice(evt.oldIndex, 1)[0]
-                    this.list.splice(evt.newIndex, 0, targetRow)
+                    const targetRow = this.tableList.splice(evt.oldIndex, 1)[0]
+                    this.tableList.splice(evt.newIndex, 0, targetRow)
 
                     // for show the changes, you can delete in you code
                     const tempIndex = this.newList.splice(evt.oldIndex, 1)[0]

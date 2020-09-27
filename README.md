@@ -8,7 +8,8 @@
 2. 根据url http://xxxx:9123=/doc.html#/system/运营方-客户信息(租户)/saveUsingPOST_29。获取当前服务名称：system，operationId：saveUsingPOST_29
 
 
-
+# 代办清单
+* 拖拽过程,输入框不能权限全选
 
 
 # 产品演示
