@@ -1,4 +1,3 @@
-<script src="../../../../../../vt/vtcloud-web/src/views/easy-code/EzTable/index.js"></script>
 <template>
     <div class="app-container">
         <div style="margin-left: 10px;">
@@ -104,10 +103,17 @@ import {formCode} from "@/utils/form-code";
 import axios from 'axios';
 
 export default {
-    name: '',
+    name: 'FormCode',
+    props: {
+        // api 字段配置内容
+        apiTableList: {
+            type: Array,
+            default: () => []
+        }
+    },
     data() {
         return {
-            listLoading: true,
+            listLoading: false,
             listQuery: {
                 page: 1,
                 limit: 10
@@ -152,12 +158,20 @@ export default {
                     value: '验证host'
                 }
             ],
-            itemNum: 0
+            itemNum: 0,
         }
     },
-    created() {
-        // 获取所有服务
-        this.getAllService()
+    watch:{
+        apiTableList:{
+            handler(val) {
+                if (Array.isArray(val) && val.length){
+                    this.tableList = val
+                    this.copyData()
+                }
+            },
+            deep: true,
+            immediate: true
+        }
     },
     mounted() {},
     methods: {
@@ -174,55 +188,6 @@ export default {
         // 删除某一项
         deleteItem(scope) {
             this.list.splice(scope.$index, 1)
-        },
-        // 获取当前所有接口文件json
-        // 根据路径获取数据 operationId 唯一标识
-        async getAllService() {
-            this.listLoading = true
-            let path_url = decodeURIComponent(location.hash)
-            let path_params = path_url.split('/')
-            if (path_params.length !== 4) return false
-            let service_name =  path_params[1]
-            let operationId =  path_params[3]
-            // 获取当前系统中的
-            let res_all_service =  await axios.get('http://10.100.172.6:9123/swagger-resources')
-            let current_service = res_all_service.data.filter(item => item.name === service_name)
-            let current_api_docs =  await axios.get(`http://10.100.172.6:9123/${current_service[0].url}`)
-            if (current_api_docs.data){
-               let _tableData = this.fromDatByJson(current_api_docs.data,operationId)
-                this.tableList = JSON.parse(JSON.stringify(_tableData))
-                await this.copyData()
-            }
-        },
-        // 后期table数据
-        fromDatByJson(apiJson,path) {
-            let _tableData = []
-            let schema = ''
-            let paths = apiJson.paths
-            let definitions = apiJson.definitions
-            Object.keys(paths).forEach((item) => {
-                let methods = paths[item]
-                Object.keys(methods).forEach((methodsItem) => {
-                    let methodsConfig = methods[methodsItem]
-                    if (methodsConfig.operationId === path) {
-                        if (Array.isArray(methodsConfig.parameters) && methodsConfig.parameters.length > 0) {
-                            schema = methodsConfig.parameters[0].schema.originalRef
-                        }
-                    }
-                })
-            })
-            let params = definitions[schema].properties
-            const fieldList = Object.keys(params)
-            fieldList.forEach((item,index) => {
-                _tableData.push({
-                    id: index,
-                    value: item,
-                    label: params[item].description.slice(0, 20),
-                    isParams: true, // 是否是参数
-                    type: 'input'
-                })
-            })
-            return _tableData
         },
         // copy数据
         async copyData() {

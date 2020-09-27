@@ -9047,9 +9047,7 @@ process.umask = function() { return 0; };
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_vue_vue_type_template_id_7ba5bd90_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 /* harmony import */ var _App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
-/* empty/unused harmony star reexport *//* harmony import */ var _App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(71);
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(28);
-
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(28);
 
 
 
@@ -9057,7 +9055,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _App_vue_vue_type_template_id_7ba5bd90_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
   _App_vue_vue_type_template_id_7ba5bd90_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -9101,7 +9099,14 @@ var render = function() {
   return _c(
     "div",
     { attrs: { id: "app" } },
-    [_c("right-panel", [_c("form-code")], 1)],
+    [
+      _c(
+        "right-panel",
+        { on: { change: _vm.panelChange } },
+        [_c("form-code", { attrs: { "api-table-list": _vm.apiTableList } })],
+        1
+      )
+    ],
     1
   )
 }
@@ -9125,8 +9130,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_RightPanel_index_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
-/* harmony import */ var _views_form_code_index_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(29);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(34);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(36);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_RightPanel_index_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
+/* harmony import */ var _views_form_code_index_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(29);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(39);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+
+
 //
 //
 //
@@ -9135,16 +9148,138 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'App',
   components: {
-    RightPanel: _components_RightPanel_index_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    FormCode: _views_form_code_index_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    RightPanel: _components_RightPanel_index_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    FormCode: _views_form_code_index_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
-  mounted: function mounted() {}
+  data: function data() {
+    return {
+      all_service: [],
+      // api 接口字段列表
+      apiTableList: []
+    };
+  },
+  mounted: function mounted() {
+    this.getAllService();
+  },
+  methods: {
+    // 获取当前所有应用
+    getAllService: function getAllService() {
+      var _this = this;
+
+      return _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var res;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('http://10.100.172.6:9123/swagger-resources');
+
+              case 2:
+                res = _context.sent;
+                _this.all_service = res.data;
+
+              case 4:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    panelChange: function panelChange(isShow) {
+      console.log("%c \u6539\u53D8\u4E86", 'font-size: 16px; font-weight: bold;color:green', isShow);
+
+      if (isShow) {
+        // 获取所有API
+        this.getCurrentApiInfo();
+      }
+    },
+    // 获取当前URL信息
+    getCurrentApiInfo: function getCurrentApiInfo() {
+      var _this2 = this;
+
+      return _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var path_url, path_params, current_service_name, operationId, current_service, current_api_docs, _api_tableData;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                path_url = decodeURIComponent(location.hash);
+                path_params = path_url.split('/');
+
+                if (!(path_params.length !== 4)) {
+                  _context2.next = 4;
+                  break;
+                }
+
+                return _context2.abrupt("return", false);
+
+              case 4:
+                current_service_name = path_params[1];
+                operationId = path_params[3];
+                current_service = _this2.all_service.filter(function (item) {
+                  return item.name === current_service_name;
+                });
+                _context2.next = 9;
+                return axios__WEBPACK_IMPORTED_MODULE_4___default.a.get("http://10.100.172.6:9123/".concat(current_service[0].url));
+
+              case 9:
+                current_api_docs = _context2.sent;
+
+                if (current_api_docs.data) {
+                  _api_tableData = _this2.getFieldListByDocs(current_api_docs.data, operationId);
+                  _this2.apiTableList = JSON.parse(JSON.stringify(_api_tableData));
+                }
+
+              case 11:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    },
+    // 将对应信息转化成 table数据, api-docs 内容结构，http://10.100.172.6:9123/system/v2/api-docs
+    getFieldListByDocs: function getFieldListByDocs(apiJson, path) {
+      var _tableData = [];
+      var schema = '';
+      var paths = apiJson.paths;
+      var definitions = apiJson.definitions;
+      Object.keys(paths).forEach(function (item) {
+        var methods = paths[item];
+        Object.keys(methods).forEach(function (methodsItem) {
+          var methodsConfig = methods[methodsItem];
+
+          if (methodsConfig.operationId === path) {
+            if (Array.isArray(methodsConfig.parameters) && methodsConfig.parameters.length > 0) {
+              schema = methodsConfig.parameters[0].schema.originalRef;
+            }
+          }
+        });
+      });
+      var params = definitions[schema].properties;
+      var fieldList = Object.keys(params);
+      fieldList.forEach(function (item, index) {
+        _tableData.push({
+          id: index,
+          value: item,
+          label: params[item].description.slice(0, 20),
+          isParams: true,
+          // 是否是参数
+          type: 'input'
+        });
+      });
+      return _tableData;
+    }
+  }
 });
 
 /***/ }),
@@ -9320,6 +9455,8 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         Object(_utils__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(document.body, 'showRightPanel');
       }
+
+      this.$emit('change', value);
     }
   },
   mounted: function mounted() {
@@ -11044,16 +11181,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: '',
+  name: 'FormCode',
+  props: {
+    // api 字段配置内容
+    apiTableList: {
+      type: Array,
+      "default": function _default() {
+        return [];
+      }
+    }
+  },
   data: function data() {
     return {
-      listLoading: true,
+      listLoading: false,
       listQuery: {
         page: 1,
         limit: 10
@@ -11091,9 +11236,17 @@ __webpack_require__.r(__webpack_exports__);
       itemNum: 0
     };
   },
-  created: function created() {
-    // 获取所有服务
-    this.getAllService();
+  watch: {
+    apiTableList: {
+      handler: function handler(val) {
+        if (Array.isArray(val) && val.length) {
+          this.tableList = val;
+          this.copyData();
+        }
+      },
+      deep: true,
+      immediate: true
+    }
   },
   mounted: function mounted() {},
   methods: {
@@ -11111,58 +11264,26 @@ __webpack_require__.r(__webpack_exports__);
     deleteItem: function deleteItem(scope) {
       this.list.splice(scope.$index, 1);
     },
-    // 获取当前所有接口文件json
-    // 根据路径获取数据 operationId 唯一标识
-    getAllService: function getAllService() {
+    // copy数据
+    copyData: function copyData() {
       var _this = this;
 
       return _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var path_url, path_params, service_name, operationId, res_all_service, current_service, current_api_docs, _tableData;
-
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this.listLoading = true;
-                path_url = decodeURIComponent(location.hash);
-                path_params = path_url.split('/');
-
-                if (!(path_params.length !== 4)) {
-                  _context.next = 5;
-                  break;
-                }
-
-                return _context.abrupt("return", false);
-
-              case 5:
-                service_name = path_params[1];
-                operationId = path_params[3]; // 获取当前系统中的
-
-                _context.next = 9;
-                return axios__WEBPACK_IMPORTED_MODULE_5___default.a.get('http://10.100.172.6:9123/swagger-resources');
-
-              case 9:
-                res_all_service = _context.sent;
-                current_service = res_all_service.data.filter(function (item) {
-                  return item.name === service_name;
+                _this.listLoading = false;
+                _this.oldList = _this.tableList.map(function (v) {
+                  return v.id;
                 });
-                _context.next = 13;
-                return axios__WEBPACK_IMPORTED_MODULE_5___default.a.get("http://10.100.172.6:9123/".concat(current_service[0].url));
+                _this.newList = _this.oldList.slice();
 
-              case 13:
-                current_api_docs = _context.sent;
+                _this.$nextTick(function () {
+                  _this.setSort();
+                });
 
-                if (!current_api_docs.data) {
-                  _context.next = 19;
-                  break;
-                }
-
-                _tableData = _this.fromDatByJson(current_api_docs.data, operationId);
-                _this.tableList = JSON.parse(JSON.stringify(_tableData));
-                _context.next = 19;
-                return _this.copyData();
-
-              case 19:
+              case 4:
               case "end":
                 return _context.stop();
             }
@@ -11170,68 +11291,9 @@ __webpack_require__.r(__webpack_exports__);
         }, _callee);
       }))();
     },
-    // 后期table数据
-    fromDatByJson: function fromDatByJson(apiJson, path) {
-      var _tableData = [];
-      var schema = '';
-      var paths = apiJson.paths;
-      var definitions = apiJson.definitions;
-      Object.keys(paths).forEach(function (item) {
-        var methods = paths[item];
-        Object.keys(methods).forEach(function (methodsItem) {
-          var methodsConfig = methods[methodsItem];
-
-          if (methodsConfig.operationId === path) {
-            if (Array.isArray(methodsConfig.parameters) && methodsConfig.parameters.length > 0) {
-              schema = methodsConfig.parameters[0].schema.originalRef;
-            }
-          }
-        });
-      });
-      var params = definitions[schema].properties;
-      var fieldList = Object.keys(params);
-      fieldList.forEach(function (item, index) {
-        _tableData.push({
-          id: index,
-          value: item,
-          label: params[item].description.slice(0, 20),
-          isParams: true,
-          // 是否是参数
-          type: 'input'
-        });
-      });
-      return _tableData;
-    },
-    // copy数据
-    copyData: function copyData() {
-      var _this2 = this;
-
-      return _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _this2.listLoading = false;
-                _this2.oldList = _this2.tableList.map(function (v) {
-                  return v.id;
-                });
-                _this2.newList = _this2.oldList.slice();
-
-                _this2.$nextTick(function () {
-                  _this2.setSort();
-                });
-
-              case 4:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2);
-      }))();
-    },
     // 对数据实现排序
     setSort: function setSort() {
-      var _this3 = this;
+      var _this2 = this;
 
       var el = this.$refs.dragTable.$el.querySelectorAll('.el-table__body-wrapper > table > tbody')[0];
       this.sortable = sortablejs__WEBPACK_IMPORTED_MODULE_2__["default"].create(el, {
@@ -11243,14 +11305,14 @@ __webpack_require__.r(__webpack_exports__);
           dataTransfer.setData('Text', '');
         },
         onEnd: function onEnd(evt) {
-          var targetRow = _this3.tableList.splice(evt.oldIndex, 1)[0];
+          var targetRow = _this2.tableList.splice(evt.oldIndex, 1)[0];
 
-          _this3.tableList.splice(evt.newIndex, 0, targetRow); // for show the changes, you can delete in you code
+          _this2.tableList.splice(evt.newIndex, 0, targetRow); // for show the changes, you can delete in you code
 
 
-          var tempIndex = _this3.newList.splice(evt.oldIndex, 1)[0];
+          var tempIndex = _this2.newList.splice(evt.oldIndex, 1)[0];
 
-          _this3.newList.splice(evt.newIndex, 0, tempIndex);
+          _this2.newList.splice(evt.newIndex, 0, tempIndex);
         }
       });
     }
@@ -17685,54 +17747,9 @@ module.exports = exports;
 
 
 /***/ }),
-/* 71 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_id_7ba5bd90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-/* 72 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var api = __webpack_require__(20);
-            var content = __webpack_require__(73);
-
-            content = content.__esModule ? content.default : content;
-
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = api(content, options);
-
-
-
-module.exports = content.locals || {};
-
-/***/ }),
-/* 73 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(22);
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-exports.push([module.i, "#iframe[data-v-7ba5bd90] {\n  position: fixed;\n  z-index: 1000;\n  top: 0;\n  width: 90%;\n  height: 90%;\n}\n", ""]);
-// Exports
-module.exports = exports;
-
-
-/***/ }),
+/* 71 */,
+/* 72 */,
+/* 73 */,
 /* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 

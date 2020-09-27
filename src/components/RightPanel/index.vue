@@ -50,6 +50,7 @@ export default {
             } else {
                 removeClass(document.body, 'showRightPanel')
             }
+            this.$emit('change', value)
         }
     },
     mounted() {
