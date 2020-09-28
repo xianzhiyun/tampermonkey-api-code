@@ -9155,7 +9155,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -9480,7 +9479,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      show: true
+      show: false
     };
   },
   watch: {
@@ -11074,6 +11073,7 @@ var render = function() {
                         },
                         on: {
                           click: function($event) {
+                            $event.stopPropagation()
                             return _vm.deleteItem(scope)
                           }
                         }
@@ -11292,7 +11292,6 @@ __webpack_require__.r(__webpack_exports__);
     // 根据显示列表内容，生成对应 表单代码
     generateCode: function generateCode() {
       var code = Object(_utils_form_code__WEBPACK_IMPORTED_MODULE_4__["formCode"])(this.tableList);
-      console.log(code);
       Object(_utils__WEBPACK_IMPORTED_MODULE_3__["copyText"])('', code);
       this.$message({
         message: '代码copy成功',
@@ -11301,7 +11300,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     // 删除某一项
     deleteItem: function deleteItem(scope) {
-      this.list.splice(scope.$index, 1);
+      this.tableList.splice(scope.$index, 1);
     },
     // copy数据
     copyData: function copyData() {
@@ -18006,6 +18005,7 @@ var render = function() {
                         },
                         on: {
                           click: function($event) {
+                            $event.stopPropagation()
                             return _vm.deleteItem(scope)
                           }
                         }
@@ -79304,7 +79304,6 @@ __webpack_require__.r(__webpack_exports__);
     // 根据显示列表内容，生成对应 表单代码
     generateCode: function generateCode() {
       var code = Object(_utils_form_code__WEBPACK_IMPORTED_MODULE_4__["formCode"])(this.tableList);
-      console.log(code);
       Object(_utils__WEBPACK_IMPORTED_MODULE_3__["copyText"])('', code);
       this.$message({
         message: '代码copy成功',
@@ -79313,7 +79312,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     // 删除某一项
     deleteItem: function deleteItem(scope) {
-      this.list.splice(scope.$index, 1);
+      this.tableList.splice(scope.$index, 1);
     },
     // copy数据
     copyData: function copyData() {

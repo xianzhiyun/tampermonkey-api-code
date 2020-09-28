@@ -57,7 +57,7 @@
                         <i style="font-size: 16px;color: #303133;cursor: pointer" class="el-icon-rank"/>
                         <i
                                 style="font-size: 16px;color: #F56C6C;margin-left: 20px;cursor: pointer"
-                                class="el-icon-delete" @click="deleteItem(scope)"
+                                class="el-icon-delete" @click.stop="deleteItem(scope)"
                         />
                     </template>
                 </el-table-column>
@@ -161,7 +161,6 @@ export default {
         // 根据显示列表内容，生成对应 表单代码
         generateCode() {
             let code = formCode(this.tableList)
-            console.log(code)
             copyText('', code)
             this.$message({
                 message: '代码copy成功',
@@ -170,7 +169,7 @@ export default {
         },
         // 删除某一项
         deleteItem(scope) {
-            this.list.splice(scope.$index, 1)
+            this.tableList.splice(scope.$index, 1)
         },
         // copy数据
         async copyData() {

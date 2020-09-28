@@ -6,7 +6,6 @@
         </right-panel>
     </div>
 </template>
-
 <script>
 
 import RightPanel from './components/RightPanel/index.vue'
