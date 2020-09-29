@@ -4,11 +4,44 @@
             <el-button style="margin: 10px" type="primary" size="mini" @click="generateCode">
                 生成代码
             </el-button>
-            操作列：
-            <el-switch
-                    :active-value="0"
-                    :inactive-value="9"
-            ></el-switch>
+            <!-- 表格顶部操作区域 -->
+           <span style="font-size:12px;font-weight: bold">列表上方：</span>
+            <el-select
+                    clearable
+                    size="small"
+                    style="min-width: 400px"
+                    v-model="operateType_up"
+                    multiple
+                    filterable
+                    allow-create
+                    default-first-option
+                    placeholder="请选择">
+                <el-option
+                        v-for="item in options_up"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                </el-option>
+            </el-select>
+            <!-- 表格内操作区域 -->
+            <span style="font-size:12px;font-weight: bold;margin-left: 10px">列表内部：</span>
+            <el-select
+                    clearable
+                    size="small"
+                    style="min-width: 400px"
+                    v-model="operateType_in"
+                    multiple
+                    filterable
+                    allow-create
+                    default-first-option
+                    placeholder="请选择">
+                <el-option
+                        v-for="item in options_in"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                </el-option>
+            </el-select>
         </div>
         <!-- Note that row-key is necessary to get a correct row order. -->
         <div class="table-box">
@@ -42,7 +75,7 @@
                 </el-table-column>
                 <el-table-column align="center" label="类型">
                     <template slot-scope="{row}">
-                        <el-select v-model="row.type" size="mini" placeholder="请选择">
+                        <el-select v-model="row.showType" size="mini" placeholder="请选择">
                             <el-option
                                     v-for="item in showTypeList"
                                     :key="item.value"
@@ -92,28 +125,6 @@ export default {
             oldList: [],
             newList: [],
             tableList: [],
-            typeOptions: [
-                {
-                    label: 'Input',
-                    value: 'input'
-                },
-                {
-                    label: '插槽',
-                    value: 'slot'
-                },
-                {
-                    label: 'select',
-                    value: 'select'
-                },
-                {
-                    label: 'radio',
-                    value: 'radio'
-                },
-                {
-                    label: 'img',
-                    value: 'img'
-                }
-            ],
             // 展示类型
             showTypeList: [
                 {
@@ -125,12 +136,12 @@ export default {
                     value: '普通插槽'
                 },
                 {
-                    label: '状态切换',
-                    value: '状态切换'
+                    label: '切换开关',
+                    value: '切换开关'
                 },
                 {
-                    label: '类型插槽',
-                    value: '类型插槽'
+                    label: '状态类型',
+                    value: '状态类型'
                 },
                 {
                     label: '时间插槽:YYYY-MM-DD',
@@ -142,12 +153,50 @@ export default {
                 },
             ],
             itemNum: 0,
+            operateType_up: [],  // 操作
+            operateType_in: [],  // 操作
+            options_up: [
+                {
+                    value: '新增',
+                    label: '新增'
+                },
+                {
+                    value: '编辑',
+                    label: '编辑'
+                },
+                {
+                    value: '删除',
+                    label: '删除'
+                },
+                {
+                    value: '自定义',
+                    label: '自定义'
+                },
+            ],
+            options_in: [
+                {
+                    value: '编辑',
+                    label: '编辑'
+                },
+                {
+                    value: '删除',
+                    label: '删除'
+                },
+                {
+                    value: '查看',
+                    label: '查看'
+                },
+                {
+                    value: '自定义',
+                    label: '自定义'
+                },
+            ],
         }
     },
-    watch:{
-        apiTableList:{
+    watch: {
+        apiTableList: {
             handler(val) {
-                if (Array.isArray(val) && val.length){
+                if (Array.isArray(val) && val.length) {
                     this.tableList = val
                     this.copyData()
                 }
@@ -156,7 +205,8 @@ export default {
             immediate: true
         }
     },
-    mounted() {},
+    mounted() {
+    },
     methods: {
         // 根据显示列表内容，生成对应 表单代码
         generateCode() {
@@ -221,11 +271,12 @@ export default {
 </style>
 
 <style scoped lang="scss">
-/deep/ .el-table__body-wrapper{
+/deep/ .el-table__body-wrapper {
     scrollbar-arrow-color: #000; /*顶部/底部图标颜色*/
     scrollbar-face-color: #333; /*滚动条颜色*/
-    scrollbar-shadow-color: #999;/*滚动条阴影颜色*/
+    scrollbar-shadow-color: #999; /*滚动条阴影颜色*/
 }
+
 /deep/ .el-table__body-wrapper::-webkit-scrollbar {
     width: 6px; // 横向滚动条
     height: 6px; // 纵向滚动条 必写
@@ -235,15 +286,16 @@ export default {
 // 滚动条的滑块
 /deep/ .el-table__body-wrapper::-webkit-scrollbar-track {
     /*background-color: #f8f8f8;*/
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     background-color: #F5F5F5;
 }
+
 // 滚动条的滑块
 /deep/ .el-table__body-wrapper::-webkit-scrollbar-thumb {
     /*background-color: #f8f8f8;*/
     border-radius: 3px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
     background-color: #1890ff;
 }
 

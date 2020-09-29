@@ -79,44 +79,80 @@ export default {
             })
 
             // 2.判断当前请求是get请求还是post请求
-            // post是表单提交
-            if (apiInfo.methods === 'post'){
-                this.componentIs = 'form'
-                originalRef = apiInfo.parameters[0].schema.originalRef
-                let params = definitions[originalRef].properties
-                const fieldList = Object.keys(originalRef)
-                // 整理代码结构
-                fieldList.forEach((item, index) => {
-                    _tableData.push({
-                        id: index,
-                        value: item,
-                        label: params[item].description.slice(0, 20),
-                        isParams: true, // 是否是参数
-                        type: 'input'
-                    })
-                })
-            }else{
-                this.componentIs = 'table'
-                // get请求是生成 生成表格代码
-                let properties = []
-                let originalRef = apiInfo.responses[200].schema.originalRef
-                let originalRef_01 = definitions[originalRef].properties.data.originalRef
-                let originalRef_02 = definitions[originalRef_01].properties.list.items.originalRef
-                properties = definitions[originalRef_02].properties
-                // 整理代码结构
-                Object.keys(properties).forEach((item, index) => {
-                    _tableData.push({
-                        id: index,
-                        value: item,
-                        label: properties[item].description.slice(0, 20),
-                        isParams: true, // 是否列表中显示字段
-                    })
-                })
-
+            if (apiInfo.methods === 'post') {
+                // 生成表单数据
+                return this.handleFormToList(apiInfo, originalRef, definitions)
+            } else {
+                // 生成表格数据
+                return this.handleTableToList(apiInfo, definitions)
             }
+        },
+        // 处理表单
+        handleFormToList(apiInfo, originalRef, definitions) {
+            let _tableData = []
+            this.componentIs = 'form'
+            originalRef = apiInfo.parameters[0].schema.originalRef
+            let params = definitions[originalRef].properties
+            const fieldList = Object.keys(originalRef)
+            // 整理代码结构
+            fieldList.forEach((item, index) => {
+                _tableData.push({
+                    id: index,
+                    value: item,
+                    label: params[item].description.slice(0, 20),
+                    isParams: true, // 是否是参数
+                    type: 'input'
+                })
+            })
             return _tableData
         },
+        // 处理表格
+        handleTableToList(apiInfo, definitions) {
+            let _tableData = []
+            this.componentIs = 'table'
+            // get请求是生成 生成表格代码
+            let properties = []
+            let originalRef = apiInfo.responses[200].schema.originalRef
+            let originalRef_01 = definitions[originalRef].properties.data.originalRef
+            let originalRef_02 = definitions[originalRef_01].properties.list.items.originalRef
+            properties = definitions[originalRef_02].properties
+            // 整理代码结构
+            Object.keys(properties).forEach((item, index) => {
+                let _current = {
+                    id: index,
+                    value: item,
+                    label: properties[item].description.slice(0, 20),
+                    showType: this.getShowTypeValue(item, properties[item])
+                }
+                if(item !== 'id'){
+                    _tableData.push(_current)
+                }
+            })
+            return _tableData
+        },
+        // ? 后续功能都可以在这里面进行添加
+        getShowTypeValue(item, property) {
+            let _item = item.toLocaleLowerCase()
+            // 判断当前是否是时间
+            if (property.format && property.format === 'date-time') {
+                return "时间插槽:YYYY-MM-DD HH:mm:ss"
+            }
+            // 状态切换
+            if (_item.includes('status')) {
+                return "切换开关"
+            }else if(property.type === "boolean"){
+                return "普通插槽"
+            }
+            return "默认"
+        },
+
+        // 添加智能排序功能，将部分字段按照优先级列在前面
+        // sortable() {}
+
+        // 添加操作列
+
     },
+
 }
 </script>
 

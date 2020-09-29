@@ -9277,46 +9277,83 @@ __webpack_require__.r(__webpack_exports__);
         });
         return flag;
       }); // 2.判断当前请求是get请求还是post请求
-      // post是表单提交
 
       if (apiInfo.methods === 'post') {
-        this.componentIs = 'form';
-        originalRef = apiInfo.parameters[0].schema.originalRef;
-        var params = definitions[originalRef].properties;
-        var fieldList = Object.keys(originalRef); // 整理代码结构
-
-        fieldList.forEach(function (item, index) {
-          _tableData.push({
-            id: index,
-            value: item,
-            label: params[item].description.slice(0, 20),
-            isParams: true,
-            // 是否是参数
-            type: 'input'
-          });
-        });
+        // 生成表单数据
+        return this.handleFormToList(apiInfo, originalRef, definitions);
       } else {
-        this.componentIs = 'table'; // get请求是生成 生成表格代码
+        // 生成表格数据
+        return this.handleTableToList(apiInfo, definitions);
+      }
+    },
+    // 处理表单
+    handleFormToList: function handleFormToList(apiInfo, originalRef, definitions) {
+      var _tableData = [];
+      this.componentIs = 'form';
+      originalRef = apiInfo.parameters[0].schema.originalRef;
+      var params = definitions[originalRef].properties;
+      var fieldList = Object.keys(originalRef); // 整理代码结构
 
-        var properties = [];
-        var _originalRef = apiInfo.responses[200].schema.originalRef;
-        var originalRef_01 = definitions[_originalRef].properties.data.originalRef;
-        var originalRef_02 = definitions[originalRef_01].properties.list.items.originalRef;
-        properties = definitions[originalRef_02].properties; // 整理代码结构
-
-        Object.keys(properties).forEach(function (item, index) {
-          _tableData.push({
-            id: index,
-            value: item,
-            label: properties[item].description.slice(0, 20),
-            isParams: true // 是否列表中显示字段
-
-          });
+      fieldList.forEach(function (item, index) {
+        _tableData.push({
+          id: index,
+          value: item,
+          label: params[item].description.slice(0, 20),
+          isParams: true,
+          // 是否是参数
+          type: 'input'
         });
+      });
+      return _tableData;
+    },
+    // 处理表格
+    handleTableToList: function handleTableToList(apiInfo, definitions) {
+      var _this3 = this;
+
+      var _tableData = [];
+      this.componentIs = 'table'; // get请求是生成 生成表格代码
+
+      var properties = [];
+      var originalRef = apiInfo.responses[200].schema.originalRef;
+      var originalRef_01 = definitions[originalRef].properties.data.originalRef;
+      var originalRef_02 = definitions[originalRef_01].properties.list.items.originalRef;
+      properties = definitions[originalRef_02].properties; // 整理代码结构
+
+      Object.keys(properties).forEach(function (item, index) {
+        var _current = {
+          id: index,
+          value: item,
+          label: properties[item].description.slice(0, 20),
+          showType: _this3.getShowTypeValue(item, properties[item])
+        };
+
+        if (item !== 'id') {
+          _tableData.push(_current);
+        }
+      });
+      return _tableData;
+    },
+    // ? 后续功能都可以在这里面进行添加
+    getShowTypeValue: function getShowTypeValue(item, property) {
+      var _item = item.toLocaleLowerCase(); // 判断当前是否是时间
+
+
+      if (property.format && property.format === 'date-time') {
+        return "时间插槽:YYYY-MM-DD HH:mm:ss";
+      } // 状态切换
+
+
+      if (_item.includes('status')) {
+        return "切换开关";
+      } else if (property.type === "boolean") {
+        return "普通插槽";
       }
 
-      return _tableData;
-    }
+      return "默认";
+    } // 添加智能排序功能，将部分字段按照优先级列在前面
+    // sortable() {}
+    // 添加操作列
+
   }
 });
 
@@ -17859,8 +17896,84 @@ var render = function() {
           },
           [_vm._v("\n            生成代码\n        ")]
         ),
-        _vm._v("\n        操作列：\n        "),
-        _c("el-switch", { attrs: { "active-value": 0, "inactive-value": 9 } })
+        _vm._v(" "),
+        _c(
+          "span",
+          { staticStyle: { "font-size": "12px", "font-weight": "bold" } },
+          [_vm._v("列表上方：")]
+        ),
+        _vm._v(" "),
+        _c(
+          "el-select",
+          {
+            staticStyle: { "min-width": "400px" },
+            attrs: {
+              clearable: "",
+              size: "small",
+              multiple: "",
+              filterable: "",
+              "allow-create": "",
+              "default-first-option": "",
+              placeholder: "请选择"
+            },
+            model: {
+              value: _vm.operateType_up,
+              callback: function($$v) {
+                _vm.operateType_up = $$v
+              },
+              expression: "operateType_up"
+            }
+          },
+          _vm._l(_vm.options_up, function(item) {
+            return _c("el-option", {
+              key: item.value,
+              attrs: { label: item.label, value: item.value }
+            })
+          }),
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "span",
+          {
+            staticStyle: {
+              "font-size": "12px",
+              "font-weight": "bold",
+              "margin-left": "10px"
+            }
+          },
+          [_vm._v("列表内部：")]
+        ),
+        _vm._v(" "),
+        _c(
+          "el-select",
+          {
+            staticStyle: { "min-width": "400px" },
+            attrs: {
+              clearable: "",
+              size: "small",
+              multiple: "",
+              filterable: "",
+              "allow-create": "",
+              "default-first-option": "",
+              placeholder: "请选择"
+            },
+            model: {
+              value: _vm.operateType_in,
+              callback: function($$v) {
+                _vm.operateType_in = $$v
+              },
+              expression: "operateType_in"
+            }
+          },
+          _vm._l(_vm.options_in, function(item) {
+            return _c("el-option", {
+              key: item.value,
+              attrs: { label: item.label, value: item.value }
+            })
+          }),
+          1
+        )
       ],
       1
     ),
@@ -17958,11 +18071,11 @@ var render = function() {
                         {
                           attrs: { size: "mini", placeholder: "请选择" },
                           model: {
-                            value: row.type,
+                            value: row.showType,
                             callback: function($$v) {
-                              _vm.$set(row, "type", $$v)
+                              _vm.$set(row, "showType", $$v)
                             },
-                            expression: "row.type"
+                            expression: "row.showType"
                           }
                         },
                         _vm._l(_vm.showTypeList, function(item) {
@@ -79222,6 +79335,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -79248,22 +79394,6 @@ __webpack_require__.r(__webpack_exports__);
       oldList: [],
       newList: [],
       tableList: [],
-      typeOptions: [{
-        label: 'Input',
-        value: 'input'
-      }, {
-        label: '插槽',
-        value: 'slot'
-      }, {
-        label: 'select',
-        value: 'select'
-      }, {
-        label: 'radio',
-        value: 'radio'
-      }, {
-        label: 'img',
-        value: 'img'
-      }],
       // 展示类型
       showTypeList: [{
         label: '默认',
@@ -79272,11 +79402,11 @@ __webpack_require__.r(__webpack_exports__);
         label: '普通插槽',
         value: '普通插槽'
       }, {
-        label: '状态切换',
-        value: '状态切换'
+        label: '切换开关',
+        value: '切换开关'
       }, {
-        label: '类型插槽',
-        value: '类型插槽'
+        label: '状态类型',
+        value: '状态类型'
       }, {
         label: '时间插槽:YYYY-MM-DD',
         value: '时间插槽:YYYY-MM-DD'
@@ -79284,7 +79414,37 @@ __webpack_require__.r(__webpack_exports__);
         label: '时间插槽:YYYY-MM-DD HH:mm:ss',
         value: '时间插槽:YYYY-MM-DD HH:mm:ss'
       }],
-      itemNum: 0
+      itemNum: 0,
+      operateType_up: [],
+      // 操作
+      operateType_in: [],
+      // 操作
+      options_up: [{
+        value: '新增',
+        label: '新增'
+      }, {
+        value: '编辑',
+        label: '编辑'
+      }, {
+        value: '删除',
+        label: '删除'
+      }, {
+        value: '自定义',
+        label: '自定义'
+      }],
+      options_in: [{
+        value: '编辑',
+        label: '编辑'
+      }, {
+        value: '删除',
+        label: '删除'
+      }, {
+        value: '查看',
+        label: '查看'
+      }, {
+        value: '自定义',
+        label: '自定义'
+      }]
     };
   },
   watch: {
