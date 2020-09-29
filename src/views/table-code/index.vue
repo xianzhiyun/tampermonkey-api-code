@@ -4,44 +4,47 @@
             <el-button style="margin: 10px" type="primary" size="mini" @click="generateCode">
                 生成代码
             </el-button>
-            <!-- 表格顶部操作区域 -->
-           <span style="font-size:12px;font-weight: bold">列表上方：</span>
-            <el-select
-                    clearable
-                    size="small"
-                    style="min-width: 400px"
-                    v-model="operateType_up"
-                    multiple
-                    filterable
-                    allow-create
-                    default-first-option
-                    placeholder="请选择">
-                <el-option
-                        v-for="item in options_up"
-                        :key="item.value"
-                        :label="item.label"
-                        :value="item.value">
-                </el-option>
-            </el-select>
-            <!-- 表格内操作区域 -->
-            <span style="font-size:12px;font-weight: bold;margin-left: 10px">列表内部：</span>
-            <el-select
-                    clearable
-                    size="small"
-                    style="min-width: 400px"
-                    v-model="operateType_in"
-                    multiple
-                    filterable
-                    allow-create
-                    default-first-option
-                    placeholder="请选择">
-                <el-option
-                        v-for="item in options_in"
-                        :key="item.value"
-                        :label="item.label"
-                        :value="item.value">
-                </el-option>
-            </el-select>
+            <!--   -->
+            <section style="margin-bottom: 10px;margin-left:15px;">
+                <!-- 表格顶部操作区域 -->
+                <span style="font-size:12px;font-weight: bold">列表上方：</span>
+                <el-select
+                        clearable
+                        size="small"
+                        style="min-width: 400px"
+                        v-model="operateType_up"
+                        multiple
+                        filterable
+                        allow-create
+                        default-first-option
+                        placeholder="请选择">
+                    <el-option
+                            v-for="item in options_up"
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value">
+                    </el-option>
+                </el-select>
+                <!-- 表格内操作区域 -->
+                <span style="font-size:12px;font-weight: bold;margin-left: 10px">列表内部：</span>
+                <el-select
+                        clearable
+                        size="small"
+                        style="min-width: 400px"
+                        v-model="operateType_in"
+                        multiple
+                        filterable
+                        allow-create
+                        default-first-option
+                        placeholder="请选择">
+                    <el-option
+                            v-for="item in options_in"
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value">
+                    </el-option>
+                </el-select>
+            </section>
         </div>
         <!-- Note that row-key is necessary to get a correct row order. -->
         <div class="table-box">
@@ -71,6 +74,13 @@
                 <el-table-column align="center" label="标题/lable">
                     <template slot-scope="{row}">
                         <el-input v-model="row.label" size="mini" placeholder="请输入内容"/>
+                    </template>
+                </el-table-column>
+                <el-table-column align="center" label="搜索参数" width="90">
+                    <template slot-scope="{row}">
+                        <el-switch
+                                v-model="row.isParams"
+                        />
                     </template>
                 </el-table-column>
                 <el-table-column align="center" label="类型">

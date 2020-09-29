@@ -9324,16 +9324,29 @@ __webpack_require__.r(__webpack_exports__);
           id: index,
           value: item,
           label: properties[item].description.slice(0, 20),
+          isParams: _this3.setSearchParams(item.toLocaleLowerCase()),
+          // 是否作为搜索参数
           showType: _this3.getShowTypeValue(item, properties[item])
         };
 
         if (item !== 'id') {
           _tableData.push(_current);
         }
-      });
+      }); // 按照指定规则实现排序
+
+      this.sortable(_tableData);
       return _tableData;
     },
-    // ? 后续功能都可以在这里面进行添加
+    // 搜索参数-类型,
+    setSearchParams: function setSearchParams(field) {
+      // 默认搜索配置项
+      var arr = ['name', 'status', 'time'];
+      var flag = arr.some(function (i) {
+        return field.includes(i);
+      });
+      return flag;
+    },
+    // 插槽-类型
     getShowTypeValue: function getShowTypeValue(item, property) {
       var _item = item.toLocaleLowerCase(); // 判断当前是否是时间
 
@@ -9350,10 +9363,33 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return "默认";
-    } // 添加智能排序功能，将部分字段按照优先级列在前面
-    // sortable() {}
-    // 添加操作列
+    },
+    // 排序-显示字段排序
+    sortable: function sortable(objs) {
+      var start = ['name', 'code'];
+      var end = ['time', 'status'];
+      this.sortByArr(objs, start, 'start');
+      this.sortByArr(objs, end, 'end');
+    },
+    // 根据数组内容实现排序
+    sortByArr: function sortByArr(objs, order, rule) {
+      var _this4 = this;
 
+      objs.sort(function (a, b) {
+        // order是规则bai  objs是需要排序的数du组
+        if (rule === 'start') {
+          return _this4.getIndex(order, b.value.toLocaleLowerCase()) - _this4.getIndex(order, a.value.toLocaleLowerCase());
+        } else {
+          return _this4.getIndex(order, a.value.toLocaleLowerCase()) - _this4.getIndex(order, b.value.toLocaleLowerCase());
+        }
+      });
+    },
+    // 获取索引
+    getIndex: function getIndex(order, value) {
+      return order.findIndex(function (item) {
+        return value.includes(item);
+      });
+    }
   }
 });
 
@@ -17898,80 +17934,87 @@ var render = function() {
         ),
         _vm._v(" "),
         _c(
-          "span",
-          { staticStyle: { "font-size": "12px", "font-weight": "bold" } },
-          [_vm._v("列表上方：")]
-        ),
-        _vm._v(" "),
-        _c(
-          "el-select",
-          {
-            staticStyle: { "min-width": "400px" },
-            attrs: {
-              clearable: "",
-              size: "small",
-              multiple: "",
-              filterable: "",
-              "allow-create": "",
-              "default-first-option": "",
-              placeholder: "请选择"
-            },
-            model: {
-              value: _vm.operateType_up,
-              callback: function($$v) {
-                _vm.operateType_up = $$v
+          "section",
+          { staticStyle: { "margin-bottom": "10px", "margin-left": "15px" } },
+          [
+            _c(
+              "span",
+              { staticStyle: { "font-size": "12px", "font-weight": "bold" } },
+              [_vm._v("列表上方：")]
+            ),
+            _vm._v(" "),
+            _c(
+              "el-select",
+              {
+                staticStyle: { "min-width": "400px" },
+                attrs: {
+                  clearable: "",
+                  size: "small",
+                  multiple: "",
+                  filterable: "",
+                  "allow-create": "",
+                  "default-first-option": "",
+                  placeholder: "请选择"
+                },
+                model: {
+                  value: _vm.operateType_up,
+                  callback: function($$v) {
+                    _vm.operateType_up = $$v
+                  },
+                  expression: "operateType_up"
+                }
               },
-              expression: "operateType_up"
-            }
-          },
-          _vm._l(_vm.options_up, function(item) {
-            return _c("el-option", {
-              key: item.value,
-              attrs: { label: item.label, value: item.value }
-            })
-          }),
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticStyle: {
-              "font-size": "12px",
-              "font-weight": "bold",
-              "margin-left": "10px"
-            }
-          },
-          [_vm._v("列表内部：")]
-        ),
-        _vm._v(" "),
-        _c(
-          "el-select",
-          {
-            staticStyle: { "min-width": "400px" },
-            attrs: {
-              clearable: "",
-              size: "small",
-              multiple: "",
-              filterable: "",
-              "allow-create": "",
-              "default-first-option": "",
-              placeholder: "请选择"
-            },
-            model: {
-              value: _vm.operateType_in,
-              callback: function($$v) {
-                _vm.operateType_in = $$v
+              _vm._l(_vm.options_up, function(item) {
+                return _c("el-option", {
+                  key: item.value,
+                  attrs: { label: item.label, value: item.value }
+                })
+              }),
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "12px",
+                  "font-weight": "bold",
+                  "margin-left": "10px"
+                }
               },
-              expression: "operateType_in"
-            }
-          },
-          _vm._l(_vm.options_in, function(item) {
-            return _c("el-option", {
-              key: item.value,
-              attrs: { label: item.label, value: item.value }
-            })
-          }),
+              [_vm._v("列表内部：")]
+            ),
+            _vm._v(" "),
+            _c(
+              "el-select",
+              {
+                staticStyle: { "min-width": "400px" },
+                attrs: {
+                  clearable: "",
+                  size: "small",
+                  multiple: "",
+                  filterable: "",
+                  "allow-create": "",
+                  "default-first-option": "",
+                  placeholder: "请选择"
+                },
+                model: {
+                  value: _vm.operateType_in,
+                  callback: function($$v) {
+                    _vm.operateType_in = $$v
+                  },
+                  expression: "operateType_in"
+                }
+              },
+              _vm._l(_vm.options_in, function(item) {
+                return _c("el-option", {
+                  key: item.value,
+                  attrs: { label: item.label, value: item.value }
+                })
+              }),
+              1
+            )
+          ],
           1
         )
       ],
@@ -18050,6 +18093,29 @@ var render = function() {
                             _vm.$set(row, "label", $$v)
                           },
                           expression: "row.label"
+                        }
+                      })
+                    ]
+                  }
+                }
+              ])
+            }),
+            _vm._v(" "),
+            _c("el-table-column", {
+              attrs: { align: "center", label: "搜索参数", width: "90" },
+              scopedSlots: _vm._u([
+                {
+                  key: "default",
+                  fn: function(ref) {
+                    var row = ref.row
+                    return [
+                      _c("el-switch", {
+                        model: {
+                          value: row.isParams,
+                          callback: function($$v) {
+                            _vm.$set(row, "isParams", $$v)
+                          },
+                          expression: "row.isParams"
                         }
                       })
                     ]
@@ -79267,6 +79333,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
 
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //

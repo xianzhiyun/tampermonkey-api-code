@@ -122,15 +122,27 @@ export default {
                     id: index,
                     value: item,
                     label: properties[item].description.slice(0, 20),
+                    isParams: this.setSearchParams(item.toLocaleLowerCase()),  // 是否作为搜索参数
                     showType: this.getShowTypeValue(item, properties[item])
                 }
-                if(item !== 'id'){
+                if (item !== 'id') {
                     _tableData.push(_current)
                 }
             })
+            // 按照指定规则实现排序
+            this.sortable(_tableData)
             return _tableData
         },
-        // ? 后续功能都可以在这里面进行添加
+        // 搜索参数-类型,
+        setSearchParams(field) {
+            // 默认搜索配置项
+            let arr = ['name', 'status', 'time']
+            let flag = arr.some((i) => {
+                return field.includes(i)
+            })
+            return flag
+        },
+        // 插槽-类型
         getShowTypeValue(item, property) {
             let _item = item.toLocaleLowerCase()
             // 判断当前是否是时间
@@ -140,17 +152,36 @@ export default {
             // 状态切换
             if (_item.includes('status')) {
                 return "切换开关"
-            }else if(property.type === "boolean"){
+            } else if (property.type === "boolean") {
                 return "普通插槽"
             }
             return "默认"
         },
 
-        // 添加智能排序功能，将部分字段按照优先级列在前面
-        // sortable() {}
-
-        // 添加操作列
-
+        // 排序-显示字段排序
+        sortable(objs) {
+            let start = ['name','code']
+            let end = ['time', 'status']
+            this.sortByArr(objs, start,'start')
+            this.sortByArr(objs, end,'end')
+        },
+        // 根据数组内容实现排序
+        sortByArr(objs, order, rule) {
+            objs.sort((a, b) => {
+                // order是规则bai  objs是需要排序的数du组
+                if (rule === 'start'){
+                    return this.getIndex(order, b.value.toLocaleLowerCase()) - this.getIndex(order, a.value.toLocaleLowerCase())
+                }else{
+                    return this.getIndex(order, a.value.toLocaleLowerCase()) - this.getIndex(order, b.value.toLocaleLowerCase())
+                }
+            });
+        },
+        // 获取索引
+        getIndex(order, value) {
+            return order.findIndex((item) => {
+                return value.includes(item)
+            })
+        }
     },
 
 }
