@@ -9300,7 +9300,7 @@ __webpack_require__.r(__webpack_exports__);
           value: item,
           label: params[item].description.slice(0, 20),
           isParams: true,
-          // 是否是参数
+          // 是否作为参数
           type: 'input'
         });
       });
@@ -9324,8 +9324,8 @@ __webpack_require__.r(__webpack_exports__);
           id: index,
           value: item,
           label: properties[item].description.slice(0, 20),
-          isParams: _this3.setSearchParams(item.toLocaleLowerCase()),
-          // 是否作为搜索参数
+          paramsType: _this3.setSearchParams(item.toLocaleLowerCase()),
+          // 是否作为搜索参数，以及当前搜索参数类型
           showType: _this3.getShowTypeValue(item, properties[item])
         };
 
@@ -18102,22 +18102,34 @@ var render = function() {
             }),
             _vm._v(" "),
             _c("el-table-column", {
-              attrs: { align: "center", label: "搜索参数", width: "90" },
+              attrs: { align: "center", label: "搜索参数" },
               scopedSlots: _vm._u([
                 {
                   key: "default",
                   fn: function(ref) {
                     var row = ref.row
                     return [
-                      _c("el-switch", {
-                        model: {
-                          value: row.isParams,
-                          callback: function($$v) {
-                            _vm.$set(row, "isParams", $$v)
-                          },
-                          expression: "row.isParams"
-                        }
-                      })
+                      _c(
+                        "el-select",
+                        {
+                          class: [row.paramsType ? "highlight" : ""],
+                          attrs: { size: "mini", placeholder: "请选择" },
+                          model: {
+                            value: row.paramsType,
+                            callback: function($$v) {
+                              _vm.$set(row, "paramsType", $$v)
+                            },
+                            expression: "row.paramsType"
+                          }
+                        },
+                        _vm._l(_vm.searchParamsType, function(item) {
+                          return _c("el-option", {
+                            key: item.value,
+                            attrs: { label: item.label, value: item.value }
+                          })
+                        }),
+                        1
+                      )
                     ]
                   }
                 }
@@ -18135,6 +18147,7 @@ var render = function() {
                       _c(
                         "el-select",
                         {
+                          class: [row.showType !== "默认" ? "highlight" : ""],
                           attrs: { size: "mini", placeholder: "请选择" },
                           model: {
                             value: row.showType,
@@ -79329,8 +79342,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sortablejs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(37);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
 /* harmony import */ var _utils_form_code__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(38);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(39);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
 
 
 //
@@ -79444,7 +79455,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
+//
+//
+//
+//
+//
 
 
 
@@ -79470,6 +79485,17 @@ __webpack_require__.r(__webpack_exports__);
       oldList: [],
       newList: [],
       tableList: [],
+      // 是否作为过滤条件
+      searchParamsType: [{
+        label: 'True',
+        value: true
+      }, {
+        label: 'False',
+        value: false
+      }, {
+        label: '搜索参数插槽',
+        value: '搜索参数插槽'
+      }],
       // 展示类型
       showTypeList: [{
         label: '默认',
@@ -79537,7 +79563,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {},
   methods: {
-    // 根据显示列表内容，生成对应 表单代码
+    // 代码生成
     generateCode: function generateCode() {
       var code = Object(_utils_form_code__WEBPACK_IMPORTED_MODULE_4__["formCode"])(this.tableList);
       Object(_utils__WEBPACK_IMPORTED_MODULE_3__["copyText"])('', code);
@@ -79648,7 +79674,7 @@ module.exports = content.locals || {};
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(22);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".app-container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  padding: 10px 5px 10px 10px;\n  /*background: #999999;*/\n}\n.sortable-ghost {\n  opacity: .8;\n  color: #fff !important;\n  background: #42b983 !important;\n}\n", ""]);
+exports.push([module.i, ".app-container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  padding: 10px 5px 10px 10px;\n  /*background: #999999;*/\n}\n.sortable-ghost {\n  opacity: .8;\n  color: #fff !important;\n  background: #42b983 !important;\n}\n.highlight input {\n  color: #409EFF !important;\n}\n", ""]);
 // Exports
 module.exports = exports;
 

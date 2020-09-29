@@ -76,16 +76,21 @@
                         <el-input v-model="row.label" size="mini" placeholder="请输入内容"/>
                     </template>
                 </el-table-column>
-                <el-table-column align="center" label="搜索参数" width="90">
+                <el-table-column align="center" label="搜索参数">
                     <template slot-scope="{row}">
-                        <el-switch
-                                v-model="row.isParams"
-                        />
+                        <el-select :class="[ row.paramsType ? 'highlight' : '']" v-model="row.paramsType" size="mini" placeholder="请选择">
+                            <el-option
+                                    v-for="item in searchParamsType"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                            />
+                        </el-select>
                     </template>
                 </el-table-column>
                 <el-table-column align="center" label="类型">
                     <template slot-scope="{row}">
-                        <el-select v-model="row.showType" size="mini" placeholder="请选择">
+                        <el-select :class="[row.showType !== '默认'? 'highlight' : '']"  v-model="row.showType" size="mini" placeholder="请选择">
                             <el-option
                                     v-for="item in showTypeList"
                                     :key="item.value"
@@ -113,7 +118,6 @@
 import Sortable from 'sortablejs'
 import {copyText} from '@/utils'
 import {formCode} from "@/utils/form-code";
-import axios from 'axios';
 
 export default {
     name: 'FormCode',
@@ -135,6 +139,21 @@ export default {
             oldList: [],
             newList: [],
             tableList: [],
+            // 是否作为过滤条件
+            searchParamsType: [
+                {
+                    label: 'True',
+                    value: true
+                },
+                {
+                    label: 'False',
+                    value: false
+                },
+                {
+                    label: '搜索参数插槽',
+                    value: '搜索参数插槽'
+                }
+            ],
             // 展示类型
             showTypeList: [
                 {
@@ -218,7 +237,7 @@ export default {
     mounted() {
     },
     methods: {
-        // 根据显示列表内容，生成对应 表单代码
+        // 代码生成
         generateCode() {
             let code = formCode(this.tableList)
             copyText('', code)
@@ -259,7 +278,7 @@ export default {
                     this.newList.splice(evt.newIndex, 0, tempIndex)
                 }
             })
-        },
+        }
     }
 }
 </script>
@@ -277,6 +296,10 @@ export default {
     opacity: .8;
     color: #fff !important;
     background: #42b983 !important;
+}
+
+.highlight input{
+    color: #409EFF !important;
 }
 </style>
 

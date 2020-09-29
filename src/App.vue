@@ -100,7 +100,7 @@ export default {
                     id: index,
                     value: item,
                     label: params[item].description.slice(0, 20),
-                    isParams: true, // 是否是参数
+                    isParams: true, // 是否作为参数
                     type: 'input'
                 })
             })
@@ -122,7 +122,7 @@ export default {
                     id: index,
                     value: item,
                     label: properties[item].description.slice(0, 20),
-                    isParams: this.setSearchParams(item.toLocaleLowerCase()),  // 是否作为搜索参数
+                    paramsType: this.setSearchParams(item.toLocaleLowerCase()),  // 是否作为搜索参数，以及当前搜索参数类型
                     showType: this.getShowTypeValue(item, properties[item])
                 }
                 if (item !== 'id') {
