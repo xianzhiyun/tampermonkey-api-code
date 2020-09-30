@@ -7,7 +7,75 @@
 export default class TableCode {
 
     constructor() {
-        this.config = {
+        this.template = ''
+        this.slot = []
+        this.slot_filter = []
+        this.slot_table = []
+        this.script = ''
+        this.data = ''
+        this.methods = []
+        this.mounted = ''
+        this.styles = ''
+        this.tableList = []
+        this.tableConfig = {}
+    }
+
+    // 获取template代码片段
+    getTemplate(tableConfig) {
+        let slot_code_table_up = ''
+        let slot_code_table_in = ''
+        this.tableConfig = tableConfig
+        // 技术实现
+        // otherConfig 配置项
+
+        console.log(`%c getTemplate`, 'font-size: 16px; font-weight: bold;color:green', tableConfig);
+
+        // 1. 生成搜索按钮代码片段
+
+        // 2. 表格顶部的插槽
+        slot_code_table_up = this.generatorSlotCodeTableUp(tableConfig.operateType_up)
+        this.slot.push(slot_code_table_up)
+
+        // 3. 表格内部的插槽
+        slot_code_table_in = this.generatorSlotCodeTableIn(tableConfig.operateType_in)
+        this.slot.push(slot_code_table_in)
+
+        // 4. 生成js代码片段
+        let scriptCode =  this.getScriptCode(tableConfig.tableList)
+
+        let html =
+            `
+                <vt-table-ez
+                    ref="bsTable"
+                    :table-config="tableConfig">
+                    <!---->
+                    <!--<template #filter-name></template>-->
+                     ${this.slot_filter.join('')}
+                    <!-- 操作区域插槽 -->
+                    <!--<template #deploy-option></template>-->
+                     ${slot_code_table_up}
+                    <!-- 表格插槽 -->
+                    <!--<template #table-status="{scope}"></template>-->
+                    ${this.slot_table.join('')}
+
+                </vt-table-ez>
+            `
+
+
+        console.log(`%c getTemplate`, 'font-size: 16px; font-weight: bold;color: green', html);
+
+        // let template =
+        //     `
+        //     <template>
+        //         <div class="full-content">
+        //         </div>
+        //      </template>
+        //     `
+    }
+
+    // 获取 script相关代码
+    getScriptCode(tableList) {
+        let config = {
             // 搜索条件
             filterInfo: {
                 // 传递数据
@@ -17,16 +85,12 @@ export default class TableCode {
                 },
                 // 字段类型设计
                 fieldList: [
-                    {label: '模板名称', type: 'slot', value: 'name'},
-                    {label: '质检类别', type: 'select', value: 'category', list: 'typeList'}
+                    // {label: '名称', type: 'slot', value: 'name'},
+                    // {label: '类别', type: 'select', value: 'category', list: 'typeList'}
                 ],
                 // select中的数据
                 listTypeInfo: {
-                    typeList: [
-                        {id: 1, name: '成品检'},
-                        {id: 2, name: '首件检'},
-                        {id: 3, name: '工序检'},
-                    ]
+                    // typeList: []
                 }
             },
             // 搜索条件内容
@@ -44,41 +108,176 @@ export default class TableCode {
                 ]
             }
         }
-        this.template = ''
-        this.script = ''
-        this.styles = ''
+        tableList.forEach((item) => {
+            // data 添加内容
+            if (item.paramsType) {
+                // data
+                config.filterInfo.data[item.value] = null
+                // 获取fieldList数组
+                this.getFieldList(item, config.filterInfo.fieldList)
+                // 获取 listTypeInfo
+                this.getListTypeInfo(item, config.filterInfo.listTypeInfo)
+                // columns数据生成
+                this.getColumns(item, config.tableInfo.columns)
+            }
+
+        })
+        return config
     }
 
-    // 获取template代码片段
-    getTemplate() {
-        let html =
+    // 获取表格列数据
+    getColumns(item, columns) {
+        // 1.生成数据
+        let column = {}
+        column.label = item.label
+        column.prop = item.prop
+        if (item.showType !== '默认'){
+            // TODO，插槽内容，例如时间、状态、类型; 可以直接添加到组件内部使用
+            column.type = 'slot'
+            // 生成表格中插槽代码
+            let _slot =
+                `
+                <template #table-${item.value}="{scope}">
+                </template>
             `
-                <vt-table-ez
-                    ref="bsTable"
-                    :table-config="tableConfig">
-                    <!---->
-                    <!--<template #filter-name></template>-->
-        
-                    <!-- 操作区域插槽 -->
-                    <!--<template #deploy-option></template>-->
-        
-                    <!-- 表格插槽 -->
-                    <!--<template #table-status="{scope}"></template>-->
-        
-                </vt-table-ez>
-            `
+            this.slot_table.push(_slot)
+        }
 
+        columns.push(column)
 
-
-
-        // let template =
-        //     `
-        //     <template>
-        //         <div class="full-content">
-        //         </div>
-        //      </template>
-        //     `
     }
+
+    getFieldList(item, fieldList) {
+
+        let fieldListItem = {}
+        // label
+        fieldListItem.label = item.label
+        // type
+        if (item.paramsType === '自定义插槽') {
+            fieldListItem.type = 'slot'
+            // 插槽-搜索条件
+            let slot_filter_item =
+                `
+                    <template #filter-${item.value}></template>
+                `
+            this.slot_filter.push(slot_filter_item)
+        } else {
+            fieldListItem.type = item.paramsType
+        }
+        if (item.type === 'select') {
+            // TODO 未开发完成
+            fieldListItem.list = `${item.value}List`
+        }
+
+        fieldListItem.value = item.value
+        fieldList.push(fieldListItem)
+    }
+
+    getListTypeInfo(item, listTypeInfo) {
+        if (item.paramsType === 'select') {
+            listTypeInfo[`${item.value}List`] = []
+        }
+    }
+
+    generatorSlotCodeTableUp(operateType_up) {
+        if (operateType_up.length === 0) return false
+        let _slot_code = ''
+        if (operateType_up && operateType_up.length) {
+            operateType_up.forEach((item) => {
+                // 生成按钮代码
+                _slot_code += this.slotCodeButton(item)
+            })
+            // 最终生成代码片段
+            _slot_code =
+                `
+                    <template #deploy-option>
+                        ${_slot_code}
+                    </template>
+                `
+        }
+        return _slot_code
+    }
+
+    // 表格内容操作列表
+    generatorSlotCodeTableIn(operateType_in) {
+        if (operateType_in.length === 0) return false
+        let _slot_code = ''
+        if (operateType_in && operateType_in.length) {
+            operateType_in.forEach((item) => {
+                // 按钮代码片段
+                _slot_code += this.slotCodeButton(item)
+            })
+            // 最终生成代码片段
+            _slot_code =
+                `
+                    <template #table-operate="{scope}">
+                        ${_slot_code}
+                    </template>
+                `
+        }
+        return _slot_code
+    }
+
+    // 按钮代码片段
+    slotCodeButton(item) {
+        let slot_code = ''
+        switch (item) {
+            case '新增':
+                slot_code =
+                    `
+                        <el-button
+                            v-has="{role: 'add'}"
+                            size="mini"
+                            type="primary"
+                            @click="handleAdd"
+                        ><i class="el-icon-plus" />新增</el-button>
+                    `
+                this.methods.push(
+                    `
+                        // 操作: 新增
+                        handleAdd() {}
+                    `
+                )
+                break;
+            case '编辑':
+                slot_code =
+                    `
+                        <el-button
+                            v-has="{role: 'edit'}"
+                            size="mini"
+                            type="primary"
+                            @click="handleAdd"
+                        >编辑</el-button>
+                    `
+                this.methods.push(
+                    `
+                        // 操作: 编辑
+                        handleEdit() {}
+                    `
+                )
+                break;
+            case '删除':
+                slot_code =
+                    `
+                        <el-button
+                            v-has="{role: 'delete'}"
+                            size="mini"
+                            type="primary"
+                            @click="handleDelete"
+                        >删除</el-button>
+                    `
+                this.methods.push(
+                    `
+                        // 操作: 删除
+                        handleAdd() {}
+                    `
+                )
+                break;
+
+        }
+        return slot_code
+    }
+
 
     // 进行拼接业务代码
     getCode() {

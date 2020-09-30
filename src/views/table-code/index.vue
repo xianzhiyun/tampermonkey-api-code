@@ -118,9 +118,10 @@
 import Sortable from 'sortablejs'
 import {copyText} from '@/utils'
 import {formCode} from "@/utils/form-code";
+import TableCode from "@/utils/TableCode";
 
 export default {
-    name: 'FormCode',
+    name: 'TableCode',
     props: {
         // api 字段配置内容
         apiTableList: {
@@ -142,16 +143,24 @@ export default {
             // 是否作为过滤条件
             searchParamsType: [
                 {
-                    label: 'True',
-                    value: true
-                },
-                {
-                    label: 'False',
+                    label: 'false',
                     value: false
                 },
                 {
-                    label: '搜索参数插槽',
-                    value: '搜索参数插槽'
+                    label: 'input',
+                    value: 'input'
+                },
+                {
+                    label: 'select',
+                    value: 'select'
+                },
+                {
+                    label: '日期和时间范围',
+                    value: 'datetimerange'
+                },
+                {
+                    label: '自定义插槽',
+                    value: '自定义插槽'
                 }
             ],
             // 展示类型
@@ -220,6 +229,7 @@ export default {
                     label: '自定义'
                 },
             ],
+            tableCode: new TableCode()
         }
     },
     watch: {
@@ -239,12 +249,24 @@ export default {
     methods: {
         // 代码生成
         generateCode() {
-            let code = formCode(this.tableList)
-            copyText('', code)
-            this.$message({
-                message: '代码copy成功',
-                type: 'success'
-            });
+
+            // 相关配置项
+            let tableConfig = {
+                tableList: this.tableList,
+                operateType_up: this.operateType_up,
+                operateType_in: this.operateType_in
+            }
+            // 获取生成的代码
+            this.tableCode.getTemplate(tableConfig)
+
+            // 代码生成器
+            // let code = formCode(tableConfig)
+            // copyText('', code)
+            // this.$message({
+            //     message: '代码copy成功',
+            //     type: 'success'
+            // });
+
         },
         // 删除某一项
         deleteItem(scope) {

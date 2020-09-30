@@ -140,7 +140,7 @@ export default {
             let flag = arr.some((i) => {
                 return field.includes(i)
             })
-            return flag
+            return flag? 'input' : ''
         },
         // 插槽-类型
         getShowTypeValue(item, property) {

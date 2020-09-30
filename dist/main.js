@@ -9344,7 +9344,7 @@ __webpack_require__.r(__webpack_exports__);
       var flag = arr.some(function (i) {
         return field.includes(i);
       });
-      return flag;
+      return flag ? 'input' : '';
     },
     // 插槽-类型
     getShowTypeValue: function getShowTypeValue(item, property) {
@@ -79342,6 +79342,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sortablejs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(37);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
 /* harmony import */ var _utils_form_code__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(38);
+/* harmony import */ var _utils_TableCode__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(237);
 
 
 //
@@ -79460,11 +79461,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'FormCode',
+  name: 'TableCode',
   props: {
     // api 字段配置内容
     apiTableList: {
@@ -79487,14 +79489,20 @@ __webpack_require__.r(__webpack_exports__);
       tableList: [],
       // 是否作为过滤条件
       searchParamsType: [{
-        label: 'True',
-        value: true
-      }, {
-        label: 'False',
+        label: 'false',
         value: false
       }, {
-        label: '搜索参数插槽',
-        value: '搜索参数插槽'
+        label: 'input',
+        value: 'input'
+      }, {
+        label: 'select',
+        value: 'select'
+      }, {
+        label: '日期和时间范围',
+        value: 'datetimerange'
+      }, {
+        label: '自定义插槽',
+        value: '自定义插槽'
       }],
       // 展示类型
       showTypeList: [{
@@ -79546,7 +79554,8 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         value: '自定义',
         label: '自定义'
-      }]
+      }],
+      tableCode: new _utils_TableCode__WEBPACK_IMPORTED_MODULE_5__["default"]()
     };
   },
   watch: {
@@ -79565,12 +79574,20 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     // 代码生成
     generateCode: function generateCode() {
-      var code = Object(_utils_form_code__WEBPACK_IMPORTED_MODULE_4__["formCode"])(this.tableList);
-      Object(_utils__WEBPACK_IMPORTED_MODULE_3__["copyText"])('', code);
-      this.$message({
-        message: '代码copy成功',
-        type: 'success'
-      });
+      // 相关配置项
+      var tableConfig = {
+        tableList: this.tableList,
+        operateType_up: this.operateType_up,
+        operateType_in: this.operateType_in
+      }; // 获取生成的代码
+
+      this.tableCode.getTemplate(tableConfig); // 代码生成器
+      // let code = formCode(tableConfig)
+      // copyText('', code)
+      // this.$message({
+      //     message: '代码copy成功',
+      //     type: 'success'
+      // });
     },
     // 删除某一项
     deleteItem: function deleteItem(scope) {
@@ -79726,6 +79743,373 @@ exports.push([module.i, "@charset \"UTF-8\";\n[data-v-063f5629] .el-table__body-
 // Exports
 module.exports = exports;
 
+
+/***/ }),
+/* 237 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return TableCode; });
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(238);
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(239);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+/**
+ * @author 🌈先知云 <公众号：先知云，微信：zhl632231327>
+ * @date ⌚2020-09-29
+ * @description 📝 生成表格组件
+ */
+var TableCode = /*#__PURE__*/function () {
+  function TableCode() {
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, TableCode);
+
+    this.template = '';
+    this.slot = [];
+    this.slot_filter = [];
+    this.slot_table = [];
+    this.script = '';
+    this.data = '';
+    this.methods = [];
+    this.mounted = '';
+    this.styles = '';
+    this.tableList = [];
+    this.tableConfig = {};
+  } // 获取template代码片段
+
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(TableCode, [{
+    key: "getTemplate",
+    value: function getTemplate(tableConfig) {
+      var slot_code_table_up = '';
+      var slot_code_table_in = '';
+      this.tableConfig = tableConfig; // 技术实现
+      // otherConfig 配置项
+
+      console.log("%c getTemplate", 'font-size: 16px; font-weight: bold;color:green', tableConfig); // 1. 生成搜索按钮代码片段
+      // 2. 表格顶部的插槽
+
+      slot_code_table_up = this.generatorSlotCodeTableUp(tableConfig.operateType_up);
+      this.slot.push(slot_code_table_up); // 3. 表格内部的插槽
+
+      slot_code_table_in = this.generatorSlotCodeTableIn(tableConfig.operateType_in);
+      this.slot.push(slot_code_table_in); // 4. 生成js代码片段
+
+      var scriptCode = this.getScriptCode(tableConfig.tableList);
+      var html = "\n                <vt-table-ez\n                    ref=\"bsTable\"\n                    :table-config=\"tableConfig\">\n                    <!---->\n                    <!--<template #filter-name></template>-->\n                     ".concat(this.slot_filter.join(''), "\n                    <!-- \u64CD\u4F5C\u533A\u57DF\u63D2\u69FD -->\n                    <!--<template #deploy-option></template>-->\n                     ").concat(slot_code_table_up, "\n                    <!-- \u8868\u683C\u63D2\u69FD -->\n                    <!--<template #table-status=\"{scope}\"></template>-->\n                    ").concat(this.slot_table.join(''), "\n\n                </vt-table-ez>\n            ");
+      console.log("%c getTemplate", 'font-size: 16px; font-weight: bold;color: green', html); // let template =
+      //     `
+      //     <template>
+      //         <div class="full-content">
+      //         </div>
+      //      </template>
+      //     `
+    } // 获取 script相关代码
+
+  }, {
+    key: "getScriptCode",
+    value: function getScriptCode(tableList) {
+      var _this = this;
+
+      var config = {
+        // 搜索条件
+        filterInfo: {
+          // 传递数据
+          data: {
+            name: null,
+            category: null
+          },
+          // 字段类型设计
+          fieldList: [// {label: '名称', type: 'slot', value: 'name'},
+            // {label: '类别', type: 'select', value: 'category', list: 'typeList'}
+          ],
+          // select中的数据
+          listTypeInfo: {// typeList: []
+          }
+        },
+        // 搜索条件内容
+        filterData: {},
+        // 表格字段
+        tableInfo: {
+          loading: false,
+          data: [],
+          columns: [{
+            label: "模板名称",
+            prop: "name"
+          }, {
+            label: "编号",
+            prop: "code",
+            width: 180,
+            sortable: true
+          }, {
+            label: "质检类别",
+            prop: "typeName"
+          }, {
+            label: "版本号",
+            prop: "versionNo"
+          }, {
+            label: "状态",
+            prop: "status",
+            type: "slot",
+            align: 'center',
+            width: 100
+          }]
+        }
+      };
+      tableList.forEach(function (item) {
+        // data 添加内容
+        if (item.paramsType) {
+          // data
+          config.filterInfo.data[item.value] = null; // 获取fieldList数组
+
+          _this.getFieldList(item, config.filterInfo.fieldList); // 获取 listTypeInfo
+
+
+          _this.getListTypeInfo(item, config.filterInfo.listTypeInfo); // columns数据生成
+
+
+          _this.getColumns(item, config.tableInfo.columns);
+        }
+      });
+      return config;
+    } // 获取表格列数据
+
+  }, {
+    key: "getColumns",
+    value: function getColumns(item, columns) {
+      // 1.生成数据
+      var column = {};
+      column.label = item.label;
+      column.prop = item.prop;
+
+      if (item.showType !== '默认') {
+        // TODO，插槽内容，例如时间、状态、类型; 可以直接添加到组件内部使用
+        column.type = 'slot'; // 生成表格中插槽代码
+
+        var _slot = "\n                <template #table-".concat(item.value, "=\"{scope}\">\n                </template>\n            ");
+
+        this.slot_table.push(_slot);
+      }
+
+      columns.push(column);
+    }
+  }, {
+    key: "getFieldList",
+    value: function getFieldList(item, fieldList) {
+      var fieldListItem = {}; // label
+
+      fieldListItem.label = item.label; // type
+
+      if (item.paramsType === '自定义插槽') {
+        fieldListItem.type = 'slot'; // 插槽-搜索条件
+
+        var slot_filter_item = "\n                    <template #filter-".concat(item.value, "></template>\n                ");
+        this.slot_filter.push(slot_filter_item);
+      } else {
+        fieldListItem.type = item.paramsType;
+      }
+
+      if (item.type === 'select') {
+        // TODO 未开发完成
+        fieldListItem.list = "".concat(item.value, "List");
+      }
+
+      fieldListItem.value = item.value;
+      fieldList.push(fieldListItem);
+    }
+  }, {
+    key: "getListTypeInfo",
+    value: function getListTypeInfo(item, listTypeInfo) {
+      if (item.paramsType === 'select') {
+        listTypeInfo["".concat(item.value, "List")] = [];
+      }
+    }
+  }, {
+    key: "generatorSlotCodeTableUp",
+    value: function generatorSlotCodeTableUp(operateType_up) {
+      var _this2 = this;
+
+      if (operateType_up.length === 0) return false;
+      var _slot_code = '';
+
+      if (operateType_up && operateType_up.length) {
+        operateType_up.forEach(function (item) {
+          // 生成按钮代码
+          _slot_code += _this2.slotCodeButton(item);
+        }); // 最终生成代码片段
+
+        _slot_code = "\n                    <template #deploy-option>\n                        ".concat(_slot_code, "\n                    </template>\n                ");
+      }
+
+      return _slot_code;
+    } // 表格内容操作列表
+
+  }, {
+    key: "generatorSlotCodeTableIn",
+    value: function generatorSlotCodeTableIn(operateType_in) {
+      var _this3 = this;
+
+      if (operateType_in.length === 0) return false;
+      var _slot_code = '';
+
+      if (operateType_in && operateType_in.length) {
+        operateType_in.forEach(function (item) {
+          // 按钮代码片段
+          _slot_code += _this3.slotCodeButton(item);
+        }); // 最终生成代码片段
+
+        _slot_code = "\n                    <template #table-operate=\"{scope}\">\n                        ".concat(_slot_code, "\n                    </template>\n                ");
+      }
+
+      return _slot_code;
+    } // 按钮代码片段
+
+  }, {
+    key: "slotCodeButton",
+    value: function slotCodeButton(item) {
+      var slot_code = '';
+
+      switch (item) {
+        case '新增':
+          slot_code = "\n                        <el-button\n                            v-has=\"{role: 'add'}\"\n                            size=\"mini\"\n                            type=\"primary\"\n                            @click=\"handleAdd\"\n                        ><i class=\"el-icon-plus\" />\u65B0\u589E</el-button>\n                    ";
+          this.methods.push("\n                        // \u64CD\u4F5C: \u65B0\u589E\n                        handleAdd() {}\n                    ");
+          break;
+
+        case '编辑':
+          slot_code = "\n                        <el-button\n                            v-has=\"{role: 'edit'}\"\n                            size=\"mini\"\n                            type=\"primary\"\n                            @click=\"handleAdd\"\n                        >\u7F16\u8F91</el-button>\n                    ";
+          this.methods.push("\n                        // \u64CD\u4F5C: \u7F16\u8F91\n                        handleEdit() {}\n                    ");
+          break;
+
+        case '删除':
+          slot_code = "\n                        <el-button\n                            v-has=\"{role: 'delete'}\"\n                            size=\"mini\"\n                            type=\"primary\"\n                            @click=\"handleDelete\"\n                        >\u5220\u9664</el-button>\n                    ";
+          this.methods.push("\n                        // \u64CD\u4F5C: \u5220\u9664\n                        handleAdd() {}\n                    ");
+          break;
+      }
+
+      return slot_code;
+    } // 进行拼接业务代码
+
+  }, {
+    key: "getCode",
+    value: function getCode() {
+      return this.template + this.script + this.styles;
+    } //
+    //     // 对数据遍历，处理结果
+    //     data.forEach((item) => {
+    //     // config.formInfo.data[item] = null
+    //     let fieldItem = {
+    //         label: item.label,
+    //         value: item.value,
+    //         type: item.type,
+    //         required: item.required,
+    //     }
+    //     // 传递数据data
+    //     if (item.isParams){
+    //     config.formInfo.data[item.value] = null
+    // }
+    //
+    // // 判断是否需要插槽
+    // switch (item.type) {
+    //     case 'slot':
+    //         // 需要在html生成代码片段
+    //         //? 帮我插进去一个插槽吧
+    //         config.slotHtml.push(`<template #form-${item.value}></template>`)
+    //         break
+    //     case 'select':
+    //         // 设置option内容
+    //         let field = item[`${item.value}Option`]
+    //         config.listTypeInfo[field] = []
+    //         break
+    //     // 图片... 上传统一
+    // }
+    // config.formInfo.fieldList.push(fieldItem)
+    //
+    // // 添加rules
+    // if (item.required) {
+    //     config.formInfo.rules[item.value] = [
+    //         {
+    //             required: true,
+    //             message: `请${item.type === 'input' ? '输入' : '选择'}${item.label}`,
+    //             trigger: ['blur', 'change']
+    //         }
+    //     ]
+    // }
+    //
+    // })
+    // // html 代码片段
+    // let html = `<template>
+    //                 <vt-form
+    //                 ref="vtForm"
+    //                 :ref-obj.sync="formInfo.ref"
+    //                 :data="formInfo.data"
+    //                 :field-list="formInfo.fieldList"
+    //                 :rules="formInfo.rules"
+    //                 :count="formInfo.count"
+    //                 label-position="top"
+    //                 >${config.slotHtml.join('\n')}</vt-form>
+    //             </template>`
+    // // js代码
+    // const script =
+    //     `<script>
+    //             export default {
+    //               data () {
+    //                 return {
+    //                   formInfo: ${JSON.stringify(config.formInfo)},
+    //                   listTypeInfo: ${JSON.stringify(config.listTypeInfo)}
+    //                 }
+    //               },
+    //               computed: {},
+    //               watch: {},
+    //               created () {},
+    //               mounted () {},
+    //             }
+    //         </script>`
+    // const css = `<style scoped lang="scss"></style>`
+    // return html + script + css
+
+  }]);
+
+  return TableCode;
+}();
+
+
+
+/***/ }),
+/* 238 */
+/***/ (function(module, exports) {
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+module.exports = _classCallCheck;
+
+/***/ }),
+/* 239 */
+/***/ (function(module, exports) {
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+module.exports = _createClass;
 
 /***/ })
 /******/ ]);
