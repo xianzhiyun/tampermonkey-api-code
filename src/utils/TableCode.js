@@ -73,10 +73,27 @@ export default class TableCode {
                 export default {
                   data () {
                     return {
-                      tableConfig:{
-                          filterInfo: ${JSON.stringify(scriptCode.filterInfo)},
+                      tableConfig: {
+                          filterInfo: {
+                              data: {
+                                 ${scriptCode.filterInfo.data.join(',\n')}
+                              },
+                              fieldList: [
+                                  ${this.getFieldListCode(scriptCode)}
+                              ]
+                          },
                           filterData: ${JSON.stringify(scriptCode.filterData)},
-                          tableInfo: ${JSON.stringify(scriptCode.tableInfo)}
+                          tableInfo: {
+                                request: {
+                                    ${scriptCode.tableInfo.request.join(',\n')}
+                                },
+                                loading: false,
+                                data: [],
+                                columns: [
+                                    ${this.getColumnsCode(scriptCode)}
+                                ]
+                            
+                          }
                       }
                     }
                   },
@@ -110,10 +127,7 @@ export default class TableCode {
             // 搜索条件
             filterInfo: {
                 // 传递数据
-                data: {
-                    name: null,
-                    category: null
-                },
+                data: [],
                 // 字段类型设计
                 fieldList: [
                     // {label: '名称', type: 'slot', value: 'name'},
@@ -128,10 +142,7 @@ export default class TableCode {
             filterData: {},
             // 表格字段
             tableInfo: {
-                request: {
-                    // url: this.$global.sys + '/api/tenant/page',
-                    isInit: true,          // 默认自动触发
-                },
+                request: ['isInit: true'],
                 loading: false,
                 data: [],
                 columns: [
@@ -150,14 +161,14 @@ export default class TableCode {
             default :
                 basePath = `this.$global.bus`
         }
-        config.tableInfo.request.url = `${basePath} + '${this.apiConfig.url}'`
+        config.tableInfo.request.push(`url:${basePath} + '${this.apiConfig.url}'`)
 
 
         tableList.forEach((item) => {
             // 搜索参数数据处理
             if (item.paramsType) {
                 // data
-                config.filterInfo.data[item.value] = null
+                config.filterInfo.data.push(`${item.value}: null`)
                 // 搜索条件: 获取fieldList数组
                 this.getFieldList(item, config.filterInfo.fieldList)
                 // 获取 listTypeInfo
@@ -178,7 +189,7 @@ export default class TableCode {
         // 1.生成数据
         let column = {}
         column.label = item.label
-        column.prop = item.prop
+        column.prop = item.value
         if (item.showType !== '默认') {
             // TODO，插槽内容，例如时间、状态、类型; 可以直接添加到组件内部使用
             column.type = 'slot'
@@ -187,7 +198,7 @@ export default class TableCode {
             let slot_default = ''
             // a. 判断当前是时间插槽
             if (item.showType === '时间插槽:YYYY-MM-DD HH:mm:ss') {
-                slot_default = `<span v-formatTime="{time: scope.row.item.value}"></span>`
+                slot_default = `<span v-format-time="{time: scope.row.${item.value}}"></span>`
             }
             // 普通插槽，留空
             // TODO 待开发
@@ -341,6 +352,30 @@ export default class TableCode {
     // 进行拼接业务代码
     getCode() {
         return this.template + this.script + this.styles
+    }
+
+    getColumnsCode(scriptCode) {
+        let tmp = []
+        scriptCode.tableInfo.columns.forEach((item) => {
+            let _ii = []
+            Object.keys(item).forEach((ii) => {
+                _ii.push(`${ii}:'${item[ii]}'`)
+            })
+            tmp.push(`{${_ii.join(',')}}`)
+        })
+        return tmp.join(',\n')
+    }
+
+    getFieldListCode(scriptCode) {
+        let tmp = []
+        scriptCode.filterInfo.fieldList.forEach((item) => {
+            let _ii = []
+            Object.keys(item).forEach((ii) => {
+                _ii.push(`${ii}:'${item[ii]}'`)
+            })
+            tmp.push(`{${_ii.join(',')}}`)
+        })
+        return tmp.join(',\n')
     }
 
     //

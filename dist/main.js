@@ -18629,7 +18629,7 @@ var TableCode = /*#__PURE__*/function () {
       var html = "\n                <vt-table-ez\n                    ref=\"bsTable\"\n                    :table-config=\"tableConfig\">\n                    <!--<template #filter-name></template>-->\n                     ".concat(this.slot_filter.join(''), "\n                    <!-- \u64CD\u4F5C\u533A\u57DF\u63D2\u69FD -->\n                    <!--<template #deploy-option></template>-->\n                     ").concat(slot_code_table_up, "\n                    <!-- \u8868\u683C\u63D2\u69FD -->\n                    <!--<template #table-status=\"{scope}\"></template>-->\n                    ").concat(this.slot_table.join(''), "\n                </vt-table-ez>\n            ");
       console.log("%c getTemplate", 'font-size: 16px; font-weight: bold;color: green', scriptCode); // 脚本文件内容
 
-      var script = "<script>\n                export default {\n                  data () {\n                    return {\n                      tableConfig:{\n                          filterInfo: ".concat(JSON.stringify(scriptCode.filterInfo), ",\n                          filterData: ").concat(JSON.stringify(scriptCode.filterData), ",\n                          tableInfo: ").concat(JSON.stringify(scriptCode.tableInfo), "\n                      }\n                    }\n                  },\n                  computed: {},\n                  watch: {},\n                  created () {},\n                  mounted () {},\n                }\n            </script>");
+      var script = "<script>\n                export default {\n                  data () {\n                    return {\n                      tableConfig: {\n                          filterInfo: {\n                              data: {\n                                 ".concat(scriptCode.filterInfo.data.join(',\n'), "\n                              },\n                              fieldList: [\n                                  ").concat(this.getFieldListCode(scriptCode), "\n                              ]\n                          },\n                          filterData: ").concat(JSON.stringify(scriptCode.filterData), ",\n                          tableInfo: {\n                                request: {\n                                    ").concat(scriptCode.tableInfo.request.join(',\n'), "\n                                },\n                                loading: false,\n                                data: [],\n                                columns: [\n                                    ").concat(this.getColumnsCode(scriptCode), "\n                                ]\n                            \n                          }\n                      }\n                    }\n                  },\n                  computed: {},\n                  watch: {},\n                  created () {},\n                  mounted () {},\n                }\n            </script>");
       console.log("%c script", 'font-size: 16px; font-weight: bold;color:red', script);
       var template = "\n            <template>\n                <div class=\"full-content\">\n                   ".concat(html, "\n                </div>\n             </template>\n            "); // 样式文件内容
 
@@ -18647,10 +18647,7 @@ var TableCode = /*#__PURE__*/function () {
         // 搜索条件
         filterInfo: {
           // 传递数据
-          data: {
-            name: null,
-            category: null
-          },
+          data: [],
           // 字段类型设计
           fieldList: [// {label: '名称', type: 'slot', value: 'name'},
             // {label: '类别', type: 'select', value: 'category', list: 'typeList'}
@@ -18663,11 +18660,7 @@ var TableCode = /*#__PURE__*/function () {
         filterData: {},
         // 表格字段
         tableInfo: {
-          request: {
-            // url: this.$global.sys + '/api/tenant/page',
-            isInit: true // 默认自动触发
-
-          },
+          request: ['isInit: true'],
           loading: false,
           data: [],
           columns: [// {label: "模板名称", prop: "name"},
@@ -18686,12 +18679,12 @@ var TableCode = /*#__PURE__*/function () {
           basePath = "this.$global.bus";
       }
 
-      config.tableInfo.request.url = "".concat(basePath, " + '").concat(this.apiConfig.url, "'");
+      config.tableInfo.request.push("url:".concat(basePath, " + '").concat(this.apiConfig.url, "'"));
       tableList.forEach(function (item) {
         // 搜索参数数据处理
         if (item.paramsType) {
           // data
-          config.filterInfo.data[item.value] = null; // 搜索条件: 获取fieldList数组
+          config.filterInfo.data.push("".concat(item.value, ": null")); // 搜索条件: 获取fieldList数组
 
           _this.getFieldList(item, config.filterInfo.fieldList); // 获取 listTypeInfo
 
@@ -18715,7 +18708,7 @@ var TableCode = /*#__PURE__*/function () {
       // 1.生成数据
       var column = {};
       column.label = item.label;
-      column.prop = item.prop;
+      column.prop = item.value;
 
       if (item.showType !== '默认') {
         // TODO，插槽内容，例如时间、状态、类型; 可以直接添加到组件内部使用
@@ -18724,7 +18717,7 @@ var TableCode = /*#__PURE__*/function () {
         var slot_default = ''; // a. 判断当前是时间插槽
 
         if (item.showType === '时间插槽:YYYY-MM-DD HH:mm:ss') {
-          slot_default = "<span v-formatTime=\"{time: scope.row.item.value}\"></span>";
+          slot_default = "<span v-format-time=\"{time: scope.row.".concat(item.value, "}\"></span>");
         } // 普通插槽，留空
         // TODO 待开发
         // b. 当前切换开关器
@@ -18839,6 +18832,32 @@ var TableCode = /*#__PURE__*/function () {
     key: "getCode",
     value: function getCode() {
       return this.template + this.script + this.styles;
+    }
+  }, {
+    key: "getColumnsCode",
+    value: function getColumnsCode(scriptCode) {
+      var tmp = [];
+      scriptCode.tableInfo.columns.forEach(function (item) {
+        var _ii = [];
+        Object.keys(item).forEach(function (ii) {
+          _ii.push("".concat(ii, ":'").concat(item[ii], "'"));
+        });
+        tmp.push("{".concat(_ii.join(','), "}"));
+      });
+      return tmp.join(',\n');
+    }
+  }, {
+    key: "getFieldListCode",
+    value: function getFieldListCode(scriptCode) {
+      var tmp = [];
+      scriptCode.filterInfo.fieldList.forEach(function (item) {
+        var _ii = [];
+        Object.keys(item).forEach(function (ii) {
+          _ii.push("".concat(ii, ":'").concat(item[ii], "'"));
+        });
+        tmp.push("{".concat(_ii.join(','), "}"));
+      });
+      return tmp.join(',\n');
     } //
     //     // 对数据遍历，处理结果
     //     data.forEach((item) => {
