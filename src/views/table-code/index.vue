@@ -127,6 +127,10 @@ export default {
         apiTableList: {
             type: Array,
             default: () => []
+        },
+        apiConfig: {
+            type: Object,
+            default: () => {}
         }
     },
     data() {
@@ -228,8 +232,7 @@ export default {
                     value: '自定义',
                     label: '自定义'
                 },
-            ],
-            tableCode: new TableCode()
+            ]
         }
     },
     watch: {
@@ -249,7 +252,7 @@ export default {
     methods: {
         // 代码生成
         generateCode() {
-
+           const tableCode = new TableCode(this.apiConfig)
             // 相关配置项
             let tableConfig = {
                 tableList: this.tableList,
@@ -257,15 +260,13 @@ export default {
                 operateType_in: this.operateType_in
             }
             // 获取生成的代码
-            this.tableCode.getTemplate(tableConfig)
-
+          let code = tableCode.getTemplate(tableConfig)
             // 代码生成器
-            // let code = formCode(tableConfig)
-            // copyText('', code)
-            // this.$message({
-            //     message: '代码copy成功',
-            //     type: 'success'
-            // });
+            copyText('', code)
+            this.$message({
+                message: '代码copy成功',
+                type: 'success'
+            });
 
         },
         // 删除某一项

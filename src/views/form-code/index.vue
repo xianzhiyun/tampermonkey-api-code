@@ -31,8 +31,8 @@
                 <el-table-column
                         label="#"
                         type="index"
-                        align="center"
                         width="50"
+                        align="center"
                 />
                 <el-table-column align="center" label="字段名/value">
                     <template slot-scope="{row}">

@@ -2,11 +2,15 @@
  * @author 🌈先知云 <公众号：先知云，微信：zhl632231327>
  * @date ⌚2020-09-29
  * @description 📝 生成表格组件
+ * 遍历传递数组，生成对应
+ * 1、template
+ * 2、script/data
+ * 3、script/methods
+ * 4、script/mounted
  */
-
 export default class TableCode {
 
-    constructor() {
+    constructor(apiConfig) {
         this.template = ''
         this.slot = []
         this.slot_filter = []
@@ -18,6 +22,7 @@ export default class TableCode {
         this.styles = ''
         this.tableList = []
         this.tableConfig = {}
+        this.apiConfig = apiConfig
     }
 
     // 获取template代码片段
@@ -32,23 +37,22 @@ export default class TableCode {
 
         // 1. 生成搜索按钮代码片段
 
-        // 2. 表格顶部的插槽
+        // 2. 表格顶部操作区域的插槽;
         slot_code_table_up = this.generatorSlotCodeTableUp(tableConfig.operateType_up)
-        this.slot.push(slot_code_table_up)
+        slot_code_table_up && this.slot.push(slot_code_table_up)
 
         // 3. 表格内部的插槽
         slot_code_table_in = this.generatorSlotCodeTableIn(tableConfig.operateType_in)
         this.slot.push(slot_code_table_in)
 
         // 4. 生成js代码片段
-        let scriptCode =  this.getScriptCode(tableConfig.tableList)
+        let scriptCode = this.getScriptCode(tableConfig.tableList)
 
         let html =
             `
                 <vt-table-ez
                     ref="bsTable"
                     :table-config="tableConfig">
-                    <!---->
                     <!--<template #filter-name></template>-->
                      ${this.slot_filter.join('')}
                     <!-- 操作区域插槽 -->
@@ -57,20 +61,47 @@ export default class TableCode {
                     <!-- 表格插槽 -->
                     <!--<template #table-status="{scope}"></template>-->
                     ${this.slot_table.join('')}
-
                 </vt-table-ez>
             `
 
 
-        console.log(`%c getTemplate`, 'font-size: 16px; font-weight: bold;color: green', html);
+        console.log(`%c getTemplate`, 'font-size: 16px; font-weight: bold;color: green', scriptCode);
 
-        // let template =
-        //     `
-        //     <template>
-        //         <div class="full-content">
-        //         </div>
-        //      </template>
-        //     `
+        // 脚本文件内容
+        const script =
+            `<script>
+                export default {
+                  data () {
+                    return {
+                      tableConfig:{
+                          filterInfo: ${JSON.stringify(scriptCode.filterInfo)},
+                          filterData: ${JSON.stringify(scriptCode.filterData)},
+                          tableInfo: ${JSON.stringify(scriptCode.tableInfo)}
+                      }
+                    }
+                  },
+                  computed: {},
+                  watch: {},
+                  created () {},
+                  mounted () {},
+                }
+            </script>`
+
+        console.log(`%c script`, 'font-size: 16px; font-weight: bold;color:red', script);
+
+        let template =
+            `
+            <template>
+                <div class="full-content">
+                   ${html}
+                </div>
+             </template>
+            `
+
+        // 样式文件内容
+        const css = `<style scoped lang="scss"></style>`
+        console.log(`%c 结果`, 'font-size: 16px; font-weight: bold;color:green', html + script + css);
+        return template + script + css
     }
 
     // 获取 script相关代码
@@ -97,54 +128,81 @@ export default class TableCode {
             filterData: {},
             // 表格字段
             tableInfo: {
+                request: {
+                    // url: this.$global.sys + '/api/tenant/page',
+                    isInit: true,          // 默认自动触发
+                },
                 loading: false,
                 data: [],
                 columns: [
-                    {label: "模板名称", prop: "name"},
-                    {label: "编号", prop: "code", width: 180, sortable: true},
-                    {label: "质检类别", prop: "typeName"},
-                    {label: "版本号", prop: "versionNo"},
-                    {label: "状态", prop: "status", type: "slot", align: 'center', width: 100},
+                    // {label: "模板名称", prop: "name"},
+                    // {label: "状态", prop: "status", type: "slot", align: 'center', width: 100},
                 ]
             }
         }
+
+        let basePath = ''
+        // TODO 使用枚举？
+        switch (this.apiConfig.basePath) {
+            case "/system":
+                basePath = `this.$global.sys`
+                break;
+            default :
+                basePath = `this.$global.bus`
+        }
+        config.tableInfo.request.url = `${basePath} + '${this.apiConfig.url}'`
+
+
         tableList.forEach((item) => {
-            // data 添加内容
+            // 搜索参数数据处理
             if (item.paramsType) {
                 // data
                 config.filterInfo.data[item.value] = null
-                // 获取fieldList数组
+                // 搜索条件: 获取fieldList数组
                 this.getFieldList(item, config.filterInfo.fieldList)
                 // 获取 listTypeInfo
                 this.getListTypeInfo(item, config.filterInfo.listTypeInfo)
+            }
+            // 类型数据处理
+            if (item.showType) {
                 // columns数据生成
                 this.getColumns(item, config.tableInfo.columns)
             }
-
         })
         return config
     }
 
-    // 获取表格列数据
+    // 1. 获取表格列数据、
+    // （2）表格中插槽代码生成
     getColumns(item, columns) {
         // 1.生成数据
         let column = {}
         column.label = item.label
         column.prop = item.prop
-        if (item.showType !== '默认'){
+        if (item.showType !== '默认') {
             // TODO，插槽内容，例如时间、状态、类型; 可以直接添加到组件内部使用
             column.type = 'slot'
             // 生成表格中插槽代码
+
+            let slot_default = ''
+            // a. 判断当前是时间插槽
+            if (item.showType === '时间插槽:YYYY-MM-DD HH:mm:ss') {
+                slot_default = `<span v-formatTime="{time: scope.row.item.value}"></span>`
+            }
+            // 普通插槽，留空
+            // TODO 待开发
+            // b. 当前切换开关器
+            // c. 当前为状态类型插槽
+
             let _slot =
                 `
-                <template #table-${item.value}="{scope}">
-                </template>
-            `
+                    <template #table-${item.value}="{scope}">
+                        ${slot_default}
+                    </template>
+                `
             this.slot_table.push(_slot)
         }
-
         columns.push(column)
-
     }
 
     getFieldList(item, fieldList) {
@@ -180,7 +238,7 @@ export default class TableCode {
     }
 
     generatorSlotCodeTableUp(operateType_up) {
-        if (operateType_up.length === 0) return false
+        if (operateType_up.length === 0) return ''
         let _slot_code = ''
         if (operateType_up && operateType_up.length) {
             operateType_up.forEach((item) => {
@@ -198,7 +256,7 @@ export default class TableCode {
         return _slot_code
     }
 
-    // 表格内容操作列表
+    // 3. 表格内容操作列表
     generatorSlotCodeTableIn(operateType_in) {
         if (operateType_in.length === 0) return false
         let _slot_code = ''
@@ -275,6 +333,7 @@ export default class TableCode {
                 break;
 
         }
+        console.log(`%c generatorSlotCodeTableUp2`, 'font-size: 16px; font-weight: bold;color:red', slot_code);
         return slot_code
     }
 
