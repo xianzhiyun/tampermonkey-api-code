@@ -9,39 +9,39 @@
                 <!-- 表格顶部操作区域 -->
                 <span style="font-size:12px;font-weight: bold">列表上方：</span>
                 <el-select
-                        clearable
-                        size="small"
-                        style="min-width: 400px"
-                        v-model="operateType_up"
-                        multiple
-                        filterable
-                        allow-create
-                        default-first-option
-                        placeholder="请选择">
+                    clearable
+                    size="small"
+                    style="min-width: 400px"
+                    v-model="operateType_up"
+                    multiple
+                    filterable
+                    allow-create
+                    default-first-option
+                    placeholder="请选择">
                     <el-option
-                            v-for="item in options_up"
-                            :key="item.value"
-                            :label="item.label"
-                            :value="item.value">
+                        v-for="item in options_up"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
                     </el-option>
                 </el-select>
                 <!-- 表格内操作区域 -->
                 <span style="font-size:12px;font-weight: bold;margin-left: 10px">列表内部：</span>
                 <el-select
-                        clearable
-                        size="small"
-                        style="min-width: 400px"
-                        v-model="operateType_in"
-                        multiple
-                        filterable
-                        allow-create
-                        default-first-option
-                        placeholder="请选择">
+                    clearable
+                    size="small"
+                    style="min-width: 400px"
+                    v-model="operateType_in"
+                    multiple
+                    filterable
+                    allow-create
+                    default-first-option
+                    placeholder="请选择">
                     <el-option
-                            v-for="item in options_in"
-                            :key="item.value"
-                            :label="item.label"
-                            :value="item.value">
+                        v-for="item in options_in"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
                     </el-option>
                 </el-select>
             </section>
@@ -49,23 +49,33 @@
         <!-- Note that row-key is necessary to get a correct row order. -->
         <div class="table-box">
             <el-table
-                    ref="dragTable"
-                    v-loading="listLoading"
-                    style="flex: 1"
-                    max-height="3500"
-                    :data="tableList"
-                    row-key="id"
-                    height="0"
-                    border
-                    fit
-                    highlight-current-row
+                ref="dragTable"
+                v-loading="listLoading"
+                style="flex: 1"
+                max-height="3500"
+                :data="tableList"
+                row-key="id"
+                height="0"
+                border
+                fit
+                highlight-current-row
             >
                 <el-table-column
-                        label="#"
-                        type="index"
-                        align="center"
-                        width="50"
+                    class="drag-cursor"
+                    label="#"
+                    type="index"
+                    align="center"
+                    width="50"
                 />
+                <el-table-column align="center" label="Drag" width="60">
+                    <template slot-scope="scope">
+                        <!--                  <i style="font-size: 16px;color: #303133;cursor: pointer" class="el-icon-rank"/>-->
+                        <i
+                            style="font-size: 16px;color: #F56C6C;cursor: pointer"
+                            class="el-icon-delete" @click.stop="deleteItem(scope)"
+                        />
+                    </template>
+                </el-table-column>
                 <el-table-column align="center" label="字段名/value">
                     <template slot-scope="{row}">
                         <el-input v-model="row.value" size="mini" placeholder="请输入内容"/>
@@ -78,35 +88,28 @@
                 </el-table-column>
                 <el-table-column align="center" label="搜索参数">
                     <template slot-scope="{row}">
-                        <el-select :class="[ row.paramsType ? 'highlight' : '']" v-model="row.paramsType" size="mini" placeholder="请选择">
+                        <el-select :class="[ row.paramsType ? 'highlight' : '']" v-model="row.paramsType" size="mini"
+                                   placeholder="请选择">
                             <el-option
-                                    v-for="item in searchParamsType"
-                                    :key="item.value"
-                                    :label="item.label"
-                                    :value="item.value"
+                                v-for="item in searchParamsType"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value"
                             />
                         </el-select>
                     </template>
                 </el-table-column>
                 <el-table-column align="center" label="类型">
                     <template slot-scope="{row}">
-                        <el-select :class="[row.showType !== '默认'? 'highlight' : '']"  v-model="row.showType" size="mini" placeholder="请选择">
+                        <el-select :class="[row.showType !== '默认'? 'highlight' : '']" v-model="row.showType" size="mini"
+                                   placeholder="请选择">
                             <el-option
-                                    v-for="item in showTypeList"
-                                    :key="item.value"
-                                    :label="item.label"
-                                    :value="item.value"
+                                v-for="item in showTypeList"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value"
                             />
                         </el-select>
-                    </template>
-                </el-table-column>
-                <el-table-column align="center" label="Drag" width="80">
-                    <template slot-scope="scope">
-                        <i style="font-size: 16px;color: #303133;cursor: pointer" class="el-icon-rank"/>
-                        <i
-                                style="font-size: 16px;color: #F56C6C;margin-left: 20px;cursor: pointer"
-                                class="el-icon-delete" @click.stop="deleteItem(scope)"
-                        />
                     </template>
                 </el-table-column>
             </el-table>
@@ -130,7 +133,8 @@ export default {
         },
         apiConfig: {
             type: Object,
-            default: () => {}
+            default: () => {
+            }
         }
     },
     data() {
@@ -252,7 +256,7 @@ export default {
     methods: {
         // 代码生成
         generateCode() {
-           const tableCode = new TableCode(this.apiConfig)
+            const tableCode = new TableCode(this.apiConfig)
             // 相关配置项
             let tableConfig = {
                 tableList: this.tableList,
@@ -260,7 +264,7 @@ export default {
                 operateType_in: this.operateType_in
             }
             // 获取生成的代码
-          let code = tableCode.getTemplate(tableConfig)
+            let code = tableCode.getTemplate(tableConfig)
             // 代码生成器
             copyText('', code)
             this.$message({
@@ -321,7 +325,7 @@ export default {
     background: #42b983 !important;
 }
 
-.highlight input{
+.highlight input {
     color: #409EFF !important;
 }
 </style>
@@ -353,6 +357,9 @@ export default {
     border-radius: 3px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
     background-color: #1890ff;
+}
+/deep/ .drag-cursor{
+    cursor: pointer;
 }
 
 .table-box {

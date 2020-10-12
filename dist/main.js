@@ -11671,7 +11671,7 @@ var render = function() {
             attrs: { type: "primary", size: "mini" },
             on: { click: _vm.generateCode }
           },
-          [_vm._v("\n            生成代码\n        ")]
+          [_vm._v("\n      生成代码\n    ")]
         ),
         _vm._v(" "),
         _c(
@@ -11681,7 +11681,7 @@ var render = function() {
             attrs: { type: "primary", size: "mini" },
             on: { click: _vm.generateCode }
           },
-          [_vm._v("\n            预览\n        ")]
+          [_vm._v("\n      预览\n    ")]
         ),
         _vm._v(" "),
         _c(
@@ -11757,6 +11757,33 @@ var render = function() {
           [
             _c("el-table-column", {
               attrs: { label: "#", type: "index", width: "50", align: "center" }
+            }),
+            _vm._v(" "),
+            _c("el-table-column", {
+              attrs: { align: "center", label: "Drag", width: "60" },
+              scopedSlots: _vm._u([
+                {
+                  key: "default",
+                  fn: function(scope) {
+                    return [
+                      _c("i", {
+                        staticClass: "el-icon-delete",
+                        staticStyle: {
+                          "font-size": "16px",
+                          color: "#F56C6C",
+                          cursor: "pointer"
+                        },
+                        on: {
+                          click: function($event) {
+                            $event.stopPropagation()
+                            return _vm.deleteItem(scope)
+                          }
+                        }
+                      })
+                    ]
+                  }
+                }
+              ])
             }),
             _vm._v(" "),
             _c("el-table-column", {
@@ -11915,43 +11942,6 @@ var render = function() {
                         }),
                         1
                       )
-                    ]
-                  }
-                }
-              ])
-            }),
-            _vm._v(" "),
-            _c("el-table-column", {
-              attrs: { align: "center", label: "Drag", width: "80" },
-              scopedSlots: _vm._u([
-                {
-                  key: "default",
-                  fn: function(scope) {
-                    return [
-                      _c("i", {
-                        staticClass: "el-icon-rank",
-                        staticStyle: {
-                          "font-size": "16px",
-                          color: "#303133",
-                          cursor: "pointer"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("i", {
-                        staticClass: "el-icon-delete",
-                        staticStyle: {
-                          "font-size": "16px",
-                          color: "#F56C6C",
-                          "margin-left": "20px",
-                          cursor: "pointer"
-                        },
-                        on: {
-                          click: function($event) {
-                            $event.stopPropagation()
-                            return _vm.deleteItem(scope)
-                          }
-                        }
-                      })
                     ]
                   }
                 }
@@ -18067,7 +18057,35 @@ var render = function() {
           },
           [
             _c("el-table-column", {
+              staticClass: "drag-cursor",
               attrs: { label: "#", type: "index", align: "center", width: "50" }
+            }),
+            _vm._v(" "),
+            _c("el-table-column", {
+              attrs: { align: "center", label: "Drag", width: "60" },
+              scopedSlots: _vm._u([
+                {
+                  key: "default",
+                  fn: function(scope) {
+                    return [
+                      _c("i", {
+                        staticClass: "el-icon-delete",
+                        staticStyle: {
+                          "font-size": "16px",
+                          color: "#F56C6C",
+                          cursor: "pointer"
+                        },
+                        on: {
+                          click: function($event) {
+                            $event.stopPropagation()
+                            return _vm.deleteItem(scope)
+                          }
+                        }
+                      })
+                    ]
+                  }
+                }
+              ])
             }),
             _vm._v(" "),
             _c("el-table-column", {
@@ -18186,43 +18204,6 @@ var render = function() {
                   }
                 }
               ])
-            }),
-            _vm._v(" "),
-            _c("el-table-column", {
-              attrs: { align: "center", label: "Drag", width: "80" },
-              scopedSlots: _vm._u([
-                {
-                  key: "default",
-                  fn: function(scope) {
-                    return [
-                      _c("i", {
-                        staticClass: "el-icon-rank",
-                        staticStyle: {
-                          "font-size": "16px",
-                          color: "#303133",
-                          cursor: "pointer"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("i", {
-                        staticClass: "el-icon-delete",
-                        staticStyle: {
-                          "font-size": "16px",
-                          color: "#F56C6C",
-                          "margin-left": "20px",
-                          cursor: "pointer"
-                        },
-                        on: {
-                          click: function($event) {
-                            $event.stopPropagation()
-                            return _vm.deleteItem(scope)
-                          }
-                        }
-                      })
-                    ]
-                  }
-                }
-              ])
             })
           ],
           1
@@ -18262,6 +18243,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_TableCode__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(76);
 
 
+//
+//
+//
 //
 //
 //
@@ -18999,7 +18983,7 @@ module.exports = content.locals || {};
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(25);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\n[data-v-063f5629] .el-table__body-wrapper {\n  scrollbar-arrow-color: #000;\n  /*顶部/底部图标颜色*/\n  scrollbar-face-color: #333;\n  /*滚动条颜色*/\n  scrollbar-shadow-color: #999;\n  /*滚动条阴影颜色*/\n}\n[data-v-063f5629] .el-table__body-wrapper::-webkit-scrollbar {\n  width: 6px;\n  height: 6px;\n  background-color: #F5F5F5;\n}\n[data-v-063f5629] .el-table__body-wrapper::-webkit-scrollbar-track {\n  /*background-color: #f8f8f8;*/\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5;\n}\n[data-v-063f5629] .el-table__body-wrapper::-webkit-scrollbar-thumb {\n  /*background-color: #f8f8f8;*/\n  border-radius: 3px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #1890ff;\n}\n.table-box[data-v-063f5629] {\n  flex: 1;\n  position: relative;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  background: #fff;\n  overflow: hidden;\n}\n.icon-star[data-v-063f5629] {\n  margin-right: 2px;\n}\n.drag-handler[data-v-063f5629] {\n  width: 20px;\n  height: 20px;\n  cursor: pointer;\n}\n.show-d[data-v-063f5629] {\n  margin-top: 15px;\n}\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n[data-v-063f5629] .el-table__body-wrapper {\n  scrollbar-arrow-color: #000;\n  /*顶部/底部图标颜色*/\n  scrollbar-face-color: #333;\n  /*滚动条颜色*/\n  scrollbar-shadow-color: #999;\n  /*滚动条阴影颜色*/\n}\n[data-v-063f5629] .el-table__body-wrapper::-webkit-scrollbar {\n  width: 6px;\n  height: 6px;\n  background-color: #F5F5F5;\n}\n[data-v-063f5629] .el-table__body-wrapper::-webkit-scrollbar-track {\n  /*background-color: #f8f8f8;*/\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5;\n}\n[data-v-063f5629] .el-table__body-wrapper::-webkit-scrollbar-thumb {\n  /*background-color: #f8f8f8;*/\n  border-radius: 3px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #1890ff;\n}\n[data-v-063f5629] .drag-cursor {\n  cursor: pointer;\n}\n.table-box[data-v-063f5629] {\n  flex: 1;\n  position: relative;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  background: #fff;\n  overflow: hidden;\n}\n.icon-star[data-v-063f5629] {\n  margin-right: 2px;\n}\n.drag-handler[data-v-063f5629] {\n  width: 20px;\n  height: 20px;\n  cursor: pointer;\n}\n.show-d[data-v-063f5629] {\n  margin-top: 15px;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
