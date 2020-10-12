@@ -33,7 +33,6 @@ export default class TableCode {
         // 技术实现
         // otherConfig 配置项
 
-        console.log(`%c getTemplate`, 'font-size: 16px; font-weight: bold;color:green', tableConfig);
 
         // 1. 生成搜索按钮代码片段
 
@@ -41,12 +40,16 @@ export default class TableCode {
         slot_code_table_up = this.generatorSlotCodeTableUp(tableConfig.operateType_up)
         slot_code_table_up && this.slot.push(slot_code_table_up)
 
-        // 3. 表格内部的插槽
         slot_code_table_in = this.generatorSlotCodeTableIn(tableConfig.operateType_in)
-        this.slot.push(slot_code_table_in)
+        slot_code_table_in && this.slot.push(slot_code_table_in)
 
         // 4. 生成js代码片段
         let scriptCode = this.getScriptCode(tableConfig.tableList)
+
+        // 3. 表格内部的插槽
+        if (tableConfig.operateType_in.length > 0) {
+            scriptCode.tableInfo.columns.push({label: '操作', prop: 'operate', type: 'slot', align: 'center'})
+        }
 
         let html =
             `
@@ -61,11 +64,10 @@ export default class TableCode {
                     <!-- 表格插槽 -->
                     <!--<template #table-status="{scope}"></template>-->
                     ${this.slot_table.join('')}
+                    ${slot_code_table_in}
                 </vt-table-ez>
             `
 
-
-        console.log(`%c getTemplate`, 'font-size: 16px; font-weight: bold;color: green', scriptCode);
 
         // 脚本文件内容
         const script =
@@ -101,10 +103,12 @@ export default class TableCode {
                   watch: {},
                   created () {},
                   mounted () {},
+                  methods:{
+                      ${this.methods.join(',\n')}
+                  }
                 }
             </script>`
 
-        console.log(`%c script`, 'font-size: 16px; font-weight: bold;color:red', script);
 
         let template =
             `
@@ -117,7 +121,6 @@ export default class TableCode {
 
         // 样式文件内容
         const css = `<style scoped lang="scss"></style>`
-        console.log(`%c 结果`, 'font-size: 16px; font-weight: bold;color:green', html + script + css);
         return template + script + css
     }
 
@@ -297,7 +300,7 @@ export default class TableCode {
                         <el-button
                             v-has="{role: 'add'}"
                             size="mini"
-                            type="primary"
+                            type="text"
                             @click="handleAdd"
                         ><i class="el-icon-plus" />新增</el-button>
                     `
@@ -314,8 +317,8 @@ export default class TableCode {
                         <el-button
                             v-has="{role: 'edit'}"
                             size="mini"
-                            type="primary"
-                            @click="handleAdd"
+                            type="text"
+                            @click="handleEdit"
                         >编辑</el-button>
                     `
                 this.methods.push(
@@ -331,20 +334,19 @@ export default class TableCode {
                         <el-button
                             v-has="{role: 'delete'}"
                             size="mini"
-                            type="primary"
+                            type="text"
                             @click="handleDelete"
                         >删除</el-button>
                     `
                 this.methods.push(
                     `
                         // 操作: 删除
-                        handleAdd() {}
+                        handleDelete() {}
                     `
                 )
                 break;
 
         }
-        console.log(`%c generatorSlotCodeTableUp2`, 'font-size: 16px; font-weight: bold;color:red', slot_code);
         return slot_code
     }
 

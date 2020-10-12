@@ -18615,26 +18615,31 @@ var TableCode = /*#__PURE__*/function () {
       var slot_code_table_in = '';
       this.tableConfig = tableConfig; // 技术实现
       // otherConfig 配置项
-
-      console.log("%c getTemplate", 'font-size: 16px; font-weight: bold;color:green', tableConfig); // 1. 生成搜索按钮代码片段
+      // 1. 生成搜索按钮代码片段
       // 2. 表格顶部操作区域的插槽;
 
       slot_code_table_up = this.generatorSlotCodeTableUp(tableConfig.operateType_up);
-      slot_code_table_up && this.slot.push(slot_code_table_up); // 3. 表格内部的插槽
-
+      slot_code_table_up && this.slot.push(slot_code_table_up);
       slot_code_table_in = this.generatorSlotCodeTableIn(tableConfig.operateType_in);
-      this.slot.push(slot_code_table_in); // 4. 生成js代码片段
+      slot_code_table_in && this.slot.push(slot_code_table_in); // 4. 生成js代码片段
 
-      var scriptCode = this.getScriptCode(tableConfig.tableList);
-      var html = "\n                <vt-table-ez\n                    ref=\"bsTable\"\n                    :table-config=\"tableConfig\">\n                    <!--<template #filter-name></template>-->\n                     ".concat(this.slot_filter.join(''), "\n                    <!-- \u64CD\u4F5C\u533A\u57DF\u63D2\u69FD -->\n                    <!--<template #deploy-option></template>-->\n                     ").concat(slot_code_table_up, "\n                    <!-- \u8868\u683C\u63D2\u69FD -->\n                    <!--<template #table-status=\"{scope}\"></template>-->\n                    ").concat(this.slot_table.join(''), "\n                </vt-table-ez>\n            ");
-      console.log("%c getTemplate", 'font-size: 16px; font-weight: bold;color: green', scriptCode); // 脚本文件内容
+      var scriptCode = this.getScriptCode(tableConfig.tableList); // 3. 表格内部的插槽
 
-      var script = "<script>\n                export default {\n                  data () {\n                    return {\n                      tableConfig: {\n                          filterInfo: {\n                              data: {\n                                 ".concat(scriptCode.filterInfo.data.join(',\n'), "\n                              },\n                              fieldList: [\n                                  ").concat(this.getFieldListCode(scriptCode), "\n                              ]\n                          },\n                          filterData: ").concat(JSON.stringify(scriptCode.filterData), ",\n                          tableInfo: {\n                                request: {\n                                    ").concat(scriptCode.tableInfo.request.join(',\n'), "\n                                },\n                                loading: false,\n                                data: [],\n                                columns: [\n                                    ").concat(this.getColumnsCode(scriptCode), "\n                                ]\n                            \n                          }\n                      }\n                    }\n                  },\n                  computed: {},\n                  watch: {},\n                  created () {},\n                  mounted () {},\n                }\n            </script>");
-      console.log("%c script", 'font-size: 16px; font-weight: bold;color:red', script);
+      if (tableConfig.operateType_in.length > 0) {
+        scriptCode.tableInfo.columns.push({
+          label: '操作',
+          prop: 'operate',
+          type: 'slot',
+          align: 'center'
+        });
+      }
+
+      var html = "\n                <vt-table-ez\n                    ref=\"bsTable\"\n                    :table-config=\"tableConfig\">\n                    <!--<template #filter-name></template>-->\n                     ".concat(this.slot_filter.join(''), "\n                    <!-- \u64CD\u4F5C\u533A\u57DF\u63D2\u69FD -->\n                    <!--<template #deploy-option></template>-->\n                     ").concat(slot_code_table_up, "\n                    <!-- \u8868\u683C\u63D2\u69FD -->\n                    <!--<template #table-status=\"{scope}\"></template>-->\n                    ").concat(this.slot_table.join(''), "\n                    ").concat(slot_code_table_in, "\n                </vt-table-ez>\n            "); // 脚本文件内容
+
+      var script = "<script>\n                export default {\n                  data () {\n                    return {\n                      tableConfig: {\n                          filterInfo: {\n                              data: {\n                                 ".concat(scriptCode.filterInfo.data.join(',\n'), "\n                              },\n                              fieldList: [\n                                  ").concat(this.getFieldListCode(scriptCode), "\n                              ]\n                          },\n                          filterData: ").concat(JSON.stringify(scriptCode.filterData), ",\n                          tableInfo: {\n                                request: {\n                                    ").concat(scriptCode.tableInfo.request.join(',\n'), "\n                                },\n                                loading: false,\n                                data: [],\n                                columns: [\n                                    ").concat(this.getColumnsCode(scriptCode), "\n                                ]\n                            \n                          }\n                      }\n                    }\n                  },\n                  computed: {},\n                  watch: {},\n                  created () {},\n                  mounted () {},\n                  methods:{\n                      ").concat(this.methods.join(',\n'), "\n                  }\n                }\n            </script>");
       var template = "\n            <template>\n                <div class=\"full-content\">\n                   ".concat(html, "\n                </div>\n             </template>\n            "); // 样式文件内容
 
       var css = "<style scoped lang=\"scss\"></style>";
-      console.log("%c \u7ED3\u679C", 'font-size: 16px; font-weight: bold;color:green', html + script + css);
       return template + script + css;
     } // 获取 script相关代码
 
@@ -18809,22 +18814,21 @@ var TableCode = /*#__PURE__*/function () {
 
       switch (item) {
         case '新增':
-          slot_code = "\n                        <el-button\n                            v-has=\"{role: 'add'}\"\n                            size=\"mini\"\n                            type=\"primary\"\n                            @click=\"handleAdd\"\n                        ><i class=\"el-icon-plus\" />\u65B0\u589E</el-button>\n                    ";
+          slot_code = "\n                        <el-button\n                            v-has=\"{role: 'add'}\"\n                            size=\"mini\"\n                            type=\"text\"\n                            @click=\"handleAdd\"\n                        ><i class=\"el-icon-plus\" />\u65B0\u589E</el-button>\n                    ";
           this.methods.push("\n                        // \u64CD\u4F5C: \u65B0\u589E\n                        handleAdd() {}\n                    ");
           break;
 
         case '编辑':
-          slot_code = "\n                        <el-button\n                            v-has=\"{role: 'edit'}\"\n                            size=\"mini\"\n                            type=\"primary\"\n                            @click=\"handleAdd\"\n                        >\u7F16\u8F91</el-button>\n                    ";
+          slot_code = "\n                        <el-button\n                            v-has=\"{role: 'edit'}\"\n                            size=\"mini\"\n                            type=\"text\"\n                            @click=\"handleEdit\"\n                        >\u7F16\u8F91</el-button>\n                    ";
           this.methods.push("\n                        // \u64CD\u4F5C: \u7F16\u8F91\n                        handleEdit() {}\n                    ");
           break;
 
         case '删除':
-          slot_code = "\n                        <el-button\n                            v-has=\"{role: 'delete'}\"\n                            size=\"mini\"\n                            type=\"primary\"\n                            @click=\"handleDelete\"\n                        >\u5220\u9664</el-button>\n                    ";
-          this.methods.push("\n                        // \u64CD\u4F5C: \u5220\u9664\n                        handleAdd() {}\n                    ");
+          slot_code = "\n                        <el-button\n                            v-has=\"{role: 'delete'}\"\n                            size=\"mini\"\n                            type=\"text\"\n                            @click=\"handleDelete\"\n                        >\u5220\u9664</el-button>\n                    ";
+          this.methods.push("\n                        // \u64CD\u4F5C: \u5220\u9664\n                        handleDelete() {}\n                    ");
           break;
       }
 
-      console.log("%c generatorSlotCodeTableUp2", 'font-size: 16px; font-weight: bold;color:red', slot_code);
       return slot_code;
     } // 进行拼接业务代码
 
