@@ -118,18 +118,24 @@ export default {
     handleTableToList(apiInfo, definitions) {
       let _tableData = []
       this.componentIs = 'table'
+
       // get请求是生成 生成表格代码
       let properties = []
-      let originalRef = apiInfo.responses[200].schema.originalRef
-      let originalRef_01 = definitions[originalRef].properties.data.originalRef
-      let originalRef_02 = definitions[originalRef_01].properties.list.items.originalRef
-      properties = definitions[originalRef_02].properties
+      // let originalRef = apiInfo.responses[200].schema.originalRef
+      // let originalRef_01 = definitions[originalRef].properties.data.originalRef
+      // let originalRef_02 = definitions[originalRef_01].properties.list.items.originalRef
+      // properties = definitions[originalRef_02].properties
+
+      // 获取属性参数
+      properties = this.getProperties(apiInfo,definitions)
+
+      console.log(`%c 获取属性参数`, 'font-size: 16px; font-weight: bold;color:green', properties);
       // 整理代码结构
       Object.keys(properties).forEach((item, index) => {
         let _current = {
           id: index,
           value: item,
-          label: properties[item].description.slice(0, 20),
+          label: properties[item].description?.slice(0, 20) || '-',
           paramsType: this.setSearchParams(item.toLocaleLowerCase()),  // 是否作为搜索参数，以及当前搜索参数类型
           showType: this.getShowTypeValue(item, properties[item])
         }
@@ -140,6 +146,18 @@ export default {
       // 按照指定规则实现排序
       this.sortable(_tableData)
       return _tableData
+    },
+    // 获取属性参数
+    getProperties(apiInfo,definitions) {
+
+      let properties = []
+      let originalRef = apiInfo.responses[200].schema.originalRef
+      let originalRef_01 = definitions[originalRef].properties.data.originalRef
+      let originalRef_02 = definitions[originalRef_01].properties.list.items.originalRef
+      properties = definitions[originalRef_02].properties
+      return properties
+
+
     },
     // 搜索参数-类型,
     setSearchParams(field) {

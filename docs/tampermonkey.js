@@ -13,5 +13,5 @@
 // @require      file://D:\tools\TamperMonkey\swagger_1.0.1.js
 // 缺少在线更新
 // 直接复制到油侯插件中
-console.log(`%c 当前网站正在使用插件easy-code.js --公众号：先知云`, 'font-size: 14px; font-weight: bold;color:green');
+console.log(`%c 当前网站正在使用插件easy-code.js --公众号：先知云，微信：zhl632231327`, 'font-size: 14px; font-weight: bold;color:green');
 

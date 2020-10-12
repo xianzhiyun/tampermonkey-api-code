@@ -141,7 +141,8 @@ export default {
     cursor: pointer;
     color: #fff;
     line-height: 48px;
-    background: url("./code.png");
+    //background: url("./code.png");
+    background: #409EFF;
     background-size: contain;
 }
 
