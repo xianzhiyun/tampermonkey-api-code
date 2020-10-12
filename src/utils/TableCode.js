@@ -12,7 +12,7 @@ export default class TableCode {
 
     constructor(apiConfig) {
         this.template = ''
-        this.slot = []
+        this.slot = []              //未知暂未使用
         this.slot_filter = []
         this.slot_table = []
         this.script = ''
