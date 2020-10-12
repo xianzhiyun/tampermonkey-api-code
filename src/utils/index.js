@@ -37,7 +37,9 @@ export function parseTime(time, cFormat) {
     const time_str = format.replace(/{([ymdhisa])+}/g, (result, key) => {
         const value = formatObj[key]
         // Note: getDay() returns 0 on Sunday
-        if (key === 'a') { return ['日', '一', '二', '三', '四', '五', '六'][value ] }
+        if (key === 'a') {
+            return ['日', '一', '二', '三', '四', '五', '六'][value]
+        }
         return value.toString().padStart(2, '0')
     })
     return time_str
@@ -73,15 +75,15 @@ export function formatTime(time, option) {
         return parseTime(time, option)
     } else {
         return (
-          d.getMonth() +
-          1 +
-          '月' +
-          d.getDate() +
-          '日' +
-          d.getHours() +
-          '时' +
-          d.getMinutes() +
-          '分'
+            d.getMonth() +
+            1 +
+            '月' +
+            d.getDate() +
+            '日' +
+            d.getHours() +
+            '时' +
+            d.getMinutes() +
+            '分'
         )
     }
 }
@@ -142,10 +144,10 @@ export function cleanArray(actual) {
 export function param(json) {
     if (!json) return ''
     return cleanArray(
-      Object.keys(json).map(key => {
-          if (json[key] === undefined) return ''
-          return encodeURIComponent(key) + '=' + encodeURIComponent(json[key])
-      })
+        Object.keys(json).map(key => {
+            if (json[key] === undefined) return ''
+            return encodeURIComponent(key) + '=' + encodeURIComponent(json[key])
+        })
     ).join('&')
 }
 
@@ -159,13 +161,13 @@ export function param2Obj(url) {
         return {}
     }
     return JSON.parse(
-      '{"' +
-      decodeURIComponent(search)
-        .replace(/"/g, '\\"')
-        .replace(/&/g, '","')
-        .replace(/=/g, '":"')
-        .replace(/\+/g, ' ') +
-      '"}'
+        '{"' +
+        decodeURIComponent(search)
+            .replace(/"/g, '\\"')
+            .replace(/&/g, '","')
+            .replace(/=/g, '":"')
+            .replace(/\+/g, ' ') +
+        '"}'
     )
 }
 
@@ -217,8 +219,8 @@ export function toggleClass(element, className) {
         classString += '' + className
     } else {
         classString =
-          classString.substr(0, nameIndex) +
-          classString.substr(nameIndex + className.length)
+            classString.substr(0, nameIndex) +
+            classString.substr(nameIndex + className.length)
     }
     element.className = classString
 }
@@ -244,7 +246,7 @@ export function getTime(type) {
 export function debounce(func, wait, immediate) {
     let timeout, args, context, timestamp, result
 
-    const later = function() {
+    const later = function () {
         // 据上一次触发时间间隔
         const last = +new Date() - timestamp
 
@@ -261,7 +263,7 @@ export function debounce(func, wait, immediate) {
         }
     }
 
-    return function(...args) {
+    return function (...args) {
         context = this
         timestamp = +new Date()
         const callNow = immediate && !timeout
@@ -407,7 +409,8 @@ export function back() {
         this.$router.push({path: this.$route.query.from || '/'})
     })
 }
-export function randomRange(min,max) {
+
+export function randomRange(min, max) {
     let returnStr = '';
     let range = (max ? Math.round(Math.random() * (max - min)) + min : min);
     let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -418,9 +421,10 @@ export function randomRange(min,max) {
     }
     return returnStr;
 }
+
 export function flatten(data) {
     return data.reduce((arr, {id, name, children = []}) =>
-      arr.concat([{id, name}], flatten(children)), [])
+        arr.concat([{id, name}], flatten(children)), [])
 }
 
 // 复制文本
