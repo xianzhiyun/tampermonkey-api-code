@@ -11671,7 +11671,7 @@ var render = function() {
             attrs: { type: "primary", size: "mini" },
             on: { click: _vm.generateCode }
           },
-          [_vm._v("\n      生成代码\n    ")]
+          [_vm._v("\n            生成代码\n        ")]
         ),
         _vm._v(" "),
         _c(
@@ -11681,7 +11681,7 @@ var render = function() {
             attrs: { type: "primary", size: "mini" },
             on: { click: _vm.generateCode }
           },
-          [_vm._v("\n      预览\n    ")]
+          [_vm._v("\n            预览\n        ")]
         ),
         _vm._v(" "),
         _c(
@@ -18582,7 +18582,8 @@ var TableCode = /*#__PURE__*/function () {
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, TableCode);
 
     this.template = '';
-    this.slot = [];
+    this.slot = []; //未知暂未使用
+
     this.slot_filter = [];
     this.slot_table = [];
     this.script = '';
