@@ -6,7 +6,7 @@
     "watch": "webpack --watch"
   },
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "element-ui": "^2.13.2",
     "sortablejs": "^1.10.2",
     "vue": "^2.6.11"
